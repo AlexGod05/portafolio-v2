@@ -6,3 +6,4 @@ Se adjunta el archivo PDF
 
 https://github.com/AlexGod05/portafolio-v2/blob/master/Portafolio%20de%20Claiderman%20Alexander%20Lozano%20Cardona.pdf
 
+Nota: Aun se encuentra en desarrollo y en mejora.
