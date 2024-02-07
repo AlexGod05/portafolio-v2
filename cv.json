@@ -1,0 +1,521 @@
+{
+  "basics":{
+    "name":"Claiderman Alexander Lozano Cardona",
+    "label":"Desarrollador de software con más de 4 años de experiencia",
+    "image":"/me.jpg",
+    "email":"lozanocardona200938@gmail.com",
+    "phone":"+57 3014128547",
+    "url":"https://github.com/AlexGod05",
+    "summary":"Tecnólogo en Análisis y Desarrollo de Sistemas de Información con sólidos conocimientos en la gestión de contenedores, la implementación de microservicios a través de API REST, el manejo de bases de datos y la utilización de servicios en la nube de AWS. Destaco por mi agilidad para asimilar nuevas herramientas y tecnologías de información, demostrando un enfoque proactivo hacia el mejoramiento continuo y la adaptación fluida a diversos entornos. Mi habilidad para trabajar de manera colaborativa en equipos multidisciplinarios, incluso bajo condiciones de alta presión, ha sido fundamental en mi trayectoria profesional.",
+    "location":{
+      "address":"",
+      "postalCode":"050010",
+      "city":"Medellín",
+      "countryCode":"CO",
+      "region":"Colombia"
+    },
+    "profiles":[
+      {
+        "network":"LinkedIn",
+        "username":"Claiderman Alexander Lozano Cardona",
+        "url":"https://www.linkedin.com/in/claiderman-alexander-lozano-cardona-292a19174/"
+      },
+      {
+        "network":"GitHub",
+        "username":"AlexGod05",
+        "url":"https://github.com/AlexGod05"
+      }
+    ]
+  },
+  "work":[
+    {
+      "name":"Pragma",
+      "position":"Desarrollador de software",
+      "url":"https://www.pragma.co/es/",
+      "startDate":"2020-08-03",
+      "endDate":"2023-10-17",
+      "summary":"Durante mi trayecto por la empresa tuve la oportunidad de aportar en varios proyectos, en diferentes clientes, con el marco de trabajo SCRUM y KANBAN, principalmente en el área de Back-end con el lenguaje de programación Java y el Framework Spring, realizando despliegues en servicios de AWS y Azure DevOps, también aporté, pero a menor escala en el área de Front-End y Arquitectura de software.",
+      "highlights":[
+        "Started the company"
+      ]
+    },
+    {
+      "name":"Pragma",
+      "position":"Practicante Auxiliar en desarrollo de software",
+      "url":"https://www.pragma.co/es/",
+      "startDate":"2020-01-01",
+      "endDate":"2021-01-01",
+      "summary":"Durante estos 6 meses de prácticas, pude aplicar mis conocimientos adquiridos en la Tecnología de desarrollo de sistemas de información, apoyando como full-stack en proyectos internos de la empresa, con el lenguaje de programación Node.js y Java por el lado del Back-End, y por el lado del Front-end con Angular, también inicié mi camino en AWS, consumiendo varios servicios como son S3, DynamoDB y Cognito",
+      "highlights":[
+        "Started the company"
+      ]
+    },
+    {
+      "name":"Emtelco S.A",
+      "position":"Asesor Soporte técnico",
+      "url":"https://emtelco.com.co/",
+      "startDate":"2019-01-01",
+      "endDate":"2020-01-01",
+      "summary":"Durante mi estancia en esta empresa de Call Center tuve una capacitación de 20 días, donde vimos temas de atención al cliente en el área de soporte técnico para el cliente Tigo-Une que hace parte del área de telecomunicaciones, donde al finalizar la capacitación pude ejercer mi rol, dando soporte vía telefónica, para los servicios de Internet, Tv (parabólica) y telefonía fija, donde también se aprovechaba la llamada para ofrecer nuevos servicios de ventas",
+      "highlights":[
+        "Started the company"
+      ]
+    },
+    {
+      "name":"Autodicol S.A.S",
+      "position":"Practicante Técnico en Sistemas",
+      "url":"https://www.autodicol.com/",
+      "startDate":"2018-01-01",
+      "endDate":"2019-01-01",
+      "summary":"Durante mis prácticas en esta empresa, tuve la oportunidad de aportar mi conocimiento adquirido en la Técnica en sistemas, apoyando en el mantenimiento y reparación de computadores e impresoras, también tuve la oportunidad de adentrarme en el mundo de la programación en Java con MySQL, desarrollando una aplicación de escritorio para el área de importaciones, facilitando la gestión y el trabajo final de mis compañeros. Esta sería mi primera experiencia a nivel empresarial en el área de programación.",
+      "highlights":[
+        "Started the company"
+      ]
+    }
+  ],
+  "volunteer":[
+    {
+      "organization":"Organization",
+      "position":"Volunteer",
+      "url":"https://organization.com/",
+      "startDate":"2012-01-01",
+      "endDate":"2013-01-01",
+      "summary":"Description…",
+      "highlights":[
+        "Awarded 'Volunteer of the Month'"
+      ]
+    }
+  ],
+  "education":[
+    {
+      "institution":"Sena",
+      "url":"https://oferta.senasofiaplus.edu.co/sofia-oferta/",
+      "area":"Tecnólogo en desarrollo y sistemas de información",
+      "studyType":"Tecnólogo",
+      "startDate":"2019-01-01",
+      "endDate":"2021-01-01",
+      "score":"4.0",
+      "courses":[
+        "DB1101 - Basic SQL"
+      ]
+    },
+    {
+      "institution":"Sena",
+      "url":"https://oferta.senasofiaplus.edu.co/sofia-oferta/",
+      "area":"Técnico en sistemas",
+      "studyType":"Técnico",
+      "startDate":"2018-01-01",
+      "endDate":"2019-01-01",
+      "score":"4.0",
+      "courses":[
+        "DB1101 - Basic SQL"
+      ]
+    },
+    {
+      "institution":"Sena",
+      "url":"https://oferta.senasofiaplus.edu.co/sofia-oferta/",
+      "area":"Técnico en dibujo arquitectónico",
+      "studyType":"Técnico",
+      "startDate":"2017-01-01",
+      "endDate":"2018-01-01",
+      "score":"4.0",
+      "courses":[
+        "DB1101 - Basic SQL"
+      ]
+    }
+  ],
+  "awards":[
+    {
+      "title":"Award",
+      "date":"2014-11-01",
+      "awarder":"Company",
+      "summary":"There is no spoon."
+    }
+  ],
+  "certificates":[
+    {
+      "name":"Certificate",
+      "date":"2021-11-07",
+      "issuer":"Company",
+      "url":"https://certificate.com"
+    }
+  ],
+  "publications":[
+    {
+      "name":"Publication",
+      "publisher":"Company",
+      "releaseDate":"2014-10-01",
+      "url":"https://publication.com",
+      "summary":"Description…"
+    }
+  ],
+  "skills":[
+    {
+      "name":"SCRUM",
+      "level":"Master",
+      "keywords":[
+        "Desarrollo Web",
+        "Frontend"
+      ]
+    },
+    {
+      "name":"kANVAN",
+      "level":"Master",
+      "keywords":[
+        "Desarrollo Web",
+        "Frontend"
+      ]
+    },
+    {
+      "name":"Java",
+      "level":"Master",
+      "keywords":[
+        "Desarrollo Web",
+        "Frontend"
+      ]
+    },
+    {
+      "name":"Spring Framework",
+      "level":"Master",
+      "keywords":[
+        "Desarrollo Web",
+        "Frontend",
+        "Diseño Responsive"
+      ]
+    },
+    {
+      "name":"AWS",
+      "level":"Master",
+      "keywords":[
+        "Desarrollo Web",
+        "Frontend"
+      ]
+    },
+    {
+      "name":"Azure DevOps",
+      "level":"Master",
+      "keywords":[
+        "Desarrollo Web",
+        "Frontend"
+      ]
+    },
+    {
+      "name":"Mysql",
+      "level":"Avanzado",
+      "keywords":[
+        "Desarrollo Web",
+        "Frontend",
+        "CSS Framework",
+        "Diseño Responsive"
+      ]
+    },
+    {
+      "name":"PostGresql",
+      "level":"Avanzado",
+      "keywords":[
+        "Desarrollo Web",
+        "Frontend",
+        "CSS Framework",
+        "Diseño Responsive"
+      ]
+    },
+    {
+      "name":"MongoDB",
+      "level":"Avanzado",
+      "keywords":[
+        "Desarrollo Web",
+        "Frontend",
+        "CSS Framework",
+        "Diseño Responsive"
+      ]
+    },
+    {
+      "name":"FluidAttack",
+      "level":"Master",
+      "keywords":[
+        "Desarrollo Web",
+        "Frontend"
+      ]
+    },
+    {
+      "name":"Azure DevOps",
+      "level":"Avanzado",
+      "keywords":[
+        "Desarrollo Web",
+        "Backend",
+        "JavaScript",
+        "Servidor"
+      ]
+    },
+    {
+      "name":"Git",
+      "level":"Avanzado",
+      "keywords":[
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name":"GitLab",
+      "level":"Avanzado",
+      "keywords":[
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name":"Mockito",
+      "level":"Avanzado",
+      "keywords":[
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name":"Junit5",
+      "level":"Avanzado",
+      "keywords":[
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name":"Kubernetes",
+      "level":"Avanzado",
+      "keywords":[
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name":"RabbitMQ",
+      "level":"Avanzado",
+      "keywords":[
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name":"Redis",
+      "level":"Avanzado",
+      "keywords":[
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name":"Docker",
+      "level":"Avanzado",
+      "keywords":[
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name":"CMS Contentful",
+      "level":"Avanzado",
+      "keywords":[
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name":"NodeJs",
+      "level":"Avanzado",
+      "keywords":[
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name":"Angular",
+      "level":"Avanzado",
+      "keywords":[
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name":"Astro",
+      "level":"Avanzado",
+      "keywords":[
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name":"Trello",
+      "level":"Avanzado",
+      "keywords":[
+        "Bases de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    }
+  ],
+  "languages":[
+    {
+      "language":"Spanish",
+      "fluency":"Native speaker"
+    }
+  ],
+  "interests":[
+    {
+      "name":"Wildlife",
+      "keywords":[
+        "Ferrets",
+        "Unicorns"
+      ]
+    }
+  ],
+  "references":[
+    {
+      "name":"Jane Doe",
+      "reference":"Reference…"
+    }
+  ],
+  "projects":[
+    {
+      "name":"Autodicol S.A.S - Importaciones",
+      "description":"Programa interno de escritorio de importaciones para Autodicol S.A.S.",
+      "highlights":[
+        "Java",
+        "MySQL"
+      ]
+    },
+    {
+      "name":"Pragma - Grupo Familia - Pequeñin",
+      "description":"Se hizo un rediseño de la página web de Pequeñin, estuve en la construcción e implementación en el área de back-end creando microservicios Api Rest.",
+      "highlights":[
+        "SCRUM",
+        "Java",
+        "Spring Framework",
+        "AWS",
+        "Jenkins",
+        "GitLab",
+        "Mockito",
+        "Junit5",
+        "MySQL",
+        "Redis",
+        "RabbitMQ",
+        "Kubernetes",
+        "Trello"
+      ],
+      "url":"https://www.pequenin.com.co/"
+    },
+    {
+      "name":"Pragma - Grupo Familia - Transversal",
+      "description":"En este proyecto apoyé las 5 marcas del grupo Familia, las cuales son: Pequeñin, Nosotras, Petys, Pomys, Tena y Familia institucional, estas marcas tienen la misma infraestructura de software lo que permitía que un cambio general se pudiera implementar en todas las marcas.",
+      "highlights":[
+        "SCRUM",
+        "Java",
+        "Spring Framework",
+        "AWS",
+        "Jenkins",
+        "GitLab",
+        "Mockito",
+        "Junit5",
+        "MySQL",
+        "Redis",
+        "RabbitMQ",
+        "Kubernetes",
+        "Trello"
+      ],
+      "url":"https://www.grupofamilia.com/"
+    },
+    {
+      "name":"Pragma - Grupo Familia - Nosotras V-App",
+      "description":"En este proyecto realicé el Back-end para una aplicación Mobile, creando microservicios Api Rest, en este caso estuve liderando el área de Back-end, lo cual me permitió retarme y llevar de principio a fin este proyecto.",
+      "highlights":[
+        "SCRUM",
+        "Java",
+        "Spring Framework",
+        "AWS",
+        "Jenkins",
+        "GitLab",
+        "Mockito",
+        "Junit5",
+        "MySQL",
+        "Redis",
+        "RabbitMQ",
+        "Kubernetes",
+        "Trello"
+      ],
+      "url":"https://play.google.com/store/apps/details?id=com.nolapp&hl=es_CO&gl=US"
+    },
+    {
+      "name":"Pragma - Banistmo",
+      "description":"Se desarrolló un sistema de envío de PDF, para el resumen y gestión de créditos que se dieron en el tiempo de la pandemia, después de esto estuve apoyando en la sostenibilidad y actualización de los microservicios del Banco.",
+      "highlights":[
+        "KANBAN",
+        "Java",
+        "Spring Framework",
+        "AWS",
+        "Azure DevOps",
+        "FluidAttack",
+        "Mockito",
+        "Junit5",
+        "PostgreSQL",
+        "Redis",
+        "RabbitMQ"
+      ],
+      "url":"https://www.banistmo.com/wps/portal/banistmo/personas"
+    },
+    {
+      "name":"Pragma - Comfama",
+      "description":"Se desarrolló un filtro de búsqueda para que los usuarios tengan una mejor accesibilidad en la plataforma y puedan encontrar de una mejor forma los servicios ofrecidos por Comfama.",
+      "highlights":[
+        "SCRUM",
+        "Java",
+        "Spring Framework",
+        "AWS",
+        "Azure DevOps",
+        "Mockito",
+        "Junit5",
+        "CMS Contentful",
+        "Redis",
+        "RabbitMQ"
+      ],
+      "url":"https://www.comfama.com/"
+    },
+    {
+      "name":"Pragma - Bancolombia",
+      "description":"En este Banco, Aporté en la arquitectura de software, conectando y desplegando varios servicios para la gestión de Log de Auditoría, la cual recopilaba los Logs de varios Microservicios para el área de Empresas.",
+      "highlights":[
+        "SCRUM",
+        "AWS",
+        "Azure DevOps",
+        "Kubernetes",
+        "Docker",
+        "MongoDB",
+        "RabbitMQ"
+      ],
+      "url":"https://www.bancolombia.com/negocios/productos-financieros/sucursal-virtual-empresas"
+    }
+  ]
+}
