@@ -3,7 +3,7 @@
     "name": "Claiderman Alexander Lozano Cardona",
     "label": "Software developer with over 4 years of experience",
     "image": "/me.jpg",
-    "email": "lozanocardona200938@gmail.com",
+    "email": "claiderman.lozano@gmail.com",
     "phone": "+57 3014128547",
     "url": "https://github.com/AlexGod05",
     "summary": "Software developer with more than 4 years of experience in microservices architecture and backend development. Strong knowledge in implementing REST APIs, database management, and cloud services (AWS, Azure). Experience developing enterprise solutions for clients such as Bancolombia, Comfama, and Grupo Familia, working with technologies like Java, Spring Framework, TypeScript, Python, and serverless services. Currently at Polygonus, contributing to backend development for video game and interactive application projects, implementing solutions with TypeScript, Python (Django/FastAPI), and AWS services. Known for continuous learning, best development practices, and experience in agile methodologies (SCRUM, KANBAN). Proactive and adaptable, participating in the development of robust and scalable solutions, maintaining quality and security standards. Knowledge in CI/CD integration, containers (Docker, Kubernetes), and application monitoring, contributing to efficient and maintainable deployments.",
@@ -11,6 +11,7 @@
       "address": "",
       "postalCode": "050010",
       "city": "Medellín",
+      "department": "Antioquia",
       "countryCode": "CO",
       "region": "Colombia"
     },

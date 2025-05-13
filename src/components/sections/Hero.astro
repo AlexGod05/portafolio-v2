@@ -7,11 +7,12 @@ import X from "@/icons/X.astro"
 import LinkedIn from "@/icons/LinkedIn.astro"
 import GitHub from "@/icons/GitHub.astro"
 import WorldMap from "@/icons/WorldMap.astro"
+import Copy from "@/icons/Copy.astro"
 import type { SocialIcon } from "@/types"
 
 const cvData = await getCVData()
 const { name, label, image, location, profiles, phone, email } = cvData.basics
-const { city, region } = location
+const { city, department, region } = location
 
 const SOCIAL_ICONS: SocialIcon = {
   GitHub,
@@ -21,8 +22,14 @@ const SOCIAL_ICONS: SocialIcon = {
 
 const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
 const linkedUrl = linkedInfo?.url
+const githubInfo = profiles.find(({ network }) => network === "GitHub")
+const githubUrl = githubInfo?.url
 
 const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
+
+const copyToClipboard = (text: string) => {
+  navigator.clipboard.writeText(text)
+}
 ---
 
 <Section>
@@ -32,53 +39,108 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
         <h1>{name}</h1>
       </div>
       <h2>{label}</h2>
-      <span>
-        <WorldMap />
-        {city}, {region}
-      </span>
+      <a 
+        href="https://www.google.com/maps?q=6.299806,-75.535111" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        title="Ver ubicación en Google Maps"
+        class="location-link"
+      >
+        <span>
+          <WorldMap />
+          {city}, {department}, {region}
+        </span>
+      </a>
       <footer class="print">
         {printInfo}
       </footer>
       <footer class="no-print">
-        {
-          email && (
-            <a
-              href={`mailto:${email}`}
-              title={`Enviar un correo electrónico a ${name} al correo ${email}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Mail />
-            </a>
-          )
-        }
-        {
-          phone && (
-            <a
-              href={`tel:${phone}`}
-              title={`Llamar por teléfono a ${name} al número ${phone}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Phone />
-            </a>
-          )
-        }
-        {
-          profiles.map(({ network, url }) => {
-            const Icon = SOCIAL_ICONS[network]
-            return (
-              <a
-                href={url}
-                title={`Visitar el perfil de ${name} en ${network}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {Icon && <Icon />}
-              </a>
+        <div class="contact-info">
+          {
+            email && (
+              <div class="contact-item">
+                <a
+                  href={`mailto:${email}`}
+                  title={`Enviar un correo electrónico a ${name} al correo ${email}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="icon-link"
+                >
+                  <Mail />
+                </a>
+                <div class="contact-value">
+                  {email}
+                  <button class="copy-button" onclick={`copyToClipboard('${email}')`} title="Copiar email">
+                    <Copy />
+                  </button>
+                </div>
+              </div>
             )
-          })
-        }
+          }
+          {
+            phone && (
+              <div class="contact-item">
+                <a
+                  href={`tel:${phone}`}
+                  title={`Llamar por teléfono a ${name} al número ${phone}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="icon-link"
+                >
+                  <Phone />
+                </a>
+                <div class="contact-value">
+                  {phone}
+                  <button class="copy-button" onclick={`copyToClipboard('${phone}')`} title="Copiar teléfono">
+                    <Copy />
+                  </button>
+                </div>
+              </div>
+            )
+          }
+          {
+            linkedUrl && (
+              <div class="contact-item">
+                <a
+                  href={linkedUrl}
+                  title={`Visitar el perfil de ${name} en LinkedIn`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="icon-link"
+                >
+                  <LinkedIn />
+                </a>
+                <div class="contact-value">
+                  {linkedUrl}
+                  <button class="copy-button" onclick={`copyToClipboard('${linkedUrl}')`} title="Copiar perfil de LinkedIn">
+                    <Copy />
+                  </button>
+                </div>
+              </div>
+            )
+          }
+          {
+            githubUrl && (
+              <div class="contact-item">
+                <a
+                  href={githubUrl}
+                  title={`Visitar el perfil de ${name} en GitHub`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="icon-link"
+                >
+                  <GitHub />
+                </a>
+                <div class="contact-value">
+                  {githubUrl}
+                  <button class="copy-button" onclick={`copyToClipboard('${githubUrl}')`} title="Copiar perfil de GitHub">
+                    <Copy />
+                  </button>
+                </div>
+              </div>
+            )
+          }
+        </div>
       </footer>
     </div>
     <figure>
@@ -159,9 +221,120 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     transition: all 0.3s ease;
   }
 
+  footer a.contact-link {
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    min-width: 120px;
+    padding: 8px;
+    gap: 4px;
+  }
+
+  footer a.contact-link .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer a.contact-link span {
+    font-size: 0.75rem;
+    text-align: center;
+    word-break: break-all;
+  }
+
   footer a:hover {
     background: var(--card-bg);
     border: 1px solid var(--border);
+  }
+
+  .location-link {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+  }
+
+  .location-link:hover {
+    color: var(--primary);
+  }
+
+  .location-link span {
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.85rem;
+    letter-spacing: -0.05rem;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .icon-link {
+    color: var(--secondary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    padding: 4px;
+    height: 24px;
+    width: 24px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .icon-link:hover {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+  }
+
+  .contact-value {
+    color: var(--secondary);
+    font-size: 0.85rem;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .copy-button {
+    background: none;
+    border: none;
+    padding: 2px;
+    cursor: pointer;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+
+  .copy-button:hover {
+    opacity: 1;
+  }
+
+  .contact-value:hover {
+    background: var(--card-bg);
+  }
+
+  .contact-value:hover .copy-button {
+    opacity: 1;
   }
 
   @media (width <= 700px) {
@@ -194,5 +367,40 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     figure {
       margin: 0 auto;
     }
+
+    .contact-info {
+      align-items: flex-start;
+    }
+    .contact-item {
+      width: 100%;
+    }
+    .contact-value {
+      max-width: 200px;
+    }
   }
 </style>
+
+<script>
+  declare global {
+    interface Window {
+      copyToClipboard: (text: string) => void;
+    }
+  }
+
+  window.copyToClipboard = function(text: string) {
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        const button = document.activeElement as HTMLElement
+        if (button) {
+          const originalHTML = button.innerHTML
+          button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>'
+          setTimeout(() => {
+            button.innerHTML = originalHTML
+          }, 1000)
+        }
+      })
+      .catch(err => {
+        console.error('Error al copiar:', err)
+      })
+  }
+</script>
