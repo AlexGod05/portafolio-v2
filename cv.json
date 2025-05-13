@@ -185,7 +185,6 @@
   "skills":[
     {
       "name":"SCRUM",
-      "level":"Master",
       "keywords":[
         "Bancolombia",
         "Comfama",
@@ -195,7 +194,6 @@
     },
     {
       "name":"Kanban",
-      "level":"Master",
       "keywords":[
         "Banistmo",
         "Gestión de Créditos",
@@ -204,7 +202,6 @@
     },
     {
       "name":"Java",
-      "level":"Master",
       "keywords":[
         "Spring Framework",
         "Microservicios",
@@ -214,7 +211,6 @@
     },
     {
       "name":"Spring Framework",
-      "level":"Master",
       "keywords":[
         "REST APIs",
         "Microservicios",
@@ -224,7 +220,6 @@
     },
     {
       "name":"AWS",
-      "level":"Master",
       "keywords":[
         "Lambda",
         "ECS",
@@ -235,7 +230,6 @@
     },
     {
       "name":"Azure DevOps",
-      "level":"Master",
       "keywords":[
         "CI/CD",
         "Bancolombia",
@@ -245,7 +239,6 @@
     },
     {
       "name":"MySQL",
-      "level":"Master",
       "keywords":[
         "Grupo Familia",
         "Nosotras V-App",
@@ -255,7 +248,6 @@
     },
     {
       "name":"PostgreSQL",
-      "level":"Master",
       "keywords":[
         "Polygonus Academy",
         "Banistmo",
@@ -264,7 +256,6 @@
     },
     {
       "name":"MongoDB",
-      "level":"Master",
       "keywords":[
         "Bancolombia",
         "Log de Auditoría",
@@ -273,7 +264,6 @@
     },
     {
       "name":"FluidAttack",
-      "level":"Master",
       "keywords":[
         "Banistmo",
         "Seguridad",
@@ -282,7 +272,6 @@
     },
     {
       "name":"Git",
-      "level":"Master",
       "keywords":[
         "Control de Versiones",
         "Colaboración",
@@ -291,7 +280,6 @@
     },
     {
       "name":"GitLab",
-      "level":"Master",
       "keywords":[
         "Grupo Familia",
         "CI/CD",
@@ -300,7 +288,6 @@
     },
     {
       "name":"Mockito",
-      "level":"Master",
       "keywords":[
         "Comfama",
         "Banistmo",
@@ -309,7 +296,6 @@
     },
     {
       "name":"JUnit5",
-      "level":"Master",
       "keywords":[
         "Comfama",
         "Banistmo",
@@ -318,7 +304,6 @@
     },
     {
       "name":"Kubernetes",
-      "level":"Master",
       "keywords":[
         "Bancolombia",
         "Grupo Familia",
@@ -327,7 +312,6 @@
     },
     {
       "name":"RabbitMQ",
-      "level":"Master",
       "keywords":[
         "Comfama",
         "Banistmo",
@@ -336,7 +320,6 @@
     },
     {
       "name":"Redis",
-      "level":"Master",
       "keywords":[
         "Comfama",
         "Banistmo",
@@ -345,7 +328,6 @@
     },
     {
       "name":"Docker",
-      "level":"Master",
       "keywords":[
         "Bancolombia",
         "Grupo Familia",
@@ -354,7 +336,6 @@
     },
     {
       "name":"Contentful",
-      "level":"Master",
       "keywords":[
         "Comfama",
         "CMS",
@@ -363,7 +344,6 @@
     },
     {
       "name":"NodeJS",
-      "level":"Master",
       "keywords":[
         "Polygonus",
         "Futureverse",
@@ -372,7 +352,6 @@
     },
     {
       "name":"Angular",
-      "level":"Master",
       "keywords":[
         "Pragma",
         "Frontend",
@@ -381,7 +360,6 @@
     },
     {
       "name":"Astro",
-      "level":"Master",
       "keywords":[
         "Portafolio",
         "Static Site",
@@ -390,7 +368,6 @@
     },
     {
       "name":"Trello",
-      "level":"Master",
       "keywords":[
         "Grupo Familia",
         "Gestión",
@@ -399,7 +376,6 @@
     },
     {
       "name":"TypeScript",
-      "level":"Master",
       "keywords":[
         "Polygonus",
         "Futureverse",
@@ -408,7 +384,6 @@
     },
     {
       "name":"Python",
-      "level":"Master",
       "keywords":[
         "Polygonus Academy",
         "FastAPI",
@@ -417,7 +392,6 @@
     },
     {
       "name":"Serverless",
-      "level":"Master",
       "keywords":[
         "Polygonus",
         "Futureverse",
@@ -426,7 +400,6 @@
     },
     {
       "name":"NAKAMA",
-      "level":"Master",
       "keywords":[
         "Polygonus",
         "AWS ECS",

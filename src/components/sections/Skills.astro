@@ -89,20 +89,6 @@ const SKILL_NAME_TO_ICON: Record<string, string> = {
   "Serverless": "Serverless",
   "NAKAMA": "NAKAMA"
 }
-
-// Función para obtener el color del nivel
-const getLevelColor = (level: string) => {
-  switch (level.toLowerCase()) {
-    case 'master':
-      return '#4CAF50';
-    case 'avanzado':
-      return '#2196F3';
-    case 'intermedio':
-      return '#FFC107';
-    default:
-      return '#9E9E9E';
-  }
-}
 ---
 
 <Section class="accordion-container">
@@ -114,10 +100,9 @@ const getLevelColor = (level: string) => {
   <div class="accordion-content" aria-hidden="true">
     <div class="skills-grid">
       {
-        skills.map(({ name, level, keywords }) => {
+        skills.map(({ name, keywords }) => {
           const iconKey = SKILL_NAME_TO_ICON[name] || name
           const Icon = SKILLS_ICONS[iconKey]
-          const levelColor = getLevelColor(level)
 
           return (
             <div class="skill-card">
@@ -127,9 +112,6 @@ const getLevelColor = (level: string) => {
                 </div>
                 <div class="skill-info">
                   <h3>{name}</h3>
-                  <span class="skill-level" style={`--level-color: ${levelColor}`}>
-                    {level}
-                  </span>
                 </div>
               </div>
               <div class="skill-keywords">
@@ -147,9 +129,10 @@ const getLevelColor = (level: string) => {
 
 <style>
   .accordion-container {
-    border: 1px solid #eee;
+    border: 1px solid var(--border);
     border-radius: 8px;
     overflow: hidden;
+    background: var(--card-bg);
   }
 
   .accordion-header {
@@ -162,10 +145,11 @@ const getLevelColor = (level: string) => {
     justify-content: space-between;
     align-items: center;
     text-align: left;
+    color: var(--text);
   }
 
   .accordion-header:hover {
-    background: #f9f9f9;
+    background: var(--card-bg);
   }
 
   .accordion-header h2 {
@@ -173,16 +157,17 @@ const getLevelColor = (level: string) => {
     display: flex;
     align-items: center;
     gap: 8px;
+    color: var(--text);
   }
 
   .accordion-header h2 i {
-    color: #666;
+    color: var(--secondary);
     font-size: 1.1em;
   }
 
   .accordion-icon {
     font-size: 12px;
-    color: #666;
+    color: var(--secondary);
     transition: transform 0.3s ease;
   }
 
@@ -195,6 +180,7 @@ const getLevelColor = (level: string) => {
     overflow: hidden;
     transition: all 0.3s ease-out;
     padding: 0 16px;
+    color: var(--text);
   }
 
   .accordion-header[aria-expanded="true"] + .accordion-content {
@@ -211,15 +197,16 @@ const getLevelColor = (level: string) => {
   }
 
   .skill-card {
-    background: #f8f9fa;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 16px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.3s ease;
   }
 
   .skill-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
   }
 
   .skill-header {
@@ -242,7 +229,7 @@ const getLevelColor = (level: string) => {
     width: 24px;
     height: 24px;
     font-size: 24px;
-    color: #444;
+    color: var(--text);
   }
 
   .skill-info {
@@ -252,51 +239,26 @@ const getLevelColor = (level: string) => {
   .skill-info h3 {
     margin: 0;
     font-size: 1rem;
-    font-weight: 600;
-    color: #333;
-  }
-
-  .skill-level {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--level-color);
-    text-transform: capitalize;
+    color: var(--text);
   }
 
   .skill-keywords {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 4px;
   }
 
   .keyword-tag {
-    background: #e9ecef;
-    color: #495057;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
+    background: var(--background);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.6rem;
     font-weight: 500;
   }
 
-  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-  }
-
-  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
-  }
-
-  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-
-  @media (max-width: 768px) {
+  @media (width <= 700px) {
     .skills-grid {
       grid-template-columns: 1fr;
     }

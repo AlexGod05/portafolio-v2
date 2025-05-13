@@ -58,9 +58,10 @@ import { work } from "@cv"
 
 <style>
   .accordion-container {
-    border: 1px solid #eee;
+    border: 1px solid var(--border);
     border-radius: 8px;
     overflow: hidden;
+    background: var(--card-bg);
   }
 
   .accordion-header {
@@ -73,10 +74,11 @@ import { work } from "@cv"
     justify-content: space-between;
     align-items: center;
     text-align: left;
+    color: var(--text);
   }
 
   .accordion-header:hover {
-    background: #f9f9f9;
+    background: var(--card-bg);
   }
 
   .accordion-header h2 {
@@ -84,16 +86,17 @@ import { work } from "@cv"
     display: flex;
     align-items: center;
     gap: 8px;
+    color: var(--text);
   }
 
   .accordion-header h2 i {
-    color: #666;
+    color: var(--secondary);
     font-size: 1.1em;
   }
 
   .accordion-icon {
     font-size: 12px;
-    color: #666;
+    color: var(--secondary);
     transition: transform 0.3s ease;
   }
 
@@ -106,6 +109,7 @@ import { work } from "@cv"
     overflow: hidden;
     transition: all 0.3s ease-out;
     padding: 0 16px;
+    color: var(--text);
   }
 
   .accordion-header[aria-expanded="true"] + .accordion-content {
@@ -119,17 +123,17 @@ import { work } from "@cv"
   }
 
   .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: var(--background);
     border-radius: 4px;
   }
 
   .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-thumb {
-    background: #888;
+    background: var(--secondary);
     border-radius: 4px;
   }
 
   .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: var(--primary);
   }
 
   ul {
@@ -140,19 +144,20 @@ import { work } from "@cv"
 
   article h3 {
     font-weight: 500;
-    color: #111;
+    color: var(--text);
   }
 
   article a {
-    color: #111;
+    color: var(--text);
   }
 
   article a:hover {
     text-decoration: underline;
+    color: var(--primary);
   }
 
   article h4 {
-    color: #222;
+    color: var(--secondary);
     font-weight: 400;
   }
 
@@ -164,7 +169,7 @@ import { work } from "@cv"
   }
 
   time {
-    color: #555;
+    color: var(--secondary);
     font-size: 0.85rem;
     min-width: 102px;
   }
@@ -176,7 +181,7 @@ import { work } from "@cv"
   }
 
   .highlights li {
-    color: #666;
+    color: var(--secondary);
     font-size: 0.9rem;
     margin-bottom: 4px;
   }

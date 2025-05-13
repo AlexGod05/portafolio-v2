@@ -6,10 +6,58 @@ const { title } = Astro.props
 <section>
   {title && <h2>{title}</h2>}
   <slot />
+  <button
+    class="go-to-top"
+    aria-label="Ir arriba"
+    title="Ir arriba"
+  >
+    <i class="fas fa-arrow-up"></i>
+  </button>
 </section>
 
 <script>
   // se ejecuta en el cliente <----
+
+  // Función para mostrar/ocultar el botón
+  function toggleGoToTopButton() {
+    const button = document.querySelector('.go-to-top');
+    if (!button) return;
+
+    const expandedAccordions = document.querySelectorAll('.accordion-header[aria-expanded="true"]');
+    if (expandedAccordions.length > 0) {
+      button.classList.add('visible');
+    } else {
+      button.classList.remove('visible');
+    }
+  }
+
+  // Función para ir arriba
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  // Observar cambios en los acordeones
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'aria-expanded') {
+        toggleGoToTopButton();
+      }
+    });
+  });
+
+  // Observar todos los acordeones
+  document.querySelectorAll('.accordion-header').forEach((accordion) => {
+    observer.observe(accordion, { attributes: true });
+  });
+
+  // Agregar evento click al botón
+  document.querySelector('.go-to-top')?.addEventListener('click', scrollToTop);
+
+  // Verificar estado inicial
+  toggleGoToTopButton();
 </script>
 
 <style>
@@ -28,6 +76,52 @@ const { title } = Astro.props
   @media (width <= 700px) {
     section {
       margin-bottom: 38px;
+    }
+  }
+
+  .section {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .go-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px var(--shadow);
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+
+  .go-to-top:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow);
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .go-to-top.visible {
+    display: flex;
+  }
+
+  @media (width <= 700px) {
+    .go-to-top {
+      bottom: 1rem;
+      right: 1rem;
+      width: 36px;
+      height: 36px;
+      font-size: 1rem;
     }
   }
 </style>

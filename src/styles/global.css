@@ -1,0 +1,77 @@
+:root {
+  /* Light theme variables */
+  --background: #ffffff;
+  --text: #333333;
+  --primary: #8B0000;
+  --secondary: #666666;
+  --accent: #8b5cf6;
+  --border: #e0e0e0;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+:root.dark {
+  /* Dark theme variables */
+  --background: #1a1a1a;
+  --text: #ffffff;
+  --primary: #B22222;
+  --secondary: #a0a0a0;
+  --accent: #a78bfa;
+  --border: #404040;
+  --card-bg: #2d2d2d;
+  --card-border: #374151;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Base styles */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Card styles */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+/* Link styles */
+a {
+  color: var(--primary);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Button styles */
+button {
+  color: var(--text);
+}
+
+/* Input styles */
+input, textarea {
+  background-color: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+} 
