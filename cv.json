@@ -187,263 +187,250 @@
       "name":"SCRUM",
       "level":"Master",
       "keywords":[
-        "Desarrollo Web",
-        "Frontend"
+        "Bancolombia",
+        "Comfama",
+        "Grupo Familia",
+        "Gestión de Proyectos"
       ]
     },
     {
-      "name":"kANVAN",
+      "name":"Kanban",
       "level":"Master",
       "keywords":[
-        "Desarrollo Web",
-        "Frontend"
+        "Banistmo",
+        "Gestión de Créditos",
+        "Microservicios"
       ]
     },
     {
       "name":"Java",
       "level":"Master",
       "keywords":[
-        "Desarrollo Web",
-        "Frontend"
+        "Spring Framework",
+        "Microservicios",
+        "Bancolombia",
+        "Comfama"
       ]
     },
     {
       "name":"Spring Framework",
       "level":"Master",
       "keywords":[
-        "Desarrollo Web",
-        "Frontend",
-        "Diseño Responsive"
+        "REST APIs",
+        "Microservicios",
+        "Comfama",
+        "Grupo Familia"
       ]
     },
     {
       "name":"AWS",
       "level":"Master",
       "keywords":[
-        "Desarrollo Web",
-        "Frontend"
+        "Lambda",
+        "ECS",
+        "ECR",
+        "FARGATE",
+        "S3"
       ]
     },
     {
       "name":"Azure DevOps",
       "level":"Master",
       "keywords":[
-        "Desarrollo Web",
-        "Frontend"
+        "CI/CD",
+        "Bancolombia",
+        "Comfama",
+        "Banistmo"
       ]
     },
     {
-      "name":"Mysql",
-      "level":"Avanzado",
+      "name":"MySQL",
+      "level":"Master",
       "keywords":[
-        "Desarrollo Web",
-        "Frontend",
-        "CSS Framework",
-        "Diseño Responsive"
+        "Grupo Familia",
+        "Nosotras V-App",
+        "Pequeñin",
+        "Autodicol"
       ]
     },
     {
-      "name":"PostGresql",
-      "level":"Avanzado",
+      "name":"PostgreSQL",
+      "level":"Master",
       "keywords":[
-        "Desarrollo Web",
-        "Frontend",
-        "CSS Framework",
-        "Diseño Responsive"
+        "Polygonus Academy",
+        "Banistmo",
+        "Gestión de Créditos"
       ]
     },
     {
       "name":"MongoDB",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "Desarrollo Web",
-        "Frontend",
-        "CSS Framework",
-        "Diseño Responsive"
+        "Bancolombia",
+        "Log de Auditoría",
+        "Microservicios"
       ]
     },
     {
       "name":"FluidAttack",
       "level":"Master",
       "keywords":[
-        "Desarrollo Web",
-        "Frontend"
-      ]
-    },
-    {
-      "name":"Azure DevOps",
-      "level":"Avanzado",
-      "keywords":[
-        "Desarrollo Web",
-        "Backend",
-        "JavaScript",
-        "Servidor"
+        "Banistmo",
+        "Seguridad",
+        "Testing"
       ]
     },
     {
       "name":"Git",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
+        "Control de Versiones",
+        "Colaboración",
+        "DevOps"
       ]
     },
     {
       "name":"GitLab",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
+        "Grupo Familia",
+        "CI/CD",
+        "Jenkins"
       ]
     },
     {
       "name":"Mockito",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
+        "Comfama",
+        "Banistmo",
+        "Testing"
       ]
     },
     {
-      "name":"Junit5",
-      "level":"Avanzado",
+      "name":"JUnit5",
+      "level":"Master",
       "keywords":[
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
+        "Comfama",
+        "Banistmo",
+        "Testing"
       ]
     },
     {
       "name":"Kubernetes",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
+        "Bancolombia",
+        "Grupo Familia",
+        "Docker"
       ]
     },
     {
       "name":"RabbitMQ",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
+        "Comfama",
+        "Banistmo",
+        "Grupo Familia"
       ]
     },
     {
       "name":"Redis",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
+        "Comfama",
+        "Banistmo",
+        "Grupo Familia"
       ]
     },
     {
       "name":"Docker",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
+        "Bancolombia",
+        "Grupo Familia",
+        "Kubernetes"
       ]
     },
     {
-      "name":"CMS Contentful",
-      "level":"Avanzado",
+      "name":"Contentful",
+      "level":"Master",
       "keywords":[
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
+        "Comfama",
+        "CMS",
+        "Filtros de Búsqueda"
       ]
     },
     {
-      "name":"NodeJs",
-      "level":"Avanzado",
+      "name":"NodeJS",
+      "level":"Master",
       "keywords":[
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
+        "Polygonus",
+        "Futureverse",
+        "Serverless"
       ]
     },
     {
       "name":"Angular",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
+        "Pragma",
+        "Frontend",
+        "Proyectos Internos"
       ]
     },
     {
       "name":"Astro",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
+        "Portafolio",
+        "Static Site",
+        "Performance"
       ]
     },
     {
       "name":"Trello",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "Bases de Datos",
-        "SQL",
-        "Almacenamiento de Datos",
-        "Backend"
+        "Grupo Familia",
+        "Gestión",
+        "Nosotras V-App"
       ]
     },
     {
       "name":"TypeScript",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "Backend",
-        "Serverless",
-        "API Development"
+        "Polygonus",
+        "Futureverse",
+        "Serverless"
       ]
     },
     {
       "name":"Python",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "Django",
+        "Polygonus Academy",
         "FastAPI",
-        "Backend Development"
+        "Backend"
       ]
     },
     {
       "name":"Serverless",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "AWS Lambda",
-        "API Gateway",
-        "EventBridge"
+        "Polygonus",
+        "Futureverse",
+        "AWS Lambda"
       ]
     },
     {
       "name":"NAKAMA",
-      "level":"Avanzado",
+      "level":"Master",
       "keywords":[
-        "Game Development",
-        "Backend Services",
-        "Multiplayer"
+        "Polygonus",
+        "AWS ECS",
+        "Game Server"
       ]
     }
   ],

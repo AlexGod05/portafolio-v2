@@ -20,47 +20,285 @@ const SKILLS_ICONS: Record<string, any> = {
   TypeScript,
   React,
   Node,
-  MySQL,
+  MySQL: `<i class="fas fa-database"></i>`,
   Git,
   GitHub,
   Next,
   Tailwind,
+  SCRUM: `<i class="fas fa-tasks"></i>`,
+  Kanban: `<i class="fas fa-columns"></i>`,
+  Java: `<i class="fab fa-java"></i>`,
+  "Spring Framework": `<i class="fas fa-leaf"></i>`,
+  AWS: `<i class="fab fa-aws"></i>`,
+  "Azure DevOps": `<i class="fab fa-microsoft"></i>`,
+  PostgreSQL: `<i class="fas fa-database"></i>`,
+  MongoDB: `<i class="fas fa-database"></i>`,
+  FluidAttack: `<i class="fas fa-shield-alt"></i>`,
+  GitLab: `<i class="fab fa-gitlab"></i>`,
+  Mockito: `<i class="fas fa-vial"></i>`,
+  JUnit5: `<i class="fas fa-flask"></i>`,
+  Kubernetes: `<i class="fas fa-ship"></i>`,
+  RabbitMQ: `<i class="fas fa-exchange-alt"></i>`,
+  Redis: `<i class="fas fa-database"></i>`,
+  Docker: `<i class="fab fa-docker"></i>`,
+  Contentful: `<i class="fas fa-file-alt"></i>`,
+  NodeJS: `<i class="fab fa-node-js"></i>`,
+  Angular: `<i class="fab fa-angular"></i>`,
+  Astro: `<i class="fas fa-rocket"></i>`,
+  Trello: `<i class="fab fa-trello"></i>`,
+  Python: `<i class="fab fa-python"></i>`,
+  Serverless: `<i class="fas fa-cloud"></i>`,
+  NAKAMA: `<i class="fas fa-gamepad"></i>`
+}
+
+// Mapeo de nombres de habilidades a claves de iconos
+const SKILL_NAME_TO_ICON: Record<string, string> = {
+  "HTML": "HTML",
+  "CSS": "CSS",
+  "JavaScript": "JavaScript",
+  "TypeScript": "TypeScript",
+  "React": "React",
+  "Node.js": "Node",
+  "MySQL": "MySQL",
+  "Git": "Git",
+  "GitHub": "GitHub",
+  "Next.js": "Next",
+  "Tailwind CSS": "Tailwind",
+  "SCRUM": "SCRUM",
+  "Kanban": "Kanban",
+  "Java": "Java",
+  "Spring Framework": "Spring Framework",
+  "AWS": "AWS",
+  "Azure DevOps": "Azure DevOps",
+  "PostgreSQL": "PostgreSQL",
+  "MongoDB": "MongoDB",
+  "FluidAttack": "FluidAttack",
+  "GitLab": "GitLab",
+  "Mockito": "Mockito",
+  "JUnit5": "JUnit5",
+  "Kubernetes": "Kubernetes",
+  "RabbitMQ": "RabbitMQ",
+  "Redis": "Redis",
+  "Docker": "Docker",
+  "Contentful": "Contentful",
+  "NodeJS": "NodeJS",
+  "Angular": "Angular",
+  "Astro": "Astro",
+  "Trello": "Trello",
+  "Python": "Python",
+  "Serverless": "Serverless",
+  "NAKAMA": "NAKAMA"
+}
+
+// Función para obtener el color del nivel
+const getLevelColor = (level: string) => {
+  switch (level.toLowerCase()) {
+    case 'master':
+      return '#4CAF50';
+    case 'avanzado':
+      return '#2196F3';
+    case 'intermedio':
+      return '#FFC107';
+    default:
+      return '#9E9E9E';
+  }
 }
 ---
 
-<Section title="Habilidades">
-  <ul>
-    {
-      skills.map(({ name }) => {
-        const iconName = name === "Next.js" ? "Next" : name
-        const Icon = SKILLS_ICONS[iconName]
+<Section class="accordion-container">
+  <button class="accordion-header" aria-expanded="false">
+    <h2><i class="fas fa-tools"></i> Habilidades</h2>
+    <span class="accordion-icon">▼</span>
+  </button>
 
-        return (
-          <li>
-            {Icon && <Icon />} <span>{name}</span>
-          </li>
-        )
-      })
-    }
-  </ul>
+  <div class="accordion-content" aria-hidden="true">
+    <div class="skills-grid">
+      {
+        skills.map(({ name, level, keywords }) => {
+          const iconKey = SKILL_NAME_TO_ICON[name] || name
+          const Icon = SKILLS_ICONS[iconKey]
+          const levelColor = getLevelColor(level)
+
+          return (
+            <div class="skill-card">
+              <div class="skill-header">
+                <div class="skill-icon">
+                  {typeof Icon === 'string' ? <Fragment set:html={Icon} /> : Icon && <Icon />}
+                </div>
+                <div class="skill-info">
+                  <h3>{name}</h3>
+                  <span class="skill-level" style={`--level-color: ${levelColor}`}>
+                    {level}
+                  </span>
+                </div>
+              </div>
+              <div class="skill-keywords">
+                {keywords.map(keyword => (
+                  <span class="keyword-tag">{keyword}</span>
+                ))}
+              </div>
+            </div>
+          )
+        })
+      }
+    </div>
+  </div>
 </Section>
 
 <style>
-  ul {
-    display: inline-flex;
-    gap: 8px;
-    flex-wrap: wrap;
+  .accordion-container {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
   }
 
-  li {
-    align-items: center;
-    background: #eee;
-    border-radius: 6px;
-    color: black;
+  .accordion-header {
+    width: 100%;
+    padding: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .accordion-header:hover {
+    background: #f9f9f9;
+  }
+
+  .accordion-header h2 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .accordion-header h2 i {
+    color: #666;
+    font-size: 1.1em;
+  }
+
+  .accordion-icon {
+    font-size: 12px;
+    color: #666;
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-header[aria-expanded="true"] .accordion-icon {
+    transform: rotate(180deg);
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+    padding: 0 16px;
+  }
+
+  .accordion-header[aria-expanded="true"] + .accordion-content {
+    max-height: 2000px;
+    padding: 16px;
+    overflow-y: auto;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 8px 0;
+  }
+
+  .skill-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .skill-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .skill-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .skill-icon svg,
+  .skill-icon i {
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    color: #444;
+  }
+
+  .skill-info {
+    flex: 1;
+  }
+
+  .skill-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .skill-level {
     font-size: 0.8rem;
     font-weight: 500;
-    gap: 4px;
-    padding: 0.2rem 0.6rem;
+    color: var(--level-color);
+    text-transform: capitalize;
+  }
+
+  .skill-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .keyword-tag {
+    background: #e9ecef;
+    color: #495057;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  @media (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

@@ -26,6 +26,14 @@ const { name, label } = basics
   <KeyboardManager />
 </Layout>
 
+<script>
+  import { initAccordions } from '@/scripts/accordion';
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    initAccordions();
+  });
+</script>
+
 <style>
   main {
     padding: 4rem;

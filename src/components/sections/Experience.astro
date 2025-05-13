@@ -6,7 +6,7 @@ import { work } from "@cv"
 
 <Section class="accordion-container">
   <button class="accordion-header" aria-expanded="false">
-    <h2>Experiencia laboral</h2>
+    <h2><i class="fas fa-briefcase"></i> Experiencia laboral</h2>
     <span class="accordion-icon">▼</span>
   </button>
 
@@ -81,6 +81,14 @@ import { work } from "@cv"
 
   .accordion-header h2 {
     margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .accordion-header h2 i {
+    color: #666;
+    font-size: 1.1em;
   }
 
   .accordion-icon {
@@ -96,31 +104,31 @@ import { work } from "@cv"
   .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: all 0.3s ease-out;
     padding: 0 16px;
   }
 
-  .accordion-content[aria-hidden="false"] {
-    max-height: 600px;
+  .accordion-header[aria-expanded="true"] + .accordion-content {
+    max-height: 1000px;
     padding: 16px;
     overflow-y: auto;
   }
 
-  .accordion-content[aria-hidden="false"]::-webkit-scrollbar {
+  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar {
     width: 8px;
   }
 
-  .accordion-content[aria-hidden="false"]::-webkit-scrollbar-track {
+  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 4px;
   }
 
-  .accordion-content[aria-hidden="false"]::-webkit-scrollbar-thumb {
+  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 4px;
   }
 
-  .accordion-content[aria-hidden="false"]::-webkit-scrollbar-thumb:hover {
+  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
 
@@ -179,20 +187,3 @@ import { work } from "@cv"
     }
   }
 </style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-    accordionHeaders.forEach(header => {
-      header.addEventListener('click', () => {
-        const expanded = header.getAttribute('aria-expanded') === 'true';
-        header.setAttribute('aria-expanded', String(!expanded));
-        
-        const content = header.nextElementSibling;
-        if (content) {
-          content.setAttribute('aria-hidden', String(expanded));
-        }
-      });
-    });
-  });
-</script>
