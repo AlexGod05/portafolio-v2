@@ -30,16 +30,14 @@ jobs:
       - name: Build
         run: |
           npm run build
-          echo "Contents of dist directory:"
           ls -la ./dist
-          echo "Contents of dist/_astro directory:"
-          ls -la ./dist/_astro
       - name: Create .nojekyll file
         run: touch ./dist/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+          name: github-pages-${{ github.run_number }}
 
   deploy:
     needs: build
@@ -50,4 +48,6 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_number }} 
