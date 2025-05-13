@@ -4,5 +4,5 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   output: 'static',
   site: 'https://alexgod05.github.io',
-  base: '/portafolio',
+  base: '/portafolio-v2',
 });
