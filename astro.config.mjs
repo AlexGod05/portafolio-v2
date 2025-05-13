@@ -6,5 +6,10 @@ export default defineConfig({
   site: 'https://alexgod05.github.io',
   base: '/portfolio',
   trailingSlash: 'never',
-  outDir: 'docs'
+  outDir: 'docs',
+  vite: {
+    build: {
+      assetsDir: 'assets'
+    }
+  }
 });
