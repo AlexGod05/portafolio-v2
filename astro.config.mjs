@@ -8,5 +8,6 @@ export default defineConfig({
   trailingSlash: 'never',
   build: {
     format: 'directory'
-  }
+  },
+  outDir: 'docs'
 });
