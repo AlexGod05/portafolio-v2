@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",
+    "@iconify-json/mdi": "^1.2.3",
     "astro": "^5.7.12",
+    "astro-icon": "^1.1.5",
     "ninja-keys": "1.2.2",
     "typescript": "5.3.3"
   }

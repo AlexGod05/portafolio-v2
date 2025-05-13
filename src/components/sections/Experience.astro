@@ -1,5 +1,6 @@
 ---
 import Section from "../Section.astro"
+import Modal from "../Modal.astro"
 import { getCVData } from "@cv"
 
 const cvData = await getCVData()
@@ -59,21 +60,9 @@ const groupedWorkJson = JSON.stringify(groupedWork)
   </div>
 </Section>
 
-<!-- Modal template -->
-<template id="company-modal-template">
-  <div class="modal" role="dialog" aria-modal="true">
-    <div class="modal-content">
-      <button class="close-modal" aria-label="Cerrar modal">×</button>
-      <div class="modal-header">
-        <h2 class="company-name"></h2>
-        <time class="company-period"></time>
-      </div>
-      <div class="modal-body">
-        <div class="experiences-list"></div>
-      </div>
-    </div>
-  </div>
-</template>
+<Modal id="experience-modal" title="Experiencia Laboral">
+  <div class="modal-content"></div>
+</Modal>
 
 <style>
   .accordion-container {
@@ -149,264 +138,353 @@ const groupedWorkJson = JSON.stringify(groupedWork)
     color: var(--primary);
   }
 
-  /* Modal styles */
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .modal.active {
-    display: flex;
-  }
-
-  .modal-content {
-    background: var(--card-bg, #ffffff);
-    border-radius: 12px;
-    width: 90%;
-    max-width: 800px;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-    padding: 32px;
-  }
-
-  .close-modal {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--text);
-  }
-
-  .modal-header {
-    margin-bottom: 24px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--border-color);
-  }
-
-  .modal-header h2 {
-    margin: 0 0 8px 0;
-    color: var(--text);
-  }
-
-  .company-period {
-    color: var(--secondary);
-    font-size: 0.9rem;
-  }
-
-  .experiences-list {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .experience-item {
-    padding: 16px;
-    background: var(--bg-secondary);
-    border-radius: 8px;
-  }
-
-  .experience-item h3 {
-    margin: 0 0 8px 0;
-    color: var(--text);
-  }
-
-  .experience-item time {
-    display: inline-block;
-    background-color: #800020;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    margin-bottom: 12px;
-  }
-
-  .experience-item p {
-    margin: 0 0 12px 0;
-    color: var(--secondary);
-  }
-
-  .highlights {
-    list-style: disc;
-    padding-left: 20px;
-    margin: 0;
-  }
-
-  .highlights li {
-    color: var(--secondary);
-    margin-bottom: 4px;
-  }
-
   @media (max-width: 768px) {
     .companies-grid {
       grid-template-columns: 1fr;
     }
-
-    .modal-content {
-      width: 95%;
-      padding: 24px;
-    }
-
-    .company-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
-    }
-
-    .company-card time {
-      align-self: flex-start;
-    }
   }
 </style>
 
-<script type="module" define:vars={{ groupedWorkJson }}>
+<script type="module" define:vars={{ groupedWork }}>
   import { initAccordions } from "/src/scripts/accordion";
   
-  // Convertir el JSON de vuelta a objeto
-  const groupedWork = JSON.parse(groupedWorkJson);
-
   document.addEventListener('DOMContentLoaded', () => {
     // Inicializar el acordeón
     initAccordions();
-
-    // Modal functionality
-    const modalTemplate = document.getElementById('company-modal-template');
-    let currentModal = null;
-
-    function createModal(company, experiences) {
-      const modal = modalTemplate.content.cloneNode(true);
-      const modalElement = modal.querySelector('.modal');
-      const closeBtn = modal.querySelector('.close-modal');
-      const companyName = modal.querySelector('.company-name');
-      const companyPeriod = modal.querySelector('.company-period');
-      const experiencesList = modal.querySelector('.experiences-list');
-
-      // Set company name
-      companyName.textContent = company;
-
-      // Set company period
-      const firstExperience = experiences[0];
-      const lastExperience = experiences[experiences.length - 1];
-      const startYear = new Date(firstExperience.startDate).getFullYear();
-      const endYear = lastExperience.endDate 
-        ? new Date(lastExperience.endDate).getFullYear() 
-        : "Actual";
-      companyPeriod.textContent = `${startYear} - ${endYear}`;
-
-      // Add experiences
-      experiences.forEach(exp => {
-        const expElement = document.createElement('div');
-        expElement.className = 'experience-item';
-        
-        const startYear = new Date(exp.startDate).getFullYear();
-        const endYear = exp.endDate 
-          ? new Date(exp.endDate).getFullYear() 
-          : "Actual";
-
-        expElement.innerHTML = `
-          <h3>${exp.position}</h3>
-          <time>${startYear} - ${endYear}</time>
-          <p>${exp.summary}</p>
-          <ul class="highlights">
-            ${exp.highlights.map(h => `<li>${h}</li>`).join('')}
-          </ul>
-        `;
-
-        experiencesList.appendChild(expElement);
-      });
-
-      // Add event listeners
-      closeBtn.addEventListener('click', () => {
-        modalElement.classList.remove('active');
-        setTimeout(() => {
-          modalElement.remove();
-          currentModal = null;
-        }, 300);
-      });
-
-      modalElement.addEventListener('click', (e) => {
-        if (e.target === modalElement) {
-          closeBtn.click();
-        }
-      });
-
-      document.body.appendChild(modalElement);
-      currentModal = modalElement;
-      setTimeout(() => modalElement.classList.add('active'), 10);
-    }
 
     // Add click handlers to company cards
     document.querySelectorAll('.company-card').forEach(card => {
       card.addEventListener('click', () => {
         const company = card.getAttribute('data-company');
-        if (company && groupedWork[company]) {
-          createModal(company, groupedWork[company]);
+        if (!company || !groupedWork[company]) return;
+
+        const modal = document.getElementById('experience-modal');
+        if (!modal) return;
+
+        const modalContent = modal.querySelector('.modal-content');
+        if (!modalContent) return;
+
+        // Actualizar título
+        const modalTitle = modal.querySelector('.modal-header h2');
+        if (modalTitle) modalTitle.textContent = company;
+
+        // Crear el contenido de la modal con tarjetas
+        const experienceCards = groupedWork[company].map(exp => {
+          const startYear = new Date(exp.startDate).getFullYear();
+          const endYear = exp.endDate 
+            ? new Date(exp.endDate).getFullYear() 
+            : "Actual";
+
+          return `
+            <div class="experience-card">
+              <div class="card-header">
+                <div class="position-info">
+                  <h3>${exp.position}</h3>
+                  <time>${startYear} - ${endYear}</time>
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="summary-card">
+                  <h4>Descripción del Rol</h4>
+                  <p>${exp.summary}</p>
+                </div>
+                <div class="highlights-card">
+                  <h4>Logros y Responsabilidades</h4>
+                  <ul>
+                    ${exp.highlights.map(highlight => `
+                      <li>
+                        <span class="bullet">•</span>
+                        <span>${highlight}</span>
+                      </li>
+                    `).join('')}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        // Actualizar el contenido de la modal
+        modalContent.innerHTML = `
+          <div class="modal-controls">
+            <button class="close-button" aria-label="Cerrar modal">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="company-title">
+            <h2>${company}</h2>
+          </div>
+          <div class="experiences-grid">
+            ${experienceCards}
+          </div>
+          <div class="modal-footer">
+            <button class="close-modal-button">
+              <i class="fas fa-times"></i>
+              Cerrar
+            </button>
+          </div>
+        `;
+
+        // Añadir estilos para las tarjetas
+        const style = document.createElement('style');
+        style.textContent = `
+          .modal-controls {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1;
+          }
+
+          .close-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            color: var(--text-color);
+          }
+
+          .close-button:hover {
+            background: var(--bg-secondary);
+            transform: rotate(90deg);
+          }
+
+          .close-button i {
+            font-size: 1.25rem;
+          }
+
+          .modal-footer {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 2px solid #800020;
+          }
+
+          .close-modal-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: #800020;
+            color: white;
+            border: none;
+            border-radius: 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+          }
+
+          .close-modal-button:hover {
+            background: #600018;
+            transform: translateY(-2px);
+          }
+
+          .close-modal-button i {
+            font-size: 1rem;
+          }
+
+          .company-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #800020;
+          }
+
+          .company-title h2 {
+            color: var(--text-color);
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0;
+          }
+
+          .experiences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+          }
+
+          .experience-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: none;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: relative;
+          }
+
+          .experience-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+          }
+
+          .experience-card:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: #800020;
+            border-radius: 3px;
+          }
+
+          .card-header {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-bottom: none;
+          }
+
+          .position-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+          }
+
+          .position-info h3 {
+            color: var(--text-color);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+          }
+
+          .position-info time {
+            display: inline-block;
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.25rem 0.75rem;
+            background: #800020;
+            border: none;
+            border-radius: 1rem;
+          }
+
+          .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+          }
+
+          .summary-card,
+          .highlights-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.25rem;
+            border: none;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+          }
+
+          .summary-card::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #800020;
+            opacity: 0.3;
+          }
+
+          .summary-card h4,
+          .highlights-card h4 {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 1rem 0;
+          }
+
+          .summary-card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+          }
+
+          .highlights-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+          }
+
+          .highlights-card li {
+            display: flex;
+            gap: 0.75rem;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            line-height: 1.5;
+          }
+
+          .bullet {
+            color: var(--primary);
+            font-size: 1.25rem;
+            line-height: 1;
+          }
+
+          @media (max-width: 768px) {
+            .experiences-grid {
+              grid-template-columns: 1fr;
+            }
+
+            .card-header {
+              padding: 1.25rem;
+            }
+
+            .position-info {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 0.5rem;
+            }
+
+            .card-content {
+              padding: 1.25rem;
+              gap: 1rem;
+            }
+
+            .summary-card,
+            .highlights-card {
+              padding: 1rem;
+            }
+          }
+        `;
+
+        // Añadir los estilos al documento
+        document.head.appendChild(style);
+
+        // Agregar event listeners para los botones de cierre
+        const closeButtons = modalContent.querySelectorAll('.close-button, .close-modal-button');
+        closeButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            if (typeof modal.closeModal === 'function') {
+              modal.closeModal();
+            } else {
+              modal.classList.remove('active');
+              document.body.style.overflow = '';
+            }
+          });
+        });
+
+        // Abrir la modal
+        if (typeof modal.openModal === 'function') {
+          modal.openModal();
+        } else {
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
         }
       });
     });
-  });
-</script>
-
-<script>
-  const groupedWorkData = document.getElementById('groupedWorkData')?.textContent;
-  if (!groupedWorkData) return;
-
-  const groupedWork = JSON.parse(groupedWorkData);
-  const modal = document.getElementById('experienceModal');
-  const modalContent = document.getElementById('modalContent');
-  const closeModal = document.getElementById('closeModal');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalPeriod = document.getElementById('modalPeriod');
-  const modalExperiences = document.getElementById('modalExperiences');
-
-  if (!modal || !modalContent || !closeModal || !modalTitle || !modalPeriod || !modalExperiences) return;
-
-  const companyCards = document.querySelectorAll('.company-card');
-  companyCards.forEach(card => {
-    const companyName = card.getAttribute('data-company');
-    if (!companyName || !groupedWork[companyName]) return;
-
-    card.addEventListener('click', () => {
-      const company = groupedWork[companyName];
-      modalTitle.textContent = company.name;
-      modalPeriod.textContent = company.period;
-      modalExperiences.innerHTML = '';
-
-      company.experiences.forEach((exp: { title: string; description: string; tags: string[] }) => {
-        const expElement = document.createElement('div');
-        expElement.className = 'modal-experience';
-        expElement.innerHTML = `
-          <h3>${exp.title}</h3>
-          <p>${exp.description}</p>
-          <div class="modal-tags">
-            ${exp.tags.map((tag: string) => `<span>${tag}</span>`).join('')}
-          </div>
-        `;
-        modalExperiences.appendChild(expElement);
-      });
-
-      modal.classList.add('active');
-    });
-  });
-
-  closeModal.addEventListener('click', () => {
-    modal.classList.remove('active');
-  });
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('active');
-    }
   });
 </script>

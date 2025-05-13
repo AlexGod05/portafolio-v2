@@ -39,18 +39,6 @@ const copyToClipboard = (text: string) => {
         <h1>{name}</h1>
       </div>
       <h2>{label}</h2>
-      <a 
-        href="https://www.google.com/maps?q=6.299806,-75.535111" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        title="Ver ubicación en Google Maps"
-        class="location-link"
-      >
-        <span>
-          <WorldMap />
-          {city}, {department}, {region}
-        </span>
-      </a>
       <footer class="print">
         {printInfo}
       </footer>
@@ -98,6 +86,23 @@ const copyToClipboard = (text: string) => {
               </div>
             )
           }
+          <div class="contact-item">
+            <a
+              href="https://www.google.com/maps?q=6.299806,-75.535111"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Ver ubicación en Google Maps"
+              class="icon-link"
+            >
+              <WorldMap />
+            </a>
+            <div class="contact-value">
+              {city}, {department}, {region}
+              <button class="copy-button" onclick={`copyToClipboard('https://www.google.com/maps?q=6.299806,-75.535111')`} title="Copiar ubicación">
+                <Copy />
+              </button>
+            </div>
+          </div>
           {
             linkedUrl && (
               <div class="contact-item">
