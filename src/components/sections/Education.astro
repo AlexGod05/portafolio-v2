@@ -1,171 +1,189 @@
 ---
 import Section from "../Section.astro"
 import { getCVData } from "@cv"
+import { initAccordions } from "@/scripts/accordion"
 
 const cvData = await getCVData()
 const { education } = cvData
 ---
 
-<Section class="accordion-container">
-  <button class="accordion-header" aria-expanded="false">
-    <h2><i class="fas fa-graduation-cap"></i> Educación</h2>
-    <span class="accordion-icon">▼</span>
-  </button>
+<Section>
+  <div class="accordion-container">
+    <button class="accordion-header" aria-expanded="false">
+      <h2><i class="fas fa-graduation-cap"></i> Educación</h2>
+      <span class="accordion-icon">▼</span>
+    </button>
 
-  <div class="accordion-content" aria-hidden="true">
-    <ul>
-      {
-        education.map(
-          ({ institution, area, studyType, startDate, endDate, url }) => {
-            const startYear = new Date(startDate).getFullYear()
-            const endYear =
-              endDate != null ? new Date(endDate).getFullYear() : "Actual"
-            const years = `${startYear} - ${endYear}`
+    <div class="accordion-content" aria-hidden="true">
+      <div class="education-grid">
+        {
+          education.map(
+            ({ institution, area, studyType, startDate, endDate, url }) => {
+              const startYear = new Date(startDate).getFullYear()
+              const endYear =
+                endDate != null ? new Date(endDate).getFullYear() : "Actual"
+              const years = `${startYear} - ${endYear}`
 
-            return (
-              <li>
-                <article>
-                  <header>
-                    <div>
+              return (
+                <div class="education-card">
+                  <div class="education-card-content">
+                    <div class="education-header">
                       <h3>
                         <a href={url} title={`Ver ${institution}`} target="_blank">
                           {institution}
                         </a>
                       </h3>
-                      <h4>{studyType} en {area}</h4>
+                      <time>{years}</time>
                     </div>
-
-                    <time>{years}</time>
-                  </header>
-                </article>
-              </li>
-            )
-          }
-        )
-      }
-    </ul>
+                    <div class="education-details">
+                      <h4>{studyType} en {area}</h4>
+                      <a href={url} class="education-indicator" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Ver institución</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              )
+            }
+          )
+        }
+      </div>
+    </div>
   </div>
 </Section>
 
+<script>
+  import { initAccordions } from "@/scripts/accordion";
+  document.addEventListener('DOMContentLoaded', () => {
+    initAccordions();
+  });
+</script>
+
 <style>
   .accordion-container {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    background: var(--card-bg);
-    box-shadow: none;
-  }
-
-  .accordion-header {
     width: 100%;
-    padding: 16px;
-    background: none;
-    border: none;
+  }
+
+  .education-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 0;
+  }
+
+  .education-card {
+    background: var(--card-bg, #ffffff);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    color: var(--text);
-  }
-
-  .accordion-header:hover {
-    background: var(--card-bg);
-  }
-
-  .accordion-header h2 {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text);
-  }
-
-  .accordion-header h2 i {
-    color: var(--secondary);
-    font-size: 1.1em;
-  }
-
-  .accordion-icon {
-    font-size: 12px;
-    color: var(--secondary);
-    transition: transform 0.3s ease;
-  }
-
-  .accordion-header[aria-expanded="true"] .accordion-icon {
-    transform: rotate(180deg);
-  }
-
-  .accordion-content {
-    max-height: 0;
+    border: 2px solid transparent;
+    position: relative;
     overflow: hidden;
-    transition: all 0.3s ease-out;
-    padding: 0 16px;
-    color: var(--text);
+    width: 100%;
   }
 
-  .accordion-header[aria-expanded="true"] + .accordion-content {
-    max-height: 2000px;
-    padding: 16px;
-    overflow-y: auto;
+  .education-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--border-color);
+    transition: width 0.3s ease;
   }
 
-  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar {
+  .education-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-color: var(--border-color);
+  }
+
+  .education-card:hover::before {
     width: 8px;
   }
 
-  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-track {
-    background: var(--background);
-    border-radius: 4px;
+  .education-card-content {
+    padding: 24px;
   }
 
-  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-thumb {
-    background: var(--secondary);
-    border-radius: 4px;
-  }
-
-  .accordion-header[aria-expanded="true"] + .accordion-content::-webkit-scrollbar-thumb:hover {
-    background: var(--primary);
-  }
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  article h3 {
-    font-weight: 500;
-    color: var(--text);
-  }
-
-  article h4 {
-    color: var(--secondary);
-    font-weight: 400;
-  }
-
-  header {
+  .education-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 4px;
+    align-items: center;
+    margin-bottom: 16px;
   }
 
-  time {
+  .education-card h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  .education-card h3 a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .education-card h3 a:hover {
+    color: var(--primary);
+  }
+
+  .education-card time {
+    display: inline-block;
+    background-color: #800020;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .education-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .education-card h4 {
+    margin: 0;
     color: var(--secondary);
-    font-size: 0.85rem;
-    min-width: 102px;
+    font-weight: 400;
+    font-size: 1rem;
   }
 
-  .score {
+  .education-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     color: var(--secondary);
     font-size: 0.9rem;
-    margin-top: 4px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
   }
 
-  @media (width <= 700px) {
-    time {
-      text-align: right;
+  .education-indicator:hover {
+    color: var(--primary);
+  }
+
+  .education-indicator i {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 768px) {
+    .education-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .education-card time {
+      align-self: flex-start;
     }
   }
 </style>

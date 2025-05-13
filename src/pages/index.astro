@@ -12,6 +12,8 @@ import FloatingButtons from "@/components/FloatingButtons.astro"
 import ScrollToTop from "@/components/ScrollToTop.astro"
 
 import { getCVData } from "@cv"
+import "@/styles/global.css"
+
 const cvData = await getCVData()
 const { name, label } = cvData.basics
 ---

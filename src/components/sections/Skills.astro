@@ -93,122 +93,73 @@ const SKILL_NAME_TO_ICON: Record<string, string> = {
 }
 ---
 
-<Section class="accordion-container">
-  <button class="accordion-header" aria-expanded="false">
-    <h2><i class="fas fa-tools"></i> Habilidades</h2>
-    <span class="accordion-icon">▼</span>
-  </button>
+<Section>
+  <div class="accordion-container">
+    <button class="accordion-header" aria-expanded="false">
+      <h2><i class="fas fa-tools"></i> Habilidades</h2>
+      <span class="accordion-icon">▼</span>
+    </button>
 
-  <div class="accordion-content" aria-hidden="true">
-    <div class="skills-grid">
-      {
-        skills.map(({ name, keywords }) => {
-          const iconKey = SKILL_NAME_TO_ICON[name] || name
-          const Icon = SKILLS_ICONS[iconKey]
+    <div class="accordion-content" aria-hidden="true">
+      <div class="skills-grid">
+        {
+          skills.map(({ name, keywords }) => {
+            const iconKey = SKILL_NAME_TO_ICON[name] || name
+            const Icon = SKILLS_ICONS[iconKey]
 
-          return (
-            <div class="skill-card">
-              <div class="skill-header">
-                <div class="skill-icon">
-                  {typeof Icon === 'string' ? <Fragment set:html={Icon} /> : Icon && <Icon />}
+            return (
+              <div class="skill-card">
+                <div class="skill-header">
+                  <div class="skill-icon">
+                    {typeof Icon === 'string' ? <Fragment set:html={Icon} /> : Icon && <Icon />}
+                  </div>
+                  <div class="skill-info">
+                    <h3>{name}</h3>
+                  </div>
                 </div>
-                <div class="skill-info">
-                  <h3>{name}</h3>
+                <div class="skill-keywords">
+                  {keywords.map(keyword => (
+                    <span class="keyword-tag">{keyword}</span>
+                  ))}
                 </div>
               </div>
-              <div class="skill-keywords">
-                {keywords.map(keyword => (
-                  <span class="keyword-tag">{keyword}</span>
-                ))}
-              </div>
-            </div>
-          )
-        })
-      }
+            )
+          })
+        }
+      </div>
     </div>
   </div>
 </Section>
 
+<script>
+  import { initAccordions } from "@/scripts/accordion";
+  document.addEventListener('DOMContentLoaded', () => {
+    initAccordions();
+  });
+</script>
+
 <style>
   .accordion-container {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    background: var(--card-bg);
-  }
-
-  .accordion-header {
     width: 100%;
-    padding: 16px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    color: var(--text);
-  }
-
-  .accordion-header:hover {
-    background: var(--card-bg);
-  }
-
-  .accordion-header h2 {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text);
-  }
-
-  .accordion-header h2 i {
-    color: var(--secondary);
-    font-size: 1.1em;
-  }
-
-  .accordion-icon {
-    font-size: 12px;
-    color: var(--secondary);
-    transition: transform 0.3s ease;
-  }
-
-  .accordion-header[aria-expanded="true"] .accordion-icon {
-    transform: rotate(180deg);
-  }
-
-  .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease-out;
-    padding: 0 16px;
-    color: var(--text);
-  }
-
-  .accordion-header[aria-expanded="true"] + .accordion-content {
-    max-height: 2000px;
-    padding: 16px;
-    overflow-y: auto;
   }
 
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
-    padding: 8px 0;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
   }
 
   .skill-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
     border-radius: 8px;
+    border: 1px solid var(--border);
     padding: 16px;
+    background: var(--card-bg);
     transition: all 0.3s ease;
   }
 
   .skill-card:hover {
-    transform: translateY(-2px);
     border-color: var(--primary);
+    transform: translateY(-2px);
   }
 
   .skill-header {
@@ -219,50 +170,32 @@ const SKILL_NAME_TO_ICON: Record<string, string> = {
   }
 
   .skill-icon {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .skill-icon svg,
-  .skill-icon i {
-    width: 24px;
-    height: 24px;
-    font-size: 24px;
-    color: var(--text);
-  }
-
-  .skill-info {
-    flex: 1;
+    color: var(--secondary);
   }
 
   .skill-info h3 {
     margin: 0;
     font-size: 1rem;
+    font-weight: 500;
     color: var(--text);
   }
 
   .skill-keywords {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 8px;
   }
 
   .keyword-tag {
     background: var(--background);
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 0.2rem 0.6rem;
-    font-size: 0.6rem;
-    font-weight: 500;
-  }
-
-  @media (width <= 700px) {
-    .skills-grid {
-      grid-template-columns: 1fr;
-    }
+    color: var(--secondary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
   }
 </style>
