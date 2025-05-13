@@ -111,7 +111,7 @@ const SKILL_NAME_TO_ICON: Record<string, string> = {
               <div class="skill-card">
                 <div class="skill-header">
                   <div class="skill-icon">
-                    {typeof Icon === 'string' ? <Fragment set:html={Icon} /> : Icon && <Icon />}
+                    {typeof Icon === 'string' ? <div set:html={Icon} /> : Icon && <Icon />}
                   </div>
                   <div class="skill-info">
                     <h3>{name}</h3>
@@ -130,13 +130,6 @@ const SKILL_NAME_TO_ICON: Record<string, string> = {
     </div>
   </div>
 </Section>
-
-<script>
-  import { initAccordions } from "@/scripts/accordion";
-  document.addEventListener('DOMContentLoaded', () => {
-    initAccordions();
-  });
-</script>
 
 <style>
   .accordion-container {

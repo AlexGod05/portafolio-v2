@@ -3,6 +3,7 @@ import { getCVData } from "@cv"
 import { getInitialTheme } from '../scripts/theme';
 import { getInitialLanguage } from '../scripts/language';
 import '../styles/global.css';
+import ClientInit from '../components/ClientInit.astro';
 
 interface Props {
   title: string
@@ -28,6 +29,7 @@ const initialLanguage = getInitialLanguage();
   </head>
   <body>
     <slot />
+    <ClientInit />
   </body>
 </html>
 

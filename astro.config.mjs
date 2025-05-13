@@ -6,9 +6,5 @@ export default defineConfig({
   site: 'https://alexgod05.github.io',
   base: '/portfolio',
   trailingSlash: 'never',
-  build: {
-    format: 'directory',
-    assets: '_assets'
-  },
   outDir: 'docs'
 });
