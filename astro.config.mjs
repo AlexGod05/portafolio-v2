@@ -7,7 +7,8 @@ export default defineConfig({
   base: '/portfolio',
   trailingSlash: 'never',
   build: {
-    format: 'directory'
+    format: 'directory',
+    assets: '_assets'
   },
   outDir: 'docs'
 });
