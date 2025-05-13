@@ -13,7 +13,7 @@ import { education } from "@cv"
   <div class="accordion-content" aria-hidden="true">
     <ul>
       {
-        education.map(({ institution, startDate, endDate, area, studyType, score }) => {
+        education.map(({ institution, startDate, endDate, area, studyType }) => {
           const startYear = new Date(startDate).getFullYear()
           const endYear =
             endDate != null ? new Date(endDate).getFullYear() : "Actual"
@@ -33,7 +33,6 @@ import { education } from "@cv"
 
                 <footer>
                   <p>{area}</p>
-                  {score && <p class="score">Promedio: {score}</p>}
                 </footer>
               </article>
             </li>
@@ -89,8 +88,27 @@ import { education } from "@cv"
   }
 
   .accordion-content[aria-hidden="false"] {
-    max-height: 2000px;
+    max-height: 600px;
     padding: 16px;
+    overflow-y: auto;
+  }
+
+  .accordion-content[aria-hidden="false"]::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .accordion-content[aria-hidden="false"]::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  .accordion-content[aria-hidden="false"]::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  .accordion-content[aria-hidden="false"]::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
 
   ul {

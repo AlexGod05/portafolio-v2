@@ -101,8 +101,27 @@ import { work } from "@cv"
   }
 
   .accordion-content[aria-hidden="false"] {
-    max-height: 2000px;
+    max-height: 600px;
     padding: 16px;
+    overflow-y: auto;
+  }
+
+  .accordion-content[aria-hidden="false"]::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .accordion-content[aria-hidden="false"]::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  .accordion-content[aria-hidden="false"]::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  .accordion-content[aria-hidden="false"]::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
 
   ul {

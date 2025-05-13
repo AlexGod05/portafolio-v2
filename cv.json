@@ -51,7 +51,16 @@
       "endDate":"2023-10-17",
       "summary":"Durante mi trayecto por la empresa tuve la oportunidad de aportar en varios proyectos, en diferentes clientes, con el marco de trabajo SCRUM y KANBAN, principalmente en el área de Back-end con el lenguaje de programación Java y el Framework Spring, realizando despliegues en servicios de AWS y Azure DevOps, también aporté, pero a menor escala en el área de Front-End y Arquitectura de software.",
       "highlights":[
-        "Started the company"
+        "Desarrollo de microservicios con Java y Spring Framework para clientes del sector financiero y retail",
+        "Implementación de soluciones cloud utilizando AWS y Azure DevOps",
+        "Participación en proyectos utilizando metodologías ágiles (SCRUM y KANBAN)",
+        "Desarrollo de APIs REST para integración de sistemas empresariales",
+        "Contribución en la arquitectura de software y diseño de soluciones",
+        "Implementación de pruebas unitarias con Mockito y JUnit5",
+        "Gestión de bases de datos relacionales y NoSQL (MySQL, PostgreSQL, MongoDB)",
+        "Integración de servicios de mensajería (RabbitMQ) y caché (Redis)",
+        "Despliegue y configuración de contenedores con Docker y Kubernetes",
+        "Colaboración en el desarrollo frontend con Angular"
       ]
     },
     {
@@ -62,7 +71,11 @@
       "endDate":"2021-01-01",
       "summary":"Durante estos 6 meses de prácticas, pude aplicar mis conocimientos adquiridos en la Tecnología de desarrollo de sistemas de información, apoyando como full-stack en proyectos internos de la empresa, con el lenguaje de programación Node.js y Java por el lado del Back-End, y por el lado del Front-end con Angular, también inicié mi camino en AWS, consumiendo varios servicios como son S3, DynamoDB y Cognito",
       "highlights":[
-        "Started the company"
+        "Desarrollo full-stack en proyectos internos utilizando Node.js y Java",
+        "Implementación de interfaces de usuario con Angular",
+        "Primera experiencia con servicios AWS (S3, DynamoDB, Cognito)",
+        "Participación en el ciclo completo de desarrollo de aplicaciones",
+        "Colaboración en equipos de desarrollo siguiendo metodologías ágiles"
       ]
     },
     {
@@ -73,7 +86,11 @@
       "endDate":"2020-01-01",
       "summary":"Durante mi estancia en esta empresa de Call Center tuve una capacitación de 20 días, donde vimos temas de atención al cliente en el área de soporte técnico para el cliente Tigo-Une que hace parte del área de telecomunicaciones, donde al finalizar la capacitación pude ejercer mi rol, dando soporte vía telefónica, para los servicios de Internet, Tv (parabólica) y telefonía fija, donde también se aprovechaba la llamada para ofrecer nuevos servicios de ventas",
       "highlights":[
-        "Started the company"
+        "Atención y soporte técnico a clientes de servicios de telecomunicaciones",
+        "Resolución de problemas en servicios de Internet, TV y telefonía fija",
+        "Ventas cruzadas de servicios adicionales durante el soporte",
+        "Manejo de sistemas CRM para gestión de tickets y seguimiento de casos",
+        "Capacitación en atención al cliente y soporte técnico especializado"
       ]
     },
     {
@@ -84,7 +101,11 @@
       "endDate":"2019-01-01",
       "summary":"Durante mis prácticas en esta empresa, tuve la oportunidad de aportar mi conocimiento adquirido en la Técnica en sistemas, apoyando en el mantenimiento y reparación de computadores e impresoras, también tuve la oportunidad de adentrarme en el mundo de la programación en Java con MySQL, desarrollando una aplicación de escritorio para el área de importaciones, facilitando la gestión y el trabajo final de mis compañeros. Esta sería mi primera experiencia a nivel empresarial en el área de programación.",
       "highlights":[
-        "Started the company"
+        "Desarrollo de aplicación de escritorio en Java para gestión de importaciones",
+        "Mantenimiento y reparación de equipos de cómputo e impresoras",
+        "Implementación de base de datos MySQL para el sistema de importaciones",
+        "Soporte técnico a usuarios finales",
+        "Primera experiencia en desarrollo de software empresarial"
       ]
     }
   ],
@@ -109,7 +130,6 @@
       "studyType":"Tecnólogo",
       "startDate":"2019-01-01",
       "endDate":"2021-01-01",
-      "score":"4.0",
       "courses":[
         "DB1101 - Basic SQL"
       ]
@@ -121,7 +141,6 @@
       "studyType":"Técnico",
       "startDate":"2018-01-01",
       "endDate":"2019-01-01",
-      "score":"4.0",
       "courses":[
         "DB1101 - Basic SQL"
       ]
@@ -133,7 +152,6 @@
       "studyType":"Técnico",
       "startDate":"2017-01-01",
       "endDate":"2018-01-01",
-      "score":"4.0",
       "courses":[
         "DB1101 - Basic SQL"
       ]
