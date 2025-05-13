@@ -31,6 +31,10 @@ jobs:
         run: npm run build
       - name: Create .nojekyll file
         run: touch ./dist/.nojekyll
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
   deploy:
     needs: build
@@ -41,6 +45,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          path: ./dist 
+        uses: actions/deploy-pages@v4 

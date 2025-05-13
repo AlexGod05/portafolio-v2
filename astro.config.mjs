@@ -6,5 +6,5 @@ export default defineConfig({
   output: 'static',
   adapter: staticAdapter(),
   site: 'https://alexgod05.github.io',
-  base: '/portafolio-v2',
+  base: '/portafolio',
 });
