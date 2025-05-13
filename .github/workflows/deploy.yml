@@ -30,7 +30,10 @@ jobs:
       - name: Build
         run: |
           npm run build
+          echo "Contents of dist directory:"
           ls -la ./dist
+          echo "Contents of dist/_astro directory:"
+          ls -la ./dist/_astro
       - name: Create .nojekyll file
         run: touch ./dist/.nojekyll
       - name: Upload artifact
