@@ -83,25 +83,10 @@ const { education } = cvData
     overflow: hidden;
   }
 
-  .education-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background-color: var(--border-color);
-    transition: width 0.3s ease;
-  }
-
   .education-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-color: var(--border-color);
-  }
-
-  .education-card:hover::before {
-    width: 6px;
   }
 
   .education-card-content {
