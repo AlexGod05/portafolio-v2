@@ -101,7 +101,6 @@ input {
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 1rem;
-  background: var(--card-bg);
 }
 
 .accordion-header {
@@ -110,7 +109,6 @@ input {
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 1rem;
-  background: var(--card-bg);
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -141,7 +139,6 @@ input {
 }
 
 .accordion-content {
-  background: var(--card-bg);
   overflow: hidden;
   transition: max-height 0.3s ease-out;
   border-top: 1px solid var(--border);
