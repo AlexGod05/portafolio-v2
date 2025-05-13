@@ -28,9 +28,9 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
-        run: npm run build
-      - name: List build contents
-        run: ls -la ./dist
+        run: |
+          npm run build
+          ls -la ./dist
       - name: Create .nojekyll file
         run: touch ./dist/.nojekyll
       - name: Upload artifact
