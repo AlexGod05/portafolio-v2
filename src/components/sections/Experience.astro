@@ -372,3 +372,56 @@ const groupedWorkJson = JSON.stringify(groupedWork)
     });
   });
 </script>
+
+<script>
+  const groupedWorkData = document.getElementById('groupedWorkData')?.textContent;
+  if (!groupedWorkData) return;
+
+  const groupedWork = JSON.parse(groupedWorkData);
+  const modal = document.getElementById('experienceModal');
+  const modalContent = document.getElementById('modalContent');
+  const closeModal = document.getElementById('closeModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalPeriod = document.getElementById('modalPeriod');
+  const modalExperiences = document.getElementById('modalExperiences');
+
+  if (!modal || !modalContent || !closeModal || !modalTitle || !modalPeriod || !modalExperiences) return;
+
+  const companyCards = document.querySelectorAll('.company-card');
+  companyCards.forEach(card => {
+    const companyName = card.getAttribute('data-company');
+    if (!companyName || !groupedWork[companyName]) return;
+
+    card.addEventListener('click', () => {
+      const company = groupedWork[companyName];
+      modalTitle.textContent = company.name;
+      modalPeriod.textContent = company.period;
+      modalExperiences.innerHTML = '';
+
+      company.experiences.forEach((exp: { title: string; description: string; tags: string[] }) => {
+        const expElement = document.createElement('div');
+        expElement.className = 'modal-experience';
+        expElement.innerHTML = `
+          <h3>${exp.title}</h3>
+          <p>${exp.description}</p>
+          <div class="modal-tags">
+            ${exp.tags.map((tag: string) => `<span>${tag}</span>`).join('')}
+          </div>
+        `;
+        modalExperiences.appendChild(expElement);
+      });
+
+      modal.classList.add('active');
+    });
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+</script>

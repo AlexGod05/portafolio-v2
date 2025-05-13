@@ -431,7 +431,7 @@
   ],
   "projects":[
     {
-      "name":"Polygonus - Futureverse (2024)",
+      "name":"Polygonus - Futureverse (2024 - 2025)",
       "description":"Desarrollo de backend para plataforma de videojuegos, implementando servicios serverless con TypeScript y AWS.",
       "highlights":[
         "TypeScript",
@@ -445,7 +445,7 @@
       "icon":"gamepad"
     },
     {
-      "name":"Polygonus - Academy (2024)",
+      "name":"Polygonus - Academy (2024 - 2025)",
       "description":"Desarrollo de plataforma educativa para la academia de Polygonus, implementando backend con Python y FastAPI.",
       "highlights":[
         "Python",
@@ -458,7 +458,7 @@
       "icon":"graduation-cap"
     },
     {
-      "name":"Polygonus - NAKAMA Game Server (2024)",
+      "name":"Polygonus - NAKAMA Game Server (2024 - 2025)",
       "description":"Implementación y configuración de servidor NAKAMA para videojuegos, desplegado en AWS ECS y ECR FARGATE.",
       "highlights":[
         "NAKAMA",
