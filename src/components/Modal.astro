@@ -1,0 +1,244 @@
+---
+import X from '../icons/X.astro';
+
+interface Props {
+  id: string;
+  title: string;
+  subtitle?: string;
+}
+
+const { id, title, subtitle } = Astro.props;
+---
+
+<div id={id} class="modal" role="dialog" aria-modal="true">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>{title}</h2>
+      <button class="close-modal" aria-label="Cerrar modal">
+        <X />
+      </button>
+    </div>
+    {subtitle && <div class="modal-subtitle">{subtitle}</div>}
+    <div class="modal-body">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+  }
+
+  .modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .modal-content {
+    background: var(--card-bg);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .close-modal {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    color: var(--text-color);
+  }
+
+  .close-modal:hover {
+    background: var(--bg-secondary);
+    transform: rotate(90deg);
+  }
+
+  .close-modal :global(svg) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .modal-header h2 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+
+  .modal-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    display: inline-block;
+    background: var(--bg-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  .modal-body {
+    color: var(--text-color);
+  }
+
+  .experience-item {
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .experience-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .experience-item h3 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .experience-item time {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .experience-item p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .highlights li {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .highlights li::before {
+    content: "•";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .highlights li:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 95%;
+      padding: 1.5rem;
+    }
+
+    .modal-header h2 {
+      font-size: 1.5rem;
+    }
+
+    .experience-item {
+      margin-bottom: 2rem;
+    }
+
+    .experience-item h3 {
+      font-size: 1.25rem;
+    }
+
+    .experience-item p {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  function initModal(modalId: string) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+
+    const closeBtn = modal.querySelector('.close-modal');
+    if (!closeBtn) return;
+
+    // Función para abrir la modal
+    function openModal() {
+      if (!modal) return;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Función para cerrar la modal
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Event listeners
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Exponer funciones públicamente
+    Object.assign(modal, { openModal, closeModal });
+  }
+
+  // Inicializar todos los modales al cargar la página
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.modal').forEach(modal => {
+      if (modal.id) {
+        initModal(modal.id);
+      }
+    });
+  });
+</script> 

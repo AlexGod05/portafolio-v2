@@ -1,0 +1,62 @@
+<button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<style>
+  .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 100;
+  }
+
+  .scroll-to-top.visible {
+    display: flex;
+  }
+
+  .scroll-to-top:hover {
+    transform: translateY(-3px);
+    background: var(--hover);
+  }
+
+  @media (max-width: 768px) {
+    .scroll-to-top {
+      bottom: 10px;
+      right: 10px;
+      width: 35px;
+      height: 35px;
+    }
+  }
+</style>
+
+<script>
+  const scrollToTop = document.getElementById('scrollToTop');
+  const scrollThreshold = 300; // Aparece después de 300px de scroll
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > scrollThreshold) {
+      scrollToTop?.classList.add('visible');
+    } else {
+      scrollToTop?.classList.remove('visible');
+    }
+  });
+
+  scrollToTop?.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script> 
