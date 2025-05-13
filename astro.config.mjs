@@ -9,7 +9,7 @@ export default defineConfig({
   outDir: 'docs',
   vite: {
     build: {
-      assetsDir: 'assets'
+      assetsDir: '_astro'
     }
   }
 });
