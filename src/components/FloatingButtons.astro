@@ -1,3 +1,6 @@
+---
+---
+
 <div class="floating-buttons">
   <div class="theme-switch-wrapper">
     <label class="theme-switch" for="theme-toggle">
@@ -8,21 +11,49 @@
       </div>
     </label>
   </div>
-  <button class="language-toggle" aria-label="Cambiar idioma">
+  <button class="language-toggle" aria-label="Cambiar idioma" id="language-toggle">
     <i class="fas fa-globe"></i>
+    <span class="lang-text">ES</span>
   </button>
 </div>
 
 <script>
-  import { toggleTheme } from '../scripts/theme';
+  import { toggleLanguage } from '../scripts/language';
 
-  const themeToggle = document.getElementById('theme-toggle') as HTMLInputElement;
-  if (themeToggle) {
+  function toggleTheme() {
+    const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(newTheme);
+    localStorage.setItem('theme', newTheme);
+  }
+
+  function updateLanguageText() {
+    const langText = document.querySelector('.lang-text');
+    if (langText) {
+      const currentLanguage = localStorage.getItem('language') || 'es';
+      langText.textContent = currentLanguage.toUpperCase();
+    }
+  }
+
+  const themeToggle = document.getElementById('theme-toggle');
+  const languageToggle = document.getElementById('language-toggle');
+
+  // Actualizar el texto del idioma al cargar la página
+  updateLanguageText();
+
+  if (themeToggle && themeToggle instanceof HTMLInputElement) {
     // Establecer el estado inicial del checkbox basado en el tema actual
     themeToggle.checked = document.documentElement.classList.contains('dark');
 
     themeToggle.addEventListener('change', () => {
       toggleTheme();
+    });
+  }
+
+  if (languageToggle) {
+    languageToggle.addEventListener('click', () => {
+      toggleLanguage();
     });
   }
 </script>
@@ -108,15 +139,29 @@
     color: var(--text);
     cursor: pointer;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 5px var(--shadow);
     transition: all 0.3s ease;
+    padding: 0;
+    position: relative;
   }
 
   .language-toggle:hover {
     transform: scale(1.1);
     border-color: var(--primary);
+  }
+
+  .language-toggle i {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+  }
+
+  .lang-text {
+    font-size: 0.6rem;
+    line-height: 1;
+    font-weight: bold;
   }
 
   @media (max-width: 768px) {
@@ -147,6 +192,14 @@
 
     .slider i {
       font-size: 0.7rem;
+    }
+
+    .language-toggle i {
+      font-size: 0.7rem;
+    }
+
+    .lang-text {
+      font-size: 0.5rem;
     }
   }
 </style> 

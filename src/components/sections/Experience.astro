@@ -1,7 +1,9 @@
 ---
 import Section from "../Section.astro"
+import { getCVData } from "@cv"
 
-import { work } from "@cv"
+const cvData = await getCVData()
+const { work } = cvData
 ---
 
 <Section class="accordion-container">
@@ -62,6 +64,7 @@ import { work } from "@cv"
     border-radius: 8px;
     overflow: hidden;
     background: var(--card-bg);
+    box-shadow: none;
   }
 
   .accordion-header {
@@ -113,7 +116,7 @@ import { work } from "@cv"
   }
 
   .accordion-header[aria-expanded="true"] + .accordion-content {
-    max-height: 1000px;
+    max-height: 2000px;
     padding: 16px;
     overflow-y: auto;
   }

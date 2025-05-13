@@ -1,8 +1,9 @@
 ---
 import Section from "../Section.astro"
+import { getCVData } from "@cv"
 
-import { basics } from "@cv"
-const { summary } = basics
+const cvData = await getCVData()
+const { summary } = cvData.basics
 ---
 
 <Section title="Sobre mí">

@@ -1,7 +1,9 @@
 ---
 import Section from "../Section.astro"
+import { getCVData } from "@cv"
 
-import { education } from "@cv"
+const cvData = await getCVData()
+const { education } = cvData
 ---
 
 <Section class="accordion-container">
@@ -13,31 +15,33 @@ import { education } from "@cv"
   <div class="accordion-content" aria-hidden="true">
     <ul>
       {
-        education.map(({ institution, startDate, endDate, area, studyType }) => {
-          const startYear = new Date(startDate).getFullYear()
-          const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Actual"
-          const years = `${startYear} - ${endYear}`
+        education.map(
+          ({ institution, area, studyType, startDate, endDate, url }) => {
+            const startYear = new Date(startDate).getFullYear()
+            const endYear =
+              endDate != null ? new Date(endDate).getFullYear() : "Actual"
+            const years = `${startYear} - ${endYear}`
 
-          return (
-            <li>
-              <article>
-                <header>
-                  <div>
-                    <h3>{institution}</h3>
-                    <h4>{studyType}</h4>
-                  </div>
+            return (
+              <li>
+                <article>
+                  <header>
+                    <div>
+                      <h3>
+                        <a href={url} title={`Ver ${institution}`} target="_blank">
+                          {institution}
+                        </a>
+                      </h3>
+                      <h4>{studyType} en {area}</h4>
+                    </div>
 
-                  <time>{years}</time>
-                </header>
-
-                <footer>
-                  <p>{area}</p>
-                </footer>
-              </article>
-            </li>
-          )
-        })
+                    <time>{years}</time>
+                  </header>
+                </article>
+              </li>
+            )
+          }
+        )
       }
     </ul>
   </div>
@@ -49,6 +53,7 @@ import { education } from "@cv"
     border-radius: 8px;
     overflow: hidden;
     background: var(--card-bg);
+    box-shadow: none;
   }
 
   .accordion-header {
@@ -100,7 +105,7 @@ import { education } from "@cv"
   }
 
   .accordion-header[aria-expanded="true"] + .accordion-content {
-    max-height: 1000px;
+    max-height: 2000px;
     padding: 16px;
     overflow-y: auto;
   }

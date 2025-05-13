@@ -1,6 +1,7 @@
 ---
-import { basics } from "@cv"
+import { getCVData } from "@cv"
 import { getInitialTheme } from '../scripts/theme';
+import { getInitialLanguage } from '../scripts/language';
 import '../styles/global.css';
 
 interface Props {
@@ -8,12 +9,14 @@ interface Props {
 }
 
 const { title } = Astro.props
-const { image, summary } = basics
+const cvData = await getCVData()
+const { image, summary } = cvData.basics
 const initialTheme = getInitialTheme();
+const initialLanguage = getInitialLanguage();
 ---
 
 <!doctype html>
-<html lang="es" class={initialTheme}>
+<html lang={initialLanguage} class={initialTheme}>
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>

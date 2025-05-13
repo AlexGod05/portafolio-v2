@@ -11,8 +11,9 @@ import KeyboardManager from "@/components/KeyboardManager.astro"
 import FloatingButtons from "@/components/FloatingButtons.astro"
 import ScrollToTop from "@/components/ScrollToTop.astro"
 
-import { basics } from "@cv"
-const { name, label } = basics
+import { getCVData } from "@cv"
+const cvData = await getCVData()
+const { name, label } = cvData.basics
 ---
 
 <Layout title={`Portafolio de ${name} - ${label}`}>
