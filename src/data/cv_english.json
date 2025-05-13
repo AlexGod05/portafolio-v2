@@ -4,7 +4,7 @@
     "label": "Software developer with over 4 years of experience",
     "image": "/me.jpg",
     "email": "claiderman.lozano@gmail.com",
-    "phone": "+57 3014128547",
+    "phone": "+573014128547",
     "url": "https://github.com/AlexGod05",
     "summary": "Software developer with more than 4 years of experience in microservices architecture and backend development. Strong knowledge in implementing REST APIs, database management, and cloud services (AWS, Azure). Experience developing enterprise solutions for clients such as Bancolombia, Comfama, and Grupo Familia, working with technologies like Java, Spring Framework, TypeScript, Python, and serverless services. Currently at Polygonus, contributing to backend development for video game and interactive application projects, implementing solutions with TypeScript, Python (Django/FastAPI), and AWS services. Known for continuous learning, best development practices, and experience in agile methodologies (SCRUM, KANBAN). Proactive and adaptable, participating in the development of robust and scalable solutions, maintaining quality and security standards. Knowledge in CI/CD integration, containers (Docker, Kubernetes), and application monitoring, contributing to efficient and maintainable deployments.",
     "location": {
@@ -250,9 +250,129 @@
     {
       "name": "PostgreSQL",
       "keywords": [
+        "Polygonus Academy",
+        "Banistmo",
+        "Credit Management"
+      ]
+    },
+    {
+      "name": "MongoDB",
+      "keywords": [
+        "Bancolombia",
+        "Audit Log",
+        "Microservices"
+      ]
+    },
+    {
+      "name": "FluidAttack",
+      "keywords": [
+        "Banistmo",
+        "Security",
+        "Testing"
+      ]
+    },
+    {
+      "name": "Git",
+      "keywords": [
+        "Version Control",
+        "Collaboration",
+        "DevOps"
+      ]
+    },
+    {
+      "name": "GitLab",
+      "keywords": [
+        "Grupo Familia",
+        "CI/CD",
+        "Jenkins"
+      ]
+    },
+    {
+      "name": "Mockito",
+      "keywords": [
+        "Comfama",
+        "Banistmo",
+        "Testing"
+      ]
+    },
+    {
+      "name": "JUnit5",
+      "keywords": [
+        "Comfama",
+        "Banistmo",
+        "Testing"
+      ]
+    },
+    {
+      "name": "Kubernetes",
+      "keywords": [
+        "Bancolombia",
+        "Grupo Familia",
+        "Docker"
+      ]
+    },
+    {
+      "name": "RabbitMQ",
+      "keywords": [
+        "Comfama",
+        "Banistmo",
+        "Grupo Familia"
+      ]
+    },
+    {
+      "name": "Redis",
+      "keywords": [
+        "Comfama",
+        "Banistmo",
+        "Grupo Familia"
+      ]
+    },
+    {
+      "name": "Docker",
+      "keywords": [
+        "Bancolombia",
+        "Grupo Familia",
+        "Kubernetes"
+      ]
+    },
+    {
+      "name": "Contentful",
+      "keywords": [
+        "Comfama",
+        "CMS",
+        "Search Filters"
+      ]
+    },
+    {
+      "name": "NodeJS",
+      "keywords": [
         "Polygonus",
-        "Academy",
-        "Futureverse"
+        "Futureverse",
+        "Serverless"
+      ]
+    },
+    {
+      "name": "Angular",
+      "keywords": [
+        "Pragma",
+        "Frontend",
+        "Internal Projects"
+      ]
+    },
+    {
+      "name": "Astro",
+      "keywords": [
+        "Portfolio",
+        "Static Site",
+        "Performance"
+      ]
+    },
+    {
+      "name": "Trello",
+      "keywords": [
+        "Grupo Familia",
+        "Management",
+        "Nosotras V-App"
       ]
     },
     {
@@ -266,10 +386,25 @@
     {
       "name": "Python",
       "keywords": [
-        "Django",
+        "Polygonus Academy",
         "FastAPI",
+        "Backend"
+      ]
+    },
+    {
+      "name": "Serverless",
+      "keywords": [
         "Polygonus",
-        "Academy"
+        "Futureverse",
+        "AWS Lambda"
+      ]
+    },
+    {
+      "name": "NAKAMA",
+      "keywords": [
+        "Polygonus",
+        "AWS ECS",
+        "Game Server"
       ]
     }
   ],
@@ -300,8 +435,8 @@
   ],
   "projects": [
     {
-      "name": "Polygonus - Futureverse (2024)",
-      "description": "Backend development for a video game platform, implementing serverless services with TypeScript and AWS.",
+      "name": "Polygonus - Futureverse (2024 - 2025)",
+      "description": "Backend development for video game platform, implementing serverless services with TypeScript and AWS.",
       "highlights": [
         "TypeScript",
         "Serverless",
@@ -314,7 +449,7 @@
       "icon": "gamepad"
     },
     {
-      "name": "Polygonus - Academy (2024)",
+      "name": "Polygonus - Academy (2024 - 2025)",
       "description": "Development of educational platform for Polygonus academy, implementing backend with Python and FastAPI.",
       "highlights": [
         "Python",
@@ -327,7 +462,7 @@
       "icon": "graduation-cap"
     },
     {
-      "name": "Polygonus - NAKAMA Game Server (2024)",
+      "name": "Polygonus - NAKAMA Game Server (2024 - 2025)",
       "description": "Implementation and configuration of NAKAMA server for video games, deployed in AWS ECS and ECR FARGATE.",
       "highlights": [
         "NAKAMA",
@@ -339,6 +474,130 @@
       ],
       "url": "https://www.polygon.us/",
       "icon": "server"
+    },
+    {
+      "name": "Pragma - Bancolombia (2020-2023)",
+      "description": "At this Bank, I contributed to software architecture, connecting and deploying various services for Audit Log management, which collected logs from multiple Microservices for the Business area.",
+      "highlights": [
+        "SCRUM",
+        "AWS",
+        "Azure DevOps",
+        "Kubernetes",
+        "Docker",
+        "MongoDB",
+        "RabbitMQ"
+      ],
+      "url": "https://www.bancolombia.com/negocios/productos-financieros/sucursal-virtual-empresas",
+      "icon": "building-columns"
+    },
+    {
+      "name": "Pragma - Comfama (2020-2023)",
+      "description": "A search filter was developed to improve user accessibility on the platform and help users better find services offered by Comfama.",
+      "highlights": [
+        "SCRUM",
+        "Java",
+        "Spring Framework",
+        "AWS",
+        "Azure DevOps",
+        "Mockito",
+        "Junit5",
+        "CMS Contentful",
+        "Redis",
+        "RabbitMQ"
+      ],
+      "url": "https://www.comfama.com/",
+      "icon": "building"
+    },
+    {
+      "name": "Pragma - Banistmo (2020-2023)",
+      "description": "A PDF sending system was developed for credit summary and management during the pandemic. After this, I supported the sustainability and updating of the Bank's microservices.",
+      "highlights": [
+        "KANBAN",
+        "Java",
+        "Spring Framework",
+        "AWS",
+        "Azure DevOps",
+        "FluidAttack",
+        "Mockito",
+        "Junit5",
+        "PostgreSQL",
+        "Redis",
+        "RabbitMQ"
+      ],
+      "url": "https://www.banistmo.com/wps/portal/banistmo/personas",
+      "icon": "money-bill"
+    },
+    {
+      "name": "Pragma - Grupo Familia - Nosotras V-App (2020-2023)",
+      "description": "In this project, I developed the Back-end for a Mobile application, creating REST API microservices. I led the Back-end area, which allowed me to challenge myself and take this project from start to finish.",
+      "highlights": [
+        "SCRUM",
+        "Java",
+        "Spring Framework",
+        "AWS",
+        "Jenkins",
+        "GitLab",
+        "Mockito",
+        "Junit5",
+        "MySQL",
+        "Redis",
+        "RabbitMQ",
+        "Kubernetes",
+        "Trello"
+      ],
+      "url": "https://play.google.com/store/apps/details?id=com.nolapp&hl=es_CO&gl=US",
+      "icon": "mobile-screen"
+    },
+    {
+      "name": "Pragma - Grupo Familia - Transversal (2020-2023)",
+      "description": "In this project, I supported the 5 brands of the Familia group: Pequeñin, Nosotras, Petys, Pomys, Tena, and Familia institutional. These brands share the same software infrastructure, allowing general changes to be implemented across all brands.",
+      "highlights": [
+        "SCRUM",
+        "Java",
+        "Spring Framework",
+        "AWS",
+        "Jenkins",
+        "GitLab",
+        "Mockito",
+        "Junit5",
+        "MySQL",
+        "Redis",
+        "RabbitMQ",
+        "Kubernetes",
+        "Trello"
+      ],
+      "url": "https://www.grupofamilia.com/",
+      "icon": "layer-group"
+    },
+    {
+      "name": "Pragma - Grupo Familia - Pequeñin (2020-2023)",
+      "description": "A redesign of the Pequeñin website was done. I was involved in the construction and implementation in the back-end area, creating REST API microservices.",
+      "highlights": [
+        "SCRUM",
+        "Java",
+        "Spring Framework",
+        "AWS",
+        "Jenkins",
+        "GitLab",
+        "Mockito",
+        "Junit5",
+        "MySQL",
+        "Redis",
+        "RabbitMQ",
+        "Kubernetes",
+        "Trello"
+      ],
+      "url": "https://www.pequenin.com.co/",
+      "icon": "baby"
+    },
+    {
+      "name": "Autodicol S.A.S - Imports (2018-2019)",
+      "description": "Development of desktop application for import management, including order tracking, inventory control, and report generation",
+      "highlights": [
+        "Java",
+        "MySQL"
+      ],
+      "icon": "truck-fast"
     }
   ]
 }
