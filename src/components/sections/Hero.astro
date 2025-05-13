@@ -3,22 +3,14 @@ import { getCVData } from "@cv"
 import Section from "@/components/Section.astro"
 import Mail from "@/icons/Mail.astro"
 import Phone from "@/icons/Phone.astro"
-import X from "@/icons/X.astro"
 import LinkedIn from "@/icons/LinkedIn.astro"
 import GitHub from "@/icons/GitHub.astro"
 import WorldMap from "@/icons/WorldMap.astro"
 import Copy from "@/icons/Copy.astro"
-import type { SocialIcon } from "@/types"
 
 const cvData = await getCVData()
 const { name, label, image, location, profiles, phone, email } = cvData.basics
 const { city, department, region } = location
-
-const SOCIAL_ICONS: SocialIcon = {
-  GitHub,
-  LinkedIn,
-  X,
-}
 
 const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")
 const linkedUrl = linkedInfo?.url
@@ -26,10 +18,6 @@ const githubInfo = profiles.find(({ network }) => network === "GitHub")
 const githubUrl = githubInfo?.url
 
 const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
-
-const copyToClipboard = (text: string) => {
-  navigator.clipboard.writeText(text)
-}
 ---
 
 <Section>
@@ -394,18 +382,5 @@ const copyToClipboard = (text: string) => {
 
   window.copyToClipboard = function(text: string) {
     navigator.clipboard.writeText(text)
-      .then(() => {
-        const button = document.activeElement as HTMLElement
-        if (button) {
-          const originalHTML = button.innerHTML
-          button.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>'
-          setTimeout(() => {
-            button.innerHTML = originalHTML
-          }, 1000)
-        }
-      })
-      .catch(err => {
-        console.error('Error al copiar:', err)
-      })
   }
 </script>

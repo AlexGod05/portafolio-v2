@@ -13,7 +13,7 @@ export function initModal(modalId: string) {
     
     // Añadir animación de entrada a las tarjetas
     const cards = modal.querySelectorAll('.experience-card');
-    cards.forEach((card, index) => {
+    cards.forEach((card) => {
       (card as HTMLElement).style.opacity = '0';
       (card as HTMLElement).style.transform = 'translateY(20px)';
       
@@ -21,7 +21,7 @@ export function initModal(modalId: string) {
         (card as HTMLElement).style.transition = 'all 0.3s ease';
         (card as HTMLElement).style.opacity = '1';
         (card as HTMLElement).style.transform = 'translateY(0)';
-      }, 100 * index);
+      }, 100);
     });
   }
 
@@ -31,7 +31,7 @@ export function initModal(modalId: string) {
     
     // Añadir animación de salida a las tarjetas
     const cards = modal.querySelectorAll('.experience-card');
-    cards.forEach((card, index) => {
+    cards.forEach((card) => {
       (card as HTMLElement).style.opacity = '0';
       (card as HTMLElement).style.transform = 'translateY(20px)';
     });

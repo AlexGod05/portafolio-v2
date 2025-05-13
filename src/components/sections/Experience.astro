@@ -15,9 +15,6 @@ const groupedWork = work.reduce((acc, experience) => {
   acc[companyName].push(experience)
   return acc
 }, {} as Record<string, typeof work>)
-
-// Convertir groupedWork a JSON para el script
-const groupedWorkJson = JSON.stringify(groupedWork)
 ---
 
 <Section>
@@ -145,7 +142,7 @@ const groupedWorkJson = JSON.stringify(groupedWork)
   }
 </style>
 
-<script type="module" define:vars={{ groupedWork }}>
+<script type="module" is:inline define:vars={{ groupedWork }}>
   import { initAccordions } from "/src/scripts/accordion";
   
   document.addEventListener('DOMContentLoaded', () => {

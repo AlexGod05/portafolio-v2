@@ -1,6 +1,5 @@
 ---
 import { getCVData } from "@cv"
-import type { SocialIcon } from "@/types"
 
 const cvData = await getCVData()
 const profiles = cvData.basics?.profiles || []
@@ -98,7 +97,7 @@ const profilesInfo = profiles.map(({ network, url }: { network: string; url: str
     hotkey: string
   }
 
-  const ninja = document.querySelector("ninja-keys")
+  const ninja = document.querySelector("ninja-keys") as any
   const footerButton = document.getElementById("footer-button")
   const normalFooter = document.getElementById("normal-footer")
 
