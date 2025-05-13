@@ -1,17 +1,22 @@
 ---
-import { basics } from "@cv"
+import { getCVData } from "@cv"
+import { getInitialTheme } from '../scripts/theme';
+import { getInitialLanguage } from '../scripts/language';
+import '../styles/global.css';
 
 interface Props {
   title: string
 }
 
 const { title } = Astro.props
-
-const { image, summary } = basics
+const cvData = await getCVData()
+const { image, summary } = cvData.basics
+const initialTheme = getInitialTheme();
+const initialLanguage = getInitialLanguage();
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={initialLanguage} class={initialTheme}>
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>
@@ -19,6 +24,7 @@ const { image, summary } = basics
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" as="image" href={image} />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
     <slot />
@@ -34,7 +40,6 @@ const { image, summary } = basics
       "Courier New",
       Courier,
       monospace;
-    background: #fff;
     letter-spacing: -0.025rem;
   }
 
@@ -80,7 +85,6 @@ const { image, summary } = basics
   }
 
   p {
-    color: #666;
     font-size: 0.9rem;
     line-height: 1.5;
     margin: 0;

@@ -1,17 +1,19 @@
 ---
+import JavaScript from "@/icons/javascript.astro"
+import Tailwind from "@/icons/tailwind.astro"
+import TypeScript from "@/icons/type.astro"
+import GitHub from "@/icons/GitHub.astro"
+import React from "@/icons/react.astro"
 import Section from "../Section.astro"
 import HTML from "@/icons/html.astro"
-import CSS from "@/icons/css.astro"
-import JavaScript from "@/icons/javascript.astro"
-import TypeScript from "@/icons/type.astro"
-import React from "@/icons/react.astro"
 import Node from "@/icons/node.astro"
-import MySQL from "@/icons/sql.astro"
-import Git from "@/icons/git.astro"
-import GitHub from "@/icons/GitHub.astro"
-import Tailwind from "@/icons/tailwind.astro"
 import Next from "@/icons/next.astro"
-import { skills } from "@cv"
+import CSS from "@/icons/css.astro"
+import Git from "@/icons/git.astro"
+import { getCVData } from "@cv"
+
+const cvData = await getCVData()
+const { skills } = cvData
 
 const SKILLS_ICONS: Record<string, any> = {
   HTML,
@@ -20,47 +22,181 @@ const SKILLS_ICONS: Record<string, any> = {
   TypeScript,
   React,
   Node,
-  MySQL,
+  MySQL: `<i class="fas fa-database"></i>`,
   Git,
   GitHub,
   Next,
   Tailwind,
+  SCRUM: `<i class="fas fa-tasks"></i>`,
+  Kanban: `<i class="fas fa-columns"></i>`,
+  Java: `<i class="fab fa-java"></i>`,
+  "Spring Framework": `<i class="fas fa-leaf"></i>`,
+  AWS: `<i class="fab fa-aws"></i>`,
+  "Azure DevOps": `<i class="fab fa-microsoft"></i>`,
+  PostgreSQL: `<i class="fas fa-database"></i>`,
+  MongoDB: `<i class="fas fa-database"></i>`,
+  FluidAttack: `<i class="fas fa-shield-alt"></i>`,
+  GitLab: `<i class="fab fa-gitlab"></i>`,
+  Mockito: `<i class="fas fa-vial"></i>`,
+  JUnit5: `<i class="fas fa-flask"></i>`,
+  Kubernetes: `<i class="fas fa-ship"></i>`,
+  RabbitMQ: `<i class="fas fa-exchange-alt"></i>`,
+  Redis: `<i class="fas fa-database"></i>`,
+  Docker: `<i class="fab fa-docker"></i>`,
+  Contentful: `<i class="fas fa-file-alt"></i>`,
+  NodeJS: `<i class="fab fa-node-js"></i>`,
+  Angular: `<i class="fab fa-angular"></i>`,
+  Astro: `<i class="fas fa-rocket"></i>`,
+  Trello: `<i class="fab fa-trello"></i>`,
+  Python: `<i class="fab fa-python"></i>`,
+  Serverless: `<i class="fas fa-cloud"></i>`,
+  NAKAMA: `<i class="fas fa-gamepad"></i>`
+}
+
+// Mapeo de nombres de habilidades a claves de iconos
+const SKILL_NAME_TO_ICON: Record<string, string> = {
+  "HTML": "HTML",
+  "CSS": "CSS",
+  "JavaScript": "JavaScript",
+  "TypeScript": "TypeScript",
+  "React": "React",
+  "Node.js": "Node",
+  "MySQL": "MySQL",
+  "Git": "Git",
+  "GitHub": "GitHub",
+  "Next.js": "Next",
+  "Tailwind CSS": "Tailwind",
+  "SCRUM": "SCRUM",
+  "Kanban": "Kanban",
+  "Java": "Java",
+  "Spring Framework": "Spring Framework",
+  "AWS": "AWS",
+  "Azure DevOps": "Azure DevOps",
+  "PostgreSQL": "PostgreSQL",
+  "MongoDB": "MongoDB",
+  "FluidAttack": "FluidAttack",
+  "GitLab": "GitLab",
+  "Mockito": "Mockito",
+  "JUnit5": "JUnit5",
+  "Kubernetes": "Kubernetes",
+  "RabbitMQ": "RabbitMQ",
+  "Redis": "Redis",
+  "Docker": "Docker",
+  "Contentful": "Contentful",
+  "NodeJS": "NodeJS",
+  "Angular": "Angular",
+  "Astro": "Astro",
+  "Trello": "Trello",
+  "Python": "Python",
+  "Serverless": "Serverless",
+  "NAKAMA": "NAKAMA"
 }
 ---
 
-<Section title="Habilidades">
-  <ul>
-    {
-      skills.map(({ name }) => {
-        const iconName = name === "Next.js" ? "Next" : name
-        const Icon = SKILLS_ICONS[iconName]
+<Section>
+  <div class="accordion-container">
+    <button class="accordion-header" aria-expanded="false">
+      <h2><i class="fas fa-tools"></i> Habilidades</h2>
+      <span class="accordion-icon">▼</span>
+    </button>
 
-        return (
-          <li>
-            {Icon && <Icon />} <span>{name}</span>
-          </li>
-        )
-      })
-    }
-  </ul>
+    <div class="accordion-content" aria-hidden="true">
+      <div class="skills-grid">
+        {
+          skills.map(({ name, keywords }) => {
+            const iconKey = SKILL_NAME_TO_ICON[name] || name
+            const Icon = SKILLS_ICONS[iconKey]
+
+            return (
+              <div class="skill-card">
+                <div class="skill-header">
+                  <div class="skill-icon">
+                    {typeof Icon === 'string' ? <Fragment set:html={Icon} /> : Icon && <Icon />}
+                  </div>
+                  <div class="skill-info">
+                    <h3>{name}</h3>
+                  </div>
+                </div>
+                <div class="skill-keywords">
+                  {keywords.map(keyword => (
+                    <span class="keyword-tag">{keyword}</span>
+                  ))}
+                </div>
+              </div>
+            )
+          })
+        }
+      </div>
+    </div>
+  </div>
 </Section>
 
+<script>
+  import { initAccordions } from "@/scripts/accordion";
+  document.addEventListener('DOMContentLoaded', () => {
+    initAccordions();
+  });
+</script>
+
 <style>
-  ul {
-    display: inline-flex;
-    gap: 8px;
-    flex-wrap: wrap;
+  .accordion-container {
+    width: 100%;
   }
 
-  li {
-    align-items: center;
-    background: #eee;
-    border-radius: 6px;
-    color: black;
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .skill-card {
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    padding: 1rem;
+    background: var(--card-bg);
+    transition: all 0.3s ease;
+  }
+
+  .skill-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }
+
+  .skill-header {
     display: flex;
-    font-size: 0.8rem;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .skill-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+  }
+
+  .skill-info h3 {
+    margin: 0;
+    font-size: 1rem;
     font-weight: 500;
-    gap: 4px;
-    padding: 0.2rem 0.6rem;
+    color: var(--text);
+  }
+
+  .skill-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .keyword-tag {
+    background: var(--background);
+    color: var(--secondary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
   }
 </style>
