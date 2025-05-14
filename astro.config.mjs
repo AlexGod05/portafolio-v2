@@ -2,8 +2,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  output: 'static',
   site: 'https://alexgod05.github.io',
-  base: '/portfolio/',
-  outDir: 'docs'
+  base: '/portfolio',
 });
