@@ -1,0 +1,68 @@
+---
+import AccordionItem from "@accordion/AccordionItem.astro";
+import { YearBadge } from "@yearBadge/index";
+
+interface Experience {
+  position: string;
+  startDate: string;
+  endDate?: string;
+  summary: string;
+  highlights: string[];
+}
+
+interface Props {
+  experiences: Experience[];
+}
+
+const { experiences } = Astro.props;
+---
+
+<div class="experiences-accordion">
+  {experiences.map((experience) => {
+    const startYear = new Date(experience.startDate).getFullYear();
+    const endYear = experience.endDate 
+      ? new Date(experience.endDate).getFullYear() 
+      : undefined;
+    
+    return (
+      <AccordionItem 
+        title={
+          <div class="position-info">
+            <h3>{experience.position}</h3>
+            <YearBadge startYear={startYear} endYear={endYear} />
+          </div>
+        }
+      >
+        <div class="experience-content">
+          <div class="summary-card">
+            <p>{experience.summary}</p>
+          </div>
+          <div class="highlights-card">
+            <h4>Logros y Responsabilidades</h4>
+            <ul>
+              {experience.highlights.map((highlight) => (
+                <li>
+                  <span class="bullet">•</span>
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </AccordionItem>
+    );
+  })}
+</div>
+
+<style>
+  .experiences-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem 0.5rem;
+  }
+  
+  :global(.experience-content) {
+    padding: 0.75rem 0.5rem;
+  }
+</style> 

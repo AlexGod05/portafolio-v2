@@ -1,12 +1,6 @@
 ---
-import { getCVData } from "../../utils/cv"
-import Section from "../Section.astro"
-import Mail from "../../icons/Mail.astro"
-import Phone from "../../icons/Phone.astro"
-import LinkedIn from "../../icons/LinkedIn.astro"
-import GitHub from "../../icons/GitHub.astro"
-import WorldMap from "../../icons/WorldMap.astro"
-import Copy from "../../icons/Copy.astro"
+import { getCVData } from "@utils/cv"
+import { Section } from "@sections/index";
 
 const cvData = await getCVData()
 const { name, label, image, location, profiles, phone, email } = cvData.basics
@@ -34,111 +28,112 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     <footer class="print">
       {printInfo}
     </footer>
-    <footer class="no-print">
-      <div class="contact-info">
-        {
-          email && (
-            <div class="contact-item">
-              <a
-                href={`mailto:${email}`}
-                title={`Enviar un correo electrónico a ${name} al correo ${email}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="icon-link"
-              >
-                <Mail />
-              </a>
-              <div class="contact-value">
-                {email}
-                <button class="copy-button" onclick={`copyToClipboard('${email}')`} title="Copiar email">
-                  <Copy />
-                </button>
-              </div>
-            </div>
-          )
-        }
-        {
-          phone && (
-            <div class="contact-item">
-              <a
-                href={`tel:${phone}`}
-                title={`Llamar por teléfono a ${name} al número ${phone}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="icon-link"
-              >
-                <Phone />
-              </a>
-              <div class="contact-value">
-                {phone}
-                <button class="copy-button" onclick={`copyToClipboard('${phone}')`} title="Copiar teléfono">
-                  <Copy />
-                </button>
-              </div>
-            </div>
-          )
-        }
+  </div>
+</Section>
+
+<Section title="<i class='fas fa-address-card'></i> Contacto">
+  <div class="contact-info">
+    {
+      email && (
         <div class="contact-item">
           <a
-            href="https://www.google.com/maps?q=6.299806,-75.535111"
+            href={`mailto:${email}`}
+            title={`Enviar un correo electrónico a ${name} al correo ${email}`}
             target="_blank"
             rel="noopener noreferrer"
-            title="Ver ubicación en Google Maps"
             class="icon-link"
           >
-            <WorldMap />
+            <i class="fas fa-envelope"></i>
           </a>
           <div class="contact-value">
-            {city}, {department}, {region}
-            <button class="copy-button" onclick={`copyToClipboard('https://www.google.com/maps?q=6.299806,-75.535111')`} title="Copiar ubicación">
-              <Copy />
+            {email}
+            <button class="copy-button" onclick={`copyToClipboard('${email}')`} title="Copiar email">
+              <i class="fas fa-copy"></i>
             </button>
           </div>
         </div>
-        {
-          linkedUrl && (
-            <div class="contact-item">
-              <a
-                href={linkedUrl}
-                title={`Visitar el perfil de ${name} en LinkedIn`}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="icon-link"
-              >
-                <LinkedIn />
-              </a>
-              <div class="contact-value">
-                {linkedUrl}
-                <button class="copy-button" onclick={`copyToClipboard('${linkedUrl}')`} title="Copiar perfil de LinkedIn">
-                  <Copy />
-                </button>
-              </div>
-            </div>
-          )
-        }
-        {
-          githubUrl && (
-            <div class="contact-item">
-              <a
-                href={githubUrl}
-                title={`Visitar el perfil de ${name} en GitHub`}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="icon-link"
-              >
-                <GitHub />
-              </a>
-              <div class="contact-value">
-                {githubUrl}
-                <button class="copy-button" onclick={`copyToClipboard('${githubUrl}')`} title="Copiar perfil de GitHub">
-                  <Copy />
-                </button>
-              </div>
-            </div>
-          )
-        }
+      )
+    }
+    {
+      phone && (
+        <div class="contact-item">
+          <a
+            href={`tel:${phone}`}
+            title={`Llamar por teléfono a ${name} al número ${phone}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon-link"
+          >
+            <i class="fas fa-phone"></i>
+          </a>
+          <div class="contact-value">
+            {phone}
+            <button class="copy-button" onclick={`copyToClipboard('${phone}')`} title="Copiar teléfono">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      )
+    }
+    <div class="contact-item">
+      <a
+        href="https://www.google.com/maps?q=6.299806,-75.535111"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Ver ubicación en Google Maps"
+        class="icon-link"
+      >
+        <i class="fas fa-map-marker-alt"></i>
+      </a>
+      <div class="contact-value">
+        {city}, {department}, {region}
+        <button class="copy-button" onclick={`copyToClipboard('https://www.google.com/maps?q=6.299806,-75.535111')`} title="Copiar ubicación">
+          <i class="fas fa-copy"></i>
+        </button>
       </div>
-    </footer>
+    </div>
+    {
+      linkedUrl && (
+        <div class="contact-item">
+          <a
+            href={linkedUrl}
+            title={`Visitar el perfil de ${name} en LinkedIn`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon-link"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <div class="contact-value">
+            {linkedUrl}
+            <button class="copy-button" onclick={`copyToClipboard('${linkedUrl}')`} title="Copiar perfil de LinkedIn">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      )
+    }
+    {
+      githubUrl && (
+        <div class="contact-item">
+          <a
+            href={githubUrl}
+            title={`Visitar el perfil de ${name} en GitHub`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon-link"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <div class="contact-value">
+            {githubUrl}
+            <button class="copy-button" onclick={`copyToClipboard('${githubUrl}')`} title="Copiar perfil de GitHub">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      )
+    }
   </div>
 </Section>
 
@@ -204,6 +199,10 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     margin-top: 8px;
   }
 
+  footer.no-print {
+    width: 100%;
+  }
+
   footer a {
     color: var(--secondary);
     display: inline-flex;
@@ -267,6 +266,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     flex-direction: column;
     gap: 8px;
     margin-top: 16px;
+    padding: 0 1rem;
   }
 
   .contact-item {
@@ -368,7 +368,30 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     }
   }
 
-  window.copyToClipboard = function(text: string) {
+  function copyToClipboard(text: string) {
     navigator.clipboard.writeText(text)
+      .then(() => {
+        const notify = document.createElement('div');
+        notify.className = 'notification';
+        notify.textContent = '¡Copiado al portapapeles!';
+        document.body.appendChild(notify);
+        
+        setTimeout(() => {
+          notify.classList.add('show');
+        }, 10);
+        
+        setTimeout(() => {
+          notify.classList.remove('show');
+          setTimeout(() => {
+            document.body.removeChild(notify);
+          }, 300);
+        }, 2000);
+      })
+      .catch(err => {
+        console.error('Error al copiar: ', err);
+      });
   }
+  
+  // Exponer la función al ámbito global para que pueda ser accedida desde los atributos onclick
+  window.copyToClipboard = copyToClipboard;
 </script>

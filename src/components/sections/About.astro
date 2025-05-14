@@ -1,12 +1,12 @@
 ---
-import Section from "../Section.astro"
-import { getCVData } from "../../utils/cv"
+import { Section } from "@sections/index";
+import { getCVData } from "../../utils/cv";
 
-const cvData = await getCVData()
-const { summary } = cvData.basics
+const cvData = await getCVData();
+const { summary } = cvData.basics;
 ---
 
-<Section title="<i class='fas fa-user'></i> Sobre mí">
+<Section title="<i class='fas fa-id-card'></i> Perfil">
   <div class="about-content">
     <p>{summary}</p>
   </div>

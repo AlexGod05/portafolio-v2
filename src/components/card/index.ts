@@ -1,1 +1,1 @@
-export { default as CompanyCard } from "./CompanyCard.astro";
+export { default as CardInit } from "./scripts/card";

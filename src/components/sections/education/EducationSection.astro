@@ -1,0 +1,42 @@
+---
+import { Section } from "@sections/index";
+import { Accordion } from "@accordion/index";
+import { getCVData } from "@utils/cv";
+import EducationCard from "@sections/education/card/EducationCard.astro";
+
+const cvData = await getCVData()
+const { education } = cvData
+---
+
+<Section>
+  <Accordion title="Educación" icon="fas fa-graduation-cap">
+    <div class="cards-grid education-grid">
+      {
+        education.map(
+          ({ institution, area, studyType, startDate, endDate, url }) => {
+            const startYear = new Date(startDate).getFullYear()
+            const endYear =
+              endDate != null ? new Date(endDate).getFullYear() : "Actual"
+
+            return (
+              <EducationCard
+                institution={institution}
+                area={area}
+                studyType={studyType}
+                startYear={startYear}
+                endYear={endYear}
+                url={url}
+              />
+            )
+          }
+        )
+      }
+    </div>
+  </Accordion>
+</Section>
+
+<style>
+  @import '@card/styles/cards.css';
+  
+  /* Estilos específicos adicionales si son necesarios */
+</style>

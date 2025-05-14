@@ -1,0 +1,84 @@
+---
+import ExperienceModal from "@sections/experience/modal/ExperienceModal.astro";
+import { Section } from "@sections/index";
+import { Accordion } from "@accordion/index";
+import { getCVData } from "@utils/cv";
+import CompanyCard from "@sections/experience/company/card/CompanyCard.astro";
+
+const cvData = await getCVData();
+const { work, projects } = cvData;
+
+const groupedWork = work.reduce(
+  (acc, experience) => {
+    const companyName = experience.name.split(" - ")[0];
+    if (!acc[companyName]) {
+      acc[companyName] = [];
+    }
+    acc[companyName].push(experience);
+    return acc;
+  },
+  {} as Record<string, typeof work>
+);
+
+const groupedProjects = projects.reduce(
+  (acc, project) => {
+    const companyMatch = Object.keys(groupedWork).find(
+      (company) =>
+        project.name.includes(company) ||
+        (project.description && project.description.includes(company))
+    );
+
+    const company = companyMatch || "Otros";
+
+    if (!acc[company]) {
+      acc[company] = [];
+    }
+
+    acc[company].push(project);
+    return acc;
+  },
+  {} as Record<string, typeof projects>
+);
+---
+
+<Section>
+  <Accordion title="Experiencia laboral" icon="fas fa-briefcase">
+    <div class="companies-grid">
+      {
+        Object.entries(groupedWork).map(([company, experiences]) => {
+          const typedExperiences = experiences as typeof work;
+          const firstExperience = typedExperiences[0];
+          const lastExperience = typedExperiences[typedExperiences.length - 1];
+          const startYear = new Date(firstExperience.startDate).getFullYear();
+          const endYear = lastExperience.endDate
+            ? new Date(lastExperience.endDate).getFullYear()
+            : undefined;
+
+          return (
+            <CompanyCard
+              company={company}
+              startYear={startYear}
+              endYear={endYear}
+            />
+          );
+        })
+      }
+    </div>
+  </Accordion>
+</Section>
+
+<ExperienceModal />
+
+<div
+  id="grouped-work-data"
+  data-work={JSON.stringify(groupedWork)}
+  style="display: none;"
+>
+</div>
+<div
+  id="grouped-projects-data"
+  data-projects={JSON.stringify(groupedProjects)}
+  style="display: none;"
+>
+</div>
+

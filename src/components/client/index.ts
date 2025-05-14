@@ -1,0 +1,1 @@
+export { default as ClientInit } from './ClientInit.astro';

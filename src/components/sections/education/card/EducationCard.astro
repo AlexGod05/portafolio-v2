@@ -1,0 +1,38 @@
+---
+import { CompactYearBadge } from '@yearBadge/index';
+
+interface Props {
+  institution: string;
+  area: string;
+  studyType: string;
+  startYear: string | number;
+  endYear?: string | number;
+  url: string;
+}
+
+const { institution, area, studyType, startYear, endYear, url } = Astro.props;
+---
+
+<a href={url} target="_blank" rel="noopener noreferrer" class="card education-card">
+  <div class="card-content education-card-content">
+    <div class="card-header education-header">
+      <h3>{institution}</h3>
+      <CompactYearBadge startYear={startYear} endYear={endYear} showIcon={true} />
+    </div>
+    <p class="card-description education-degree">{studyType} en {area}</p>
+    <div class="card-indicator education-indicator">
+      <i class="fas fa-external-link-alt"></i>
+      <span>Ver institución</span>
+    </div>
+  </div>
+</a>
+
+<style>
+  @import '@card/styles/cards.css';
+
+  .education-degree {
+    margin: 0 0 0.5rem 0;
+    color: var(--secondary);
+    font-size: 0.85rem;
+  }
+</style> 

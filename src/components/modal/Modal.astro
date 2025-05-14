@@ -1,0 +1,82 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  subtitle?: string;
+}
+
+const { id, title, subtitle } = Astro.props;
+---
+
+<div id={id} class="modal" role="dialog" aria-modal="true">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="left-spacer"></div>
+      <h2>{title}</h2>
+      <div class="right-controls">
+        <button class="close-modal" aria-label="Cerrar modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    {subtitle && <div class="modal-subtitle">{subtitle}</div>}
+    <div class="modal-body">
+      <slot />
+    </div>
+    <div class="modal-footer">
+      <button class="close-modal-button">
+        Cerrar
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initModal(modalId: string) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+
+    const closeBtn = modal.querySelector('.close-modal');
+    const closeModalBtn = modal.querySelector('.close-modal-button');
+    
+    if (!closeBtn) return;
+
+    // Función para abrir la modal
+    function openModal() {
+      if (!modal) return;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Función para cerrar la modal
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Event listeners
+    closeBtn.addEventListener('click', closeModal);
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('click', closeModal);
+    }
+    
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Exponer funciones públicamente
+    Object.assign(modal, { openModal, closeModal });
+  }
+
+  // Inicializar todos los modales al cargar la página
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.modal').forEach(modal => {
+      if (modal.id) {
+        initModal(modal.id);
+      }
+    });
+  });
+</script> 

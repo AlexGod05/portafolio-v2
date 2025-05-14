@@ -4,10 +4,23 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@accordion/*": ["src/components/accordion/*"],
+      "@buttons/*": ["src/components/button/*"],
+      "@card/*": ["src/components/card/*"],
+      "@client/*": ["src/components/client/*"],
+      "@lists/*": ["src/components/lists/*"],
+      "@modal/*": ["src/components/modal/*"],
       "@sections/*": ["src/components/sections/*"],
+      "@theme/*": ["src/components/theme/*"],
+      "@yearBadge/*": ["src/components/yearBadge/*"],
+      "@experience/*": ["src/components/sections/experience/*"],
+      "@education/*": ["src/components/sections/education/*"],
+      "@types/*": ["src/types/*"],
+      "@data/*": ["src/data/*"],
       "@utils/*": ["src/utils/*"],
-      "@/*": ["src/*"],
-      "@scripts/*": ["src/scripts/*"]
+      "@scripts/*": ["src/scripts/*"],
+      "@icons/*": ["src/icons/*"],
+      "@globalStyles/*": ["src/styles/global.css"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

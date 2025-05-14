@@ -1,0 +1,196 @@
+/* Estilos para las pestañas en el modal */
+
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tab-header {
+  position: sticky;
+  top: 73px; /* Altura del encabezado del modal + separador */
+  background: var(--background, #ffffff);
+  z-index: 4;
+  border-bottom: 1px solid var(--border, #e5e5e5);
+  margin-top: 0;
+}
+
+.tab-buttons {
+  display: flex;
+  padding: 0 1rem;
+  margin-bottom: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tab-buttons::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-button {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary, #666);
+  border-bottom: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tab-button i {
+  font-size: 0.9rem;
+}
+
+.tab-button:hover:not(.disabled) {
+  color: var(--primary, #800020);
+}
+
+.tab-button.active {
+  color: var(--primary, #800020);
+  border-bottom: 2px solid var(--primary, #800020);
+}
+
+.tab-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tab-button .badge {
+  background-color: var(--primary, #800020);
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 1rem;
+  margin-left: 0.25rem;
+}
+
+.tab-content {
+  flex: 1;
+  width: 100%;
+  margin-top: 1rem;
+  background: var(--background, #ffffff);
+}
+
+.tab-pane {
+  display: none;
+  width: 100%;
+}
+
+.tab-pane.active {
+  display: block;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Estilos para los proyectos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+  padding: 0.5rem 1.25rem 1.5rem;
+}
+
+.project-card {
+  background: transparent;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border, #e5e5e5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+  height: 100%;
+}
+
+.project-card:hover {
+  border-color: var(--primary, #800020);
+  transform: translateY(-2px);
+  background-color: rgba(139, 0, 0, 0.02);
+}
+
+.project-card h3 {
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--text-color, #333);
+}
+
+.project-card a {
+  color: var(--text-color, #333);
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  color: var(--primary, #800020);
+  text-decoration: underline;
+}
+
+.project-card p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-secondary, #666);
+  margin: 0;
+  flex: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-tag {
+  background: var(--background, #f5f5f5);
+  color: var(--text-secondary, #666);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--border, #e5e5e5);
+}
+
+.no-projects {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary, #666);
+}
+
+/* Estilos para modo oscuro */
+:root.dark .tab-header,
+:root.dark .tab-content {
+  background: var(--background, #1a1a1a);
+}
+
+:root.dark .project-card {
+  background: transparent;
+  border-color: var(--border, #333333);
+}
+
+:root.dark .project-card:hover {
+  background-color: rgba(178, 34, 34, 0.05);
+  border-color: var(--primary, #B22222);
+}
+
+@media (max-width: 768px) {
+  .tab-header {
+    top: 63px; /* Altura ajustada para móviles */
+  }
+  
+  .tab-button {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+} 

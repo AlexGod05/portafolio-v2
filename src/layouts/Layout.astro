@@ -1,8 +1,9 @@
 ---
-import { getCVData } from "../utils/cv"
-import { getInitialTheme } from '../scripts/theme';
-import '../styles/global.css';
-import ClientInit from '../components/ClientInit.astro';
+import { getInitialTheme } from '../components/theme/script/theme';
+import '../components/modal/styles/modal-tabs.css';
+import { ClientInit } from '@client/index';
+import { getCVData } from "@utils/cv"
+import '@globalStyles/global.css';
 
 interface Props {
   title: string

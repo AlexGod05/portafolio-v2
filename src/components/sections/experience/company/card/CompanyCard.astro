@@ -1,0 +1,26 @@
+---
+import { CompactYearBadge } from '@yearBadge/index';
+
+interface Props {
+  company: string;
+  startYear: string | number;
+  endYear?: string | number;
+}
+
+const { company, startYear, endYear } = Astro.props;
+
+const displayEndYear = endYear || "Actual";
+---
+
+<div class="company-card" data-company={company}>
+  <div class="company-card-content">
+    <div class="company-header">
+      <h3>{company}</h3>
+      <CompactYearBadge startYear={startYear} endYear={endYear} showIcon={true} />
+    </div>
+    <div class="company-indicator">
+      <i class="fas fa-info-circle"></i>
+      <span>Ver experiencia</span>
+    </div>
+  </div>
+</div> 

@@ -1,0 +1,116 @@
+---
+import SkillCard from "./card/SkillCard.astro";
+import { Accordion } from "@accordion/index";
+import { Section } from "@sections/index";
+import { getCVData } from "@utils/cv"
+
+const cvData = await getCVData()
+const { skills } = cvData
+
+const SKILLS_ICONS: Record<string, string> = {
+  HTML: `<i class="fab fa-html5"></i>`,
+  CSS: `<i class="fab fa-css3-alt"></i>`,
+  JavaScript: `<i class="fab fa-js"></i>`,
+  TypeScript: `<i class="fab fa-js"></i>`,
+  React: `<i class="fab fa-react"></i>`,
+  Node: `<i class="fab fa-node-js"></i>`,
+  MySQL: `<i class="fas fa-database"></i>`,
+  Git: `<i class="fab fa-git-alt"></i>`,
+  GitHub: `<i class="fab fa-github"></i>`,
+  Next: `<i class="fab fa-react"></i>`,
+  Tailwind: `<i class="fab fa-css3-alt"></i>`,
+  SCRUM: `<i class="fas fa-tasks"></i>`,
+  Kanban: `<i class="fas fa-columns"></i>`,
+  Java: `<i class="fab fa-java"></i>`,
+  "Spring Framework": `<i class="fas fa-leaf"></i>`,
+  AWS: `<i class="fab fa-aws"></i>`,
+  "Azure DevOps": `<i class="fab fa-microsoft"></i>`,
+  PostgreSQL: `<i class="fas fa-database"></i>`,
+  MongoDB: `<i class="fas fa-database"></i>`,
+  FluidAttack: `<i class="fas fa-shield-alt"></i>`,
+  GitLab: `<i class="fab fa-gitlab"></i>`,
+  Mockito: `<i class="fas fa-vial"></i>`,
+  JUnit5: `<i class="fas fa-flask"></i>`,
+  Kubernetes: `<i class="fas fa-ship"></i>`,
+  RabbitMQ: `<i class="fas fa-exchange-alt"></i>`,
+  Redis: `<i class="fas fa-database"></i>`,
+  Docker: `<i class="fab fa-docker"></i>`,
+  Contentful: `<i class="fas fa-file-alt"></i>`,
+  NodeJS: `<i class="fab fa-node-js"></i>`,
+  Angular: `<i class="fab fa-angular"></i>`,
+  Astro: `<i class="fas fa-rocket"></i>`,
+  Trello: `<i class="fab fa-trello"></i>`,
+  Python: `<i class="fab fa-python"></i>`,
+  Serverless: `<i class="fas fa-cloud"></i>`,
+  Nakama: `<i class="fas fa-gamepad"></i>`
+}
+
+// Mapeo de nombres de habilidades a claves de iconos
+const SKILL_NAME_TO_ICON: Record<string, string> = {
+  "HTML": "HTML",
+  "CSS": "CSS",
+  "JavaScript": "JavaScript",
+  "TypeScript": "TypeScript",
+  "React": "React",
+  "Node.js": "Node",
+  "MySQL": "MySQL",
+  "Git": "Git",
+  "GitHub": "GitHub",
+  "Next.js": "Next",
+  "Tailwind CSS": "Tailwind",
+  "SCRUM": "SCRUM",
+  "Kanban": "Kanban",
+  "Java": "Java",
+  "Spring Framework": "Spring Framework",
+  "AWS": "AWS",
+  "Azure DevOps": "Azure DevOps",
+  "PostgreSQL": "PostgreSQL",
+  "MongoDB": "MongoDB",
+  "FluidAttack": "FluidAttack",
+  "GitLab": "GitLab",
+  "Mockito": "Mockito",
+  "JUnit5": "JUnit5",
+  "Kubernetes": "Kubernetes",
+  "RabbitMQ": "RabbitMQ",
+  "Redis": "Redis",
+  "Docker": "Docker",
+  "Contentful": "Contentful",
+  "NodeJS": "NodeJS",
+  "Angular": "Angular",
+  "Astro": "Astro",
+  "Trello": "Trello",
+  "Python": "Python",
+  "Serverless": "Serverless",
+  "Nakama": "Nakama"
+}
+---
+
+<Section>
+  <Accordion title="Habilidades" icon="fas fa-tools">
+    <div class="cards-grid skills-grid">
+      {
+        skills.map(({ name, keywords }) => {
+          const iconKey = SKILL_NAME_TO_ICON[name] || name;
+          const iconHtml = SKILLS_ICONS[iconKey];
+
+          return (
+            <SkillCard
+              name={name}
+              iconHtml={iconHtml}
+              keywords={keywords}
+            />
+          )
+        })
+      }
+    </div>
+  </Accordion>
+</Section>
+
+<style>
+  @import '@card/styles/cards.css';
+  
+  .skills-grid {
+    gap: 1rem;
+    padding: 1rem;
+  }
+</style>

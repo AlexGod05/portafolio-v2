@@ -1,20 +1,16 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
 
-import About from "../components/sections/About.astro"
-import Education from "../components/sections/Education.astro"
-import ExperienceSection from "../components/sections/ExperienceSection.astro"
-import Hero from "../components/sections/Hero.astro"
-import Projects from "../components/sections/Projects.astro"
-import Skills from "../components/sections/Skills.astro"
-import FloatingButtons from "../components/FloatingButtons.astro"
-import ScrollToTop from "../components/ScrollToTop.astro"
+import { EducationSection, ExperienceSection, SkillsSection } from "@sections/index";
+import { ScrollToTopButton, FloatingButtons } from "@buttons/index";
+import About from "@sections/About.astro";
+import Hero from "@sections/Hero.astro";
 
-import { getCVData } from "../utils/cv"
-import "../styles/global.css"
+import { getCVData } from "../utils/cv";
+import "../styles/global.css";
 
-const cvData = await getCVData()
-const { name, label } = cvData.basics
+const cvData = await getCVData();
+const { name, label } = cvData.basics;
 ---
 
 <Layout title={`Portafolio de ${name} - ${label}`}>
@@ -22,13 +18,12 @@ const { name, label } = cvData.basics
     <Hero />
     <About />
     <ExperienceSection />
-    <Education />
-    <Projects />
-    <Skills />
+    <EducationSection />
+    <SkillsSection />
   </main>
 
   <FloatingButtons />
-  <ScrollToTop />
+  <ScrollToTopButton />
 </Layout>
 
 <style>
