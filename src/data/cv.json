@@ -188,19 +188,8 @@
       "name":"Frameworks y Bibliotecas Backend",
       "keywords":[
         "Spring Framework",
-        "Spring Boot",
         "FastAPI",
         "Django"
-      ]
-    },
-    {
-      "name":"Conocimientos Frontend",
-      "keywords":[
-        "JavaScript",
-        "Angular",
-        "Astro",
-        "HTML/CSS",
-        "Figma"
       ]
     },
     {
@@ -209,18 +198,28 @@
         "PostgreSQL",
         "MySQL",
         "MongoDB",
-        "SQL",
+        "DynamoDB",
+        "Firebase",
         "Redis"
+      ]
+    },    
+    {
+      "name":"Mensajería y Colas",
+      "keywords":[
+        "RabbitMQ",
+        "SQS"
       ]
     },
     {
       "name":"Cloud y Servicios",
       "keywords":[
-        "AWS Lambda",
-        "AWS S3",
         "Serverless",
-        "DynamoDB",
-        "AWS ECS/ECR"
+        "Lambda",
+        "S3",
+        "EC2",
+        "RDS",
+        "CloudFormation",
+        "API Gateway"
       ]
     },
     {
@@ -241,24 +240,20 @@
         "API REST",
         "Event-Driven",
         "gRPC",
-        "RPC"
+        "RPC",
+        "SOAP",
+        "GraphQL",
+        "WebSocket"
       ]
     },
     {
       "name":"Herramientas y Metodologías",
       "keywords":[
-        "Git",
-        "GitLab",
         "SCRUM",
         "Kanban",
-        "Mockito/JUnit5"
-      ]
-    },
-    {
-      "name":"Mensajería y Colas",
-      "keywords":[
-        "RabbitMQ",
-        "SQS"
+        "Jira",
+        "Slack",
+        "Discord"
       ]
     },
     {
@@ -266,12 +261,9 @@
       "keywords":[
         "Microsoft Office",
         "Google Workspace",
-        "Jira",
-        "Confluence",
-        "Slack",
         "Microsoft Teams",
-        "Notion",
-        "Miro",
+        "Obsidian",
+        "Excalidraw",
         "Figma"
       ]
     }
@@ -334,7 +326,6 @@
         "Serverless",
         "AWS Lambda",
         "API Gateway",
-        "DynamoDB",
         "SQS"
       ],
       "url":"https://www.polygon.us/",

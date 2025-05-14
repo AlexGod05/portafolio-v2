@@ -26,7 +26,7 @@ function setupCompanyCards() {
       const modalElement = document.getElementById('experience-modal');
       if (!modalElement) return;
 
-      /** @type {HTMLElement & { closeModal?: () => void, openModal?: () => void }} */
+      /** @type {HTMLElement & { closeModal?: () => void, openModal?: () => void, navigateModals?: (direction: 'prev' | 'next') => void }} */
       const modal = modalElement;
 
       const modalBody = modal.querySelector('.modal-body');
@@ -63,7 +63,7 @@ function setupCompanyCards() {
         document.body.style.overflow = 'hidden';
       }
 
-      const handleEscKey = (event) => {
+      const handleKeyNavigation = (event) => {
         if (event.key === 'Escape') {
           if (typeof modal['closeModal'] === 'function') {
             modal['closeModal']();
@@ -71,10 +71,19 @@ function setupCompanyCards() {
             modal.classList.remove('active');
             document.body.style.overflow = '';
           }
-          document.removeEventListener('keydown', handleEscKey);
+          document.removeEventListener('keydown', handleKeyNavigation);
+        } else if (event.key === 'ArrowLeft') {
+          if (typeof modal['navigateModals'] === 'function') {
+            modal['navigateModals']('prev');
+          }
+        } else if (event.key === 'ArrowRight') {
+          if (typeof modal['navigateModals'] === 'function') {
+            modal['navigateModals']('next');
+          }
         }
       };
-      document.addEventListener('keydown', handleEscKey);
+      
+      document.addEventListener('keydown', handleKeyNavigation);
     });
   });
 }

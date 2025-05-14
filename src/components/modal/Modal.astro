@@ -11,9 +11,16 @@ const { id, title, subtitle } = Astro.props;
 <div id={id} class="modal" role="dialog" aria-modal="true">
   <div class="modal-content">
     <div class="modal-header">
-      <div class="left-spacer"></div>
+      <div class="left-controls">
+        <button class="nav-arrow prev-modal" aria-label="Anterior modal">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      </div>
       <h2>{title}</h2>
       <div class="right-controls">
+        <button class="nav-arrow next-modal" aria-label="Siguiente modal">
+          <i class="fas fa-chevron-right"></i>
+        </button>
         <button class="close-modal" aria-label="Cerrar modal">
           <i class="fas fa-times"></i>
         </button>
@@ -38,6 +45,8 @@ const { id, title, subtitle } = Astro.props;
 
     const closeBtn = modal.querySelector('.close-modal');
     const closeModalBtn = modal.querySelector('.close-modal-button');
+    const prevBtn = modal.querySelector('.prev-modal');
+    const nextBtn = modal.querySelector('.next-modal');
     
     if (!closeBtn) return;
 
@@ -55,7 +64,49 @@ const { id, title, subtitle } = Astro.props;
       document.body.style.overflow = '';
     }
 
-    // Event listeners
+    // Navegación entre modales
+    function navigateModals(direction: 'prev' | 'next') {
+      const companyCards = Array.from(document.querySelectorAll('.company-card'));
+      if (!companyCards.length) return;
+      
+      // Obtener el nombre de la empresa actual 
+      const currentCompany = modal.querySelector('.modal-header h2')?.textContent?.trim() || '';
+      
+      // Encontrar el índice de la tarjeta actual
+      const currentIndex = companyCards.findIndex(
+        card => card.getAttribute('data-company')?.trim() === currentCompany
+      );
+      
+      if (currentIndex === -1) return;
+      
+      // Calcular el nuevo índice
+      let newIndex;
+      if (direction === 'next') {
+        newIndex = (currentIndex + 1) % companyCards.length;
+      } else {
+        newIndex = (currentIndex - 1 + companyCards.length) % companyCards.length;
+      }
+      
+      // Simular clic en la nueva tarjeta
+      const newCard = companyCards[newIndex] as HTMLElement;
+      if (newCard) {
+        closeModal();
+        setTimeout(() => {
+          newCard.click();
+        }, 300); // Delay después de cerrar la modal
+      }
+    }
+
+    // Event listeners para botones de navegación
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => navigateModals('prev'));
+    }
+    
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => navigateModals('next'));
+    }
+
+    // Event listeners para cerrar modal
     closeBtn.addEventListener('click', closeModal);
     if (closeModalBtn) {
       closeModalBtn.addEventListener('click', closeModal);
@@ -67,8 +118,40 @@ const { id, title, subtitle } = Astro.props;
       }
     });
 
+    // Keyboard navigation
+    modal.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        navigateModals('prev');
+      } else if (e.key === 'ArrowRight') {
+        navigateModals('next');
+      } else if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // Cuando se abre el modal, asignar focus para permitir navegación con teclado
+    function handleModalActive() {
+      if (modal.classList.contains('active')) {
+        modal.setAttribute('tabindex', '0');
+        modal.focus();
+      } else {
+        modal.removeAttribute('tabindex');
+      }
+    }
+
+    // Observar cambios en la clase active
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+          handleModalActive();
+        }
+      });
+    });
+
+    observer.observe(modal, { attributes: true });
+
     // Exponer funciones públicamente
-    Object.assign(modal, { openModal, closeModal });
+    Object.assign(modal, { openModal, closeModal, navigateModals });
   }
 
   // Inicializar todos los modales al cargar la página

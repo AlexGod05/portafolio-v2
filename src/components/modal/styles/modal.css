@@ -52,8 +52,20 @@
   box-shadow: none;
 }
 
-.left-spacer {
+.left-controls, .right-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.left-controls {
   width: 2rem;
+}
+
+.right-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .modal-header h2 {
@@ -67,10 +79,6 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-}
-
-.right-controls {
-  width: 2rem;
 }
 
 .separator {
@@ -91,7 +99,7 @@
   z-index: 4;
 }
 
-.close-modal {
+.close-modal, .nav-arrow {
   background: none;
   border: none;
   cursor: pointer;
@@ -110,8 +118,21 @@
   transform: rotate(90deg);
 }
 
+.nav-arrow:hover {
+  background: var(--bg-secondary);
+  transform: translateX(0) scale(1.1);
+}
+
+.prev-modal:hover {
+  transform: translateX(-2px);
+}
+
+.next-modal:hover {
+  transform: translateX(2px);
+}
+
 /* Using a more generic selector to ensure it works with Astro's component system */
-.close-modal svg {
+.close-modal svg, .nav-arrow svg {
   width: 1.25rem;
   height: 1.25rem;
 }
