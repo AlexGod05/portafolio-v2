@@ -11,15 +11,9 @@
       </div>
     </label>
   </div>
-  <button class="language-toggle hidden" aria-label="Cambiar idioma" id="language-toggle">
-    <i class="fas fa-globe"></i>
-    <span class="lang-text">ES</span>
-  </button>
 </div>
 
 <script>
-  import { toggleLanguage } from '../scripts/language';
-
   function toggleTheme() {
     const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -37,7 +31,6 @@
   }
 
   const themeToggle = document.getElementById('theme-toggle');
-  const languageToggle = document.getElementById('language-toggle');
 
   // Actualizar el texto del idioma al cargar la página
   updateLanguageText();
@@ -48,12 +41,6 @@
 
     themeToggle.addEventListener('change', () => {
       toggleTheme();
-    });
-  }
-
-  if (languageToggle) {
-    languageToggle.addEventListener('click', () => {
-      toggleLanguage();
     });
   }
 </script>

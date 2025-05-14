@@ -1,7 +1,6 @@
 ---
 import { getCVData } from "../utils/cv"
 import { getInitialTheme } from '../scripts/theme';
-import { getInitialLanguage } from '../scripts/language';
 import '../styles/global.css';
 import ClientInit from '../components/ClientInit.astro';
 
@@ -13,11 +12,10 @@ const { title } = Astro.props
 const cvData = await getCVData()
 const { image, summary } = cvData.basics
 const initialTheme = getInitialTheme();
-const initialLanguage = getInitialLanguage();
 ---
 
 <!doctype html>
-<html lang={initialLanguage} class={initialTheme}>
+<html lang="es" class={initialTheme}>
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>

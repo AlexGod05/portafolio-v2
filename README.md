@@ -9,7 +9,6 @@ Personal portfolio developed with Astro and TypeScript, designed to showcase my 
 ## 🚀 Features
 
 - 🎨 Minimalist and modern design
-- 🌐 Multi-language support (Spanish/English)
 - 📱 Fully responsive
 - ⚡ Performance optimized with Astro
 - 🎯 Keyboard navigation with Ninja Keys

@@ -99,7 +99,6 @@ export interface Skills {
 }
 
 export interface Languages {
-  language: string
   fluency: string
 }
 
