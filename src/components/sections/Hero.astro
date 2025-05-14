@@ -22,147 +22,143 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
 
 <Section>
   <div class="container">
-    <div class="info">
-      <div class="header">
+    <div class="top-section">
+      <figure>
+        <img src={image} alt={name} />
+      </figure>
+      <div class="name-section">
         <h1>{name}</h1>
+        <h2>{label}</h2>
       </div>
-      <h2>{label}</h2>
-      <footer class="print">
-        {printInfo}
-      </footer>
-      <footer class="no-print">
-        <div class="contact-info">
-          {
-            email && (
-              <div class="contact-item">
-                <a
-                  href={`mailto:${email}`}
-                  title={`Enviar un correo electrónico a ${name} al correo ${email}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="icon-link"
-                >
-                  <Mail />
-                </a>
-                <div class="contact-value">
-                  {email}
-                  <button class="copy-button" onclick={`copyToClipboard('${email}')`} title="Copiar email">
-                    <Copy />
-                  </button>
-                </div>
-              </div>
-            )
-          }
-          {
-            phone && (
-              <div class="contact-item">
-                <a
-                  href={`tel:${phone}`}
-                  title={`Llamar por teléfono a ${name} al número ${phone}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="icon-link"
-                >
-                  <Phone />
-                </a>
-                <div class="contact-value">
-                  {phone}
-                  <button class="copy-button" onclick={`copyToClipboard('${phone}')`} title="Copiar teléfono">
-                    <Copy />
-                  </button>
-                </div>
-              </div>
-            )
-          }
-          <div class="contact-item">
-            <a
-              href="https://www.google.com/maps?q=6.299806,-75.535111"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Ver ubicación en Google Maps"
-              class="icon-link"
-            >
-              <WorldMap />
-            </a>
-            <div class="contact-value">
-              {city}, {department}, {region}
-              <button class="copy-button" onclick={`copyToClipboard('https://www.google.com/maps?q=6.299806,-75.535111')`} title="Copiar ubicación">
-                <Copy />
-              </button>
-            </div>
-          </div>
-          {
-            linkedUrl && (
-              <div class="contact-item">
-                <a
-                  href={linkedUrl}
-                  title={`Visitar el perfil de ${name} en LinkedIn`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="icon-link"
-                >
-                  <LinkedIn />
-                </a>
-                <div class="contact-value">
-                  {linkedUrl}
-                  <button class="copy-button" onclick={`copyToClipboard('${linkedUrl}')`} title="Copiar perfil de LinkedIn">
-                    <Copy />
-                  </button>
-                </div>
-              </div>
-            )
-          }
-          {
-            githubUrl && (
-              <div class="contact-item">
-                <a
-                  href={githubUrl}
-                  title={`Visitar el perfil de ${name} en GitHub`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="icon-link"
-                >
-                  <GitHub />
-                </a>
-                <div class="contact-value">
-                  {githubUrl}
-                  <button class="copy-button" onclick={`copyToClipboard('${githubUrl}')`} title="Copiar perfil de GitHub">
-                    <Copy />
-                  </button>
-                </div>
-              </div>
-            )
-          }
-        </div>
-      </footer>
     </div>
-    <figure>
-      <img src={image} alt={name} />
-    </figure>
+    <footer class="print">
+      {printInfo}
+    </footer>
+    <footer class="no-print">
+      <div class="contact-info">
+        {
+          email && (
+            <div class="contact-item">
+              <a
+                href={`mailto:${email}`}
+                title={`Enviar un correo electrónico a ${name} al correo ${email}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="icon-link"
+              >
+                <Mail />
+              </a>
+              <div class="contact-value">
+                {email}
+                <button class="copy-button" onclick={`copyToClipboard('${email}')`} title="Copiar email">
+                  <Copy />
+                </button>
+              </div>
+            </div>
+          )
+        }
+        {
+          phone && (
+            <div class="contact-item">
+              <a
+                href={`tel:${phone}`}
+                title={`Llamar por teléfono a ${name} al número ${phone}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="icon-link"
+              >
+                <Phone />
+              </a>
+              <div class="contact-value">
+                {phone}
+                <button class="copy-button" onclick={`copyToClipboard('${phone}')`} title="Copiar teléfono">
+                  <Copy />
+                </button>
+              </div>
+            </div>
+          )
+        }
+        <div class="contact-item">
+          <a
+            href="https://www.google.com/maps?q=6.299806,-75.535111"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Ver ubicación en Google Maps"
+            class="icon-link"
+          >
+            <WorldMap />
+          </a>
+          <div class="contact-value">
+            {city}, {department}, {region}
+            <button class="copy-button" onclick={`copyToClipboard('https://www.google.com/maps?q=6.299806,-75.535111')`} title="Copiar ubicación">
+              <Copy />
+            </button>
+          </div>
+        </div>
+        {
+          linkedUrl && (
+            <div class="contact-item">
+              <a
+                href={linkedUrl}
+                title={`Visitar el perfil de ${name} en LinkedIn`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="icon-link"
+              >
+                <LinkedIn />
+              </a>
+              <div class="contact-value">
+                {linkedUrl}
+                <button class="copy-button" onclick={`copyToClipboard('${linkedUrl}')`} title="Copiar perfil de LinkedIn">
+                  <Copy />
+                </button>
+              </div>
+            </div>
+          )
+        }
+        {
+          githubUrl && (
+            <div class="contact-item">
+              <a
+                href={githubUrl}
+                title={`Visitar el perfil de ${name} en GitHub`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="icon-link"
+              >
+                <GitHub />
+              </a>
+              <div class="contact-value">
+                {githubUrl}
+                <button class="copy-button" onclick={`copyToClipboard('${githubUrl}')`} title="Copiar perfil de GitHub">
+                  <Copy />
+                </button>
+              </div>
+            </div>
+          )
+        }
+      </div>
+    </footer>
   </div>
 </Section>
 
 <style>
   .container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
-  .info {
+  .top-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .name-section {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding-right: 32px;
-  }
-
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
   }
 
   h1 {
@@ -180,8 +176,15 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
   img {
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    width: 128px;
+    width: 150px;
+    height: 150px;
     border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  img:hover {
+    transform: scale(1.02);
   }
 
   span {
@@ -331,38 +334,23 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
   }
 
   @media (width <= 700px) {
-    .container {
-      flex-direction: column-reverse;
-    }
-
-    .info {
-      justify-content: center;
-      align-items: center;
-      padding-right: 0;
-      text-align: center;
-    }
-
-    .header {
+    .top-section {
       flex-direction: column;
-      gap: 0.5rem;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
     }
 
-    figure {
-      display: flex;
-      justify-content: center;
+    .name-section {
       align-items: center;
     }
 
-    h2 {
-      text-wrap: balance;
-    }
-
     figure {
-      margin: 0 auto;
+      margin-bottom: 0.5rem;
     }
 
     .contact-info {
-      align-items: flex-start;
+      align-items: center;
     }
     .contact-item {
       width: 100%;
