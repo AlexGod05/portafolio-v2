@@ -327,6 +327,28 @@
       "icon":"graduation-cap"
     },
     {
+      "name":"Panafutbol",
+      "client": "Panafoto",
+      "company": "Polygonus",
+      "startYear": "2024",
+      "endYear": "Actual",
+      "description":"Desarrolló una API REST para un videojuego de dominadas de fútbol con sistema de recompensas. Implementó un sistema de redención de facturas que otorga intentos en el juego, tabla de clasificación para premios, y sincronización en tiempo real de puntuaciones. La API fue diseñada para ser consumida por un cliente Unity WebGL3.",
+      "highlights":[
+        "TypeScript",
+        "Serverless",
+        "AWS",
+        "GitHub Actions",
+        "PostgreSQL",
+        "Postman",
+        "Excalidraw",
+        "REST API",
+        "Unity WebGL3"
+      ],
+      "url":"https://www.panafoto.com/",
+      "github": "https://github.com/AlexGod05/panafutbol-api",
+      "icon":"futbol"
+    },
+    {
       "name":"Fanta Runner",
       "client": "Fanta",
       "company": "Polygonus",
@@ -369,28 +391,6 @@
       "icon":"snowflake"
     },
     {
-      "name":"Panafutbol",
-      "client": "Panafoto",
-      "company": "Polygonus",
-      "startYear": "2024",
-      "endYear": "Actual",
-      "description":"Desarrolló una API REST para un videojuego de dominadas de fútbol con sistema de recompensas. Implementó un sistema de redención de facturas que otorga intentos en el juego, tabla de clasificación para premios, y sincronización en tiempo real de puntuaciones. La API fue diseñada para ser consumida por un cliente Unity WebGL3.",
-      "highlights":[
-        "TypeScript",
-        "Serverless",
-        "AWS",
-        "GitHub Actions",
-        "PostgreSQL",
-        "Postman",
-        "Excalidraw",
-        "REST API",
-        "Unity WebGL3"
-      ],
-      "url":"https://www.panafoto.com/",
-      "github": "https://github.com/AlexGod05/panafutbol-api",
-      "icon":"futbol"
-    },
-    {
       "name":"Agentes de lo Cotidiano",
       "client": "Comfama",
       "company": "Polygonus",
@@ -428,6 +428,26 @@
       "url":"https://www.polygon.us/",
       "github": "https://github.com/AlexGod05/nakama-config",
       "icon":"server"
+    },
+    {
+      "name":"Futureverse Discord Bot",
+      "client": "Futureverse",
+      "company": "Polygonus",
+      "startYear": "2024",
+      "endYear": "Actual",
+      "description":"Desarrolló un bot de Discord que integra eventos de los juegos TNL y Raicers. Implementó un sistema basado en patrones Factory y Event-Driven que procesa mensajes de SQS y los distribuye a diferentes servicios según el tipo de evento, manteniendo a la comunidad informada sobre actualizaciones y eventos de los juegos en tiempo real.",
+      "highlights":[
+        "TypeScript",
+        "Serverless",
+        "AWS SQS",
+        "Discord API",
+        "Event-Driven",
+        "Factory Pattern",
+        "GitHub Actions"
+      ],
+      "url":"https://www.futureverse.com/",
+      "github": "https://github.com/AlexGod05/futureverse-discord-bot",
+      "icon":"robot"
     },
     {
       "name":"The Next Legends (TNL)",
