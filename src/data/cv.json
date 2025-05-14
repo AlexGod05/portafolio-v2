@@ -6,7 +6,7 @@
     "email":"claiderman.lozano@gmail.com",
     "phone":"+573014128547",
     "url":"https://github.com/AlexGod05",
-    "summary":"Desarrollador Backend con más de 4 años de experiencia en desarrollo de software. Tengo conocimientos en Java, TypeScript, Python y servicios cloud (AWS, Azure). He trabajado implementando APIs REST, gestionando bases de datos y desplegando soluciones en la nube. He tenido la oportunidad de contribuir en proyectos para clientes como Bancolombia, Banistmo y Grupo Familia, y actualmente trabajo en el desarrollo de backends para videojuegos y aplicaciones interactivas en Polygonus. Me gusta aprender continuamente y adaptarme a nuevas tecnologías.",
+    "summary":"Desarrollador Backend con más de 4 años de experiencia en desarrollo de software. Tiene conocimientos en Java, TypeScript, Python y servicios cloud (AWS, Azure). Ha trabajado implementando APIs REST, gestionando bases de datos y desplegando soluciones en la nube. Ha tenido la oportunidad de contribuir en proyectos para clientes como Bancolombia, Banistmo y Grupo Familia, y actualmente trabaja en el desarrollo de backends para videojuegos y aplicaciones interactivas en Polygonus. Le gusta aprender continuamente y adaptarse a nuevas tecnologías.",
     "location":{
       "address":"",
       "postalCode":"050010",
@@ -35,13 +35,13 @@
       "url":"https://www.polygon.us/",
       "startDate":"2024-03-11",
       "endDate":null,
-      "summary":"Desarrollo backend para proyectos de videojuegos y aplicaciones interactivas, implementando arquitecturas serverless y soluciones cloud. Trabajo con clientes como Futureverse, Comfama y Fanta, desarrollando microservicios escalables y optimizando rendimiento en entornos de alta concurrencia.",
+      "summary":"Desarrolla backend para proyectos de videojuegos y aplicaciones interactivas, implementando arquitecturas serverless y soluciones cloud. Trabaja con clientes como Futureverse, Comfama y Fanta, desarrollando microservicios escalables y optimizando rendimiento en entornos de alta concurrencia.",
       "highlights":[
-        "Diseño e implemento arquitecturas serverless con TypeScript y AWS Lambda",
-        "Desarrollo APIs con Python (Django/FastAPI) para plataformas educativas",
-        "Configuro y optimizo servidores NAKAMA para videojuegos en AWS ECS/ECR",
-        "Implemento pipelines de CI/CD para despliegues automatizados",
-        "Optimizo bases de datos PostgreSQL y sistemas de caché para alto rendimiento"
+        "Diseña e implementa arquitecturas serverless con TypeScript y AWS Lambda",
+        "Desarrolla APIs con Python (Django/FastAPI) para plataformas educativas",
+        "Configura y optimiza servidores NAKAMA para videojuegos en AWS ECS/ECR",
+        "Implementa pipelines de CI/CD para despliegues automatizados",
+        "Optimiza bases de datos PostgreSQL y sistemas de caché para alto rendimiento"
       ]
     },
     {
@@ -50,13 +50,13 @@
       "url":"https://www.pragma.co/es/",
       "startDate":"2020-08-03",
       "endDate":"2023-10-17",
-      "summary":"Desarrollé microservicios y APIs REST para clientes del sector financiero y retail, utilizando principalmente Java con Spring Framework. Participé activamente en la arquitectura de soluciones cloud en AWS y Azure, implementando prácticas DevOps y metodologías ágiles (SCRUM/KANBAN).",
+      "summary":"Desarrolló microservicios y APIs REST para clientes del sector financiero y retail, utilizando principalmente Java con Spring Framework. Participó activamente en la arquitectura de soluciones cloud en AWS y Azure, implementando prácticas DevOps y metodologías ágiles (SCRUM/KANBAN).",
       "highlights":[
-        "Lideré el desarrollo backend para la aplicación móvil Nosotras V-App, aplicando arquitectura de microservicios",
-        "Implementé sistemas de auditoría y logging para aplicaciones bancarias en Bancolombia",
-        "Rediseñé la plataforma web de Pequeñin, mejorando la arquitectura de backend",
-        "Desarrollé sistema de envío de PDF para gestión de créditos durante la pandemia para Banistmo",
-        "Contribuí a la implementación de prácticas DevOps con Docker, Kubernetes y CI/CD en Azure"
+        "Lideró el desarrollo backend para la aplicación móvil Nosotras V-App, aplicando arquitectura de microservicios",
+        "Implementó sistemas de auditoría y logging para aplicaciones bancarias en Bancolombia",
+        "Rediseñó la plataforma web de Pequeñin, mejorando la arquitectura de backend",
+        "Desarrolló sistema de envío de PDF para gestión de créditos durante la pandemia para Banistmo",
+        "Contribuyó a la implementación de prácticas DevOps con Docker, Kubernetes y CI/CD en Azure"
       ]
     },
     {
@@ -65,13 +65,13 @@
       "url":"https://www.pragma.co/es/",
       "startDate":"2020-01-01",
       "endDate":"2020-08-02",
-      "summary":"Contribuí como desarrollador full-stack en proyectos internos de la empresa, aplicando conocimientos en Node.js, Java y Angular. Inicié mi experiencia con AWS implementando soluciones con S3, DynamoDB y Cognito.",
+      "summary":"Contribuyó como desarrollador full-stack en proyectos internos de la empresa, aplicando conocimientos en Node.js, Java y Angular. Inició su experiencia con AWS implementando soluciones con S3, DynamoDB y Cognito.",
       "highlights":[
-        "Desarrollé componentes full-stack para aplicaciones internas de la empresa",
-        "Implementé funcionalidades frontend con Angular para sistemas de gestión",
-        "Construí servicios backend con Node.js y Java para aplicaciones empresariales",
-        "Implementé soluciones de almacenamiento con AWS S3 y bases de datos NoSQL",
-        "Colaboré en equipos ágiles aplicando metodologías SCRUM"
+        "Desarrolló componentes full-stack para aplicaciones internas de la empresa",
+        "Implementó funcionalidades frontend con Angular para sistemas de gestión",
+        "Construyó servicios backend con Node.js y Java para aplicaciones empresariales",
+        "Implementó soluciones de almacenamiento con AWS S3 y bases de datos NoSQL",
+        "Colaboró en equipos ágiles aplicando metodologías SCRUM"
       ]
     },
     {
@@ -80,13 +80,13 @@
       "url":"https://emtelco.com.co/",
       "startDate":"2019-01-01",
       "endDate":"2020-01-01",
-      "summary":"Brindé soporte técnico especializado para servicios de Internet, TV y telefonía fija en Tigo-UNE. Desarrollé habilidades en resolución de problemas, atención al cliente y análisis técnico de incidencias.",
+      "summary":"Brindó soporte técnico especializado para servicios de Internet, TV y telefonía fija en Tigo-UNE. Desarrolló habilidades en resolución de problemas, atención al cliente y análisis técnico de incidencias.",
       "highlights":[
-        "Resolví problemas técnicos complejos en servicios de telecomunicaciones",
-        "Mejoré la satisfacción del cliente con soluciones efectivas",
-        "Implementé estrategias de ventas cruzadas durante el soporte técnico",
-        "Utilicé sistemas CRM para gestión eficiente de tickets y seguimiento",
-        "Participé en capacitaciones especializadas en atención y soporte técnico"
+        "Resolvió problemas técnicos complejos en servicios de telecomunicaciones",
+        "Mejoró la satisfacción del cliente con soluciones efectivas",
+        "Implementó estrategias de ventas cruzadas durante el soporte técnico",
+        "Utilizó sistemas CRM para gestión eficiente de tickets y seguimiento",
+        "Participó en capacitaciones especializadas en atención y soporte técnico"
       ]
     },
     {
@@ -95,13 +95,13 @@
       "url":"https://www.autodicol.com/",
       "startDate":"2018-01-01",
       "endDate":"2019-01-01",
-      "summary":"Desarrollé mi primera aplicación empresarial: un sistema de gestión de importaciones en Java con MySQL que optimizó los procesos del departamento. Adicionalmente, brindé soporte técnico al equipo de la empresa.",
+      "summary":"Desarrolló su primera aplicación empresarial: un sistema de gestión de importaciones en Java con MySQL que optimizó los procesos del departamento. Adicionalmente, brindó soporte técnico al equipo de la empresa.",
       "highlights":[
-        "Diseñé e implementé aplicación de escritorio en Java para gestión de importaciones",
-        "Desarrollé base de datos MySQL para almacenamiento eficiente de datos",
-        "Automaticé procesos manuales, reduciendo tiempos de gestión",
-        "Brindé soporte técnico a usuarios y realicé mantenimiento de equipos",
-        "Implementé mi primer proyecto de software empresarial completo"
+        "Diseñó e implementó aplicación de escritorio en Java para gestión de importaciones",
+        "Desarrolló base de datos MySQL para almacenamiento eficiente de datos",
+        "Automatizó procesos manuales, reduciendo tiempos de gestión",
+        "Brindó soporte técnico a usuarios y realizó mantenimiento de equipos",
+        "Implementó su primer proyecto de software empresarial completo"
       ]
     }
   ],
@@ -310,7 +310,7 @@
   "references":[
     {
       "name":"Disponibles a solicitud",
-      "reference":"Puedo proporcionar referencias profesionales de gerentes y líderes técnicos con quienes he trabajado en Polygonus y Pragma."
+      "reference":"Puede proporcionar referencias profesionales de gerentes y líderes técnicos con quienes ha trabajado en Polygonus y Pragma."
     }
   ],
   "projects":[
@@ -320,7 +320,7 @@
       "company": "Polygonus",
       "startYear": "2024",
       "endYear": "Actual",
-      "description":"Desarrollo de backend para plataforma de videojuegos Web3, implementando arquitectura serverless con TypeScript. Mejoré el rendimiento del sistema optimizando las consultas a DynamoDB e implementando estrategias de caché.",
+      "description":"Desarrollo de backend para plataforma de videojuegos Web3, implementando arquitectura serverless con TypeScript. Mejoró el rendimiento del sistema optimizando las consultas a DynamoDB e implementando estrategias de caché.",
       "highlights":[
         "TypeScript",
         "Serverless",
@@ -356,7 +356,7 @@
       "company": "Polygonus",
       "startYear": "2024",
       "endYear": "2025",
-      "description":"Implementación y configuración de servidor NAKAMA para videojuegos, desplegado en AWS ECS y ECR FARGATE. Implementé estrategias de escalado automático para optimizar recursos.",
+      "description":"Implementación y configuración de servidor NAKAMA para videojuegos, desplegado en AWS ECS y ECR FARGATE. Implementó estrategias de escalado automático para optimizar recursos.",
       "highlights":[
         "NAKAMA",
         "AWS ECS",
@@ -375,7 +375,7 @@
       "company": "Pragma",
       "startYear": "2020",
       "endYear": "2023",
-      "description":"Contribuí a la arquitectura de software para un sistema centralizado de Log de Auditoría que procesa eventos diarios de diversos microservicios del área Empresarial, mejorando la eficiencia en la búsqueda.",
+      "description":"Contribuyó a la arquitectura de software para un sistema centralizado de Log de Auditoría que procesa eventos diarios de diversos microservicios del área Empresarial, mejorando la eficiencia en la búsqueda.",
       "highlights":[
         "SCRUM",
         "AWS",
@@ -394,7 +394,7 @@
       "company": "Pragma",
       "startYear": "2020",
       "endYear": "2023",
-      "description":"Desarrollé un sistema de búsqueda que mejoró la accesibilidad de los usuarios a los servicios de Comfama, reduciendo los tiempos de búsqueda y facilitando la navegación.",
+      "description":"Desarrolló un sistema de búsqueda que mejoró la accesibilidad de los usuarios a los servicios de Comfama, reduciendo los tiempos de búsqueda y facilitando la navegación.",
       "highlights":[
         "SCRUM",
         "Java",
@@ -416,7 +416,7 @@
       "company": "Pragma",
       "startYear": "2020",
       "endYear": "2023",
-      "description":"Implementé un sistema de envío de PDF para gestión de créditos durante la pandemia que procesó múltiples solicitudes mensuales, reduciendo los tiempos de respuesta.",
+      "description":"Implementó un sistema de envío de PDF para gestión de créditos durante la pandemia que procesó múltiples solicitudes mensuales, reduciendo los tiempos de respuesta.",
       "highlights":[
         "KANBAN",
         "Java",
@@ -439,7 +439,7 @@
       "company": "Pragma",
       "startYear": "2020",
       "endYear": "2023",
-      "description":"Participé en el desarrollo backend para una aplicación móvil, implementando una arquitectura de microservicios que mejoró la respuesta del sistema.",
+      "description":"Participó en el desarrollo backend para una aplicación móvil, implementando una arquitectura de microservicios que mejoró la respuesta del sistema.",
       "highlights":[
         "SCRUM",
         "Java",
@@ -463,7 +463,7 @@
       "company": "Pragma",
       "startYear": "2020",
       "endYear": "2023",
-      "description":"Contribuí a una arquitectura compartida para 5 marcas del grupo Familia que facilitó el desarrollo de nuevas características y mejoró la eficiencia de mantenimiento.",
+      "description":"Contribuyó a una arquitectura compartida para 5 marcas del grupo Familia que facilitó el desarrollo de nuevas características y mejoró la eficiencia de mantenimiento.",
       "highlights":[
         "SCRUM",
         "Java",
@@ -487,7 +487,7 @@
       "company": "Pragma",
       "startYear": "2020",
       "endYear": "2023",
-      "description":"Participé en el rediseño de la plataforma web de Pequeñin, implementando una arquitectura backend que mejoró los tiempos de carga y la experiencia de usuario.",
+      "description":"Participó en el rediseño de la plataforma web de Pequeñin, implementando una arquitectura backend que mejoró los tiempos de carga y la experiencia de usuario.",
       "highlights":[
         "SCRUM",
         "Java",
@@ -511,7 +511,7 @@
       "company": "Autodicol S.A.S",
       "startYear": "2018",
       "endYear": "2019",
-      "description":"Desarrollé una aplicación de escritorio para la gestión de importaciones que optimizó el procesamiento y redujo errores en informes, mejorando el flujo de trabajo del departamento.",
+      "description":"Desarrolló una aplicación de escritorio para la gestión de importaciones que optimizó el procesamiento y redujo errores en informes, mejorando el flujo de trabajo del departamento.",
       "highlights":[
         "Java",
         "MySQL",
