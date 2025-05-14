@@ -23,10 +23,16 @@ jobs:
           node-version: 20
           cache: 'pnpm'
 
+      - name: Enable corepack
+        run: corepack enable
+
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
         with:
           version: 8.15.4
+
+      - name: Add pnpm to PATH
+        run: echo "$(pnpm bin)" >> $GITHUB_PATH
 
       - name: Install dependencies
         run: pnpm install
