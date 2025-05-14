@@ -27,15 +27,15 @@ function setupCompanyCards() {
       /** @type {HTMLElement & { closeModal?: () => void, openModal?: () => void }} */
       const modal = modalElement;
 
-      const modalContent = modal.querySelector('.modal-content');
-      if (!modalContent) return;
+      const modalBody = modal.querySelector('.modal-body');
+      if (!modalBody) return;
 
       // Actualizar título
       const modalTitle = modal.querySelector('.modal-header h2');
       if (modalTitle) modalTitle.textContent = company;
 
       // Actualizar el contenido de la modal con el acordeón de experiencias
-      updateModalContent(modalContent, company, groupedWork[company]);
+      updateModalContent(modalBody, company, groupedWork[company]);
 
       // Abrir la modal
       if (typeof modal['openModal'] === 'function') {
@@ -64,21 +64,13 @@ function setupCompanyCards() {
 
 /**
  * Actualiza el contenido del modal con las experiencias de la empresa
- * @param {HTMLElement} modalContent - El elemento del contenido del modal
+ * @param {HTMLElement} modalBody - El elemento del body del modal
  * @param {string} company - El nombre de la empresa
  * @param {Array} experiences - Las experiencias de la empresa
  */
-function updateModalContent(modalContent, company, experiences) {
+function updateModalContent(modalBody, company, experiences) {
   // Crear el HTML del contenido del modal
-  modalContent.innerHTML = `
-    <div class="modal-controls">
-      <button class="close-button" aria-label="Cerrar modal">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <div class="company-header">
-      <h2>${company}</h2>
-    </div>
+  modalBody.innerHTML = `
     <div class="experiences-accordion">
       ${experiences.map(exp => {
         const startYear = new Date(exp.startDate).getFullYear();
@@ -96,7 +88,9 @@ function updateModalContent(modalContent, company, experiences) {
                   <time>${startYear} - ${endYear}</time>
                 </div>
               </div>
-              <span class="accordion-icon">▼</span>
+              <div class="accordion-icon-wrapper">
+                <span class="accordion-icon">▼</span>
+              </div>
             </button>
             <div class="accordion-content" aria-hidden="true">
               <div class="experience-content">
@@ -120,16 +114,10 @@ function updateModalContent(modalContent, company, experiences) {
         `;
       }).join('')}
     </div>
-    <div class="modal-footer">
-      <button class="close-modal-button">
-        <i class="fas fa-times"></i>
-        Cerrar
-      </button>
-    </div>
   `;
 
   // Agregar manejadores de eventos para los acordeones dentro del modal
-  const accordionHeaders = modalContent.querySelectorAll('.accordion-header');
+  const accordionHeaders = modalBody.querySelectorAll('.accordion-header');
   accordionHeaders.forEach(header => {
     header.addEventListener('click', () => {
       const isExpanded = header.getAttribute('aria-expanded') === 'true';
@@ -144,22 +132,6 @@ function updateModalContent(modalContent, company, experiences) {
         if (content instanceof HTMLElement) {
           content.style.maxHeight = isExpanded ? '0px' : `${content.scrollHeight}px`;
         }
-      }
-    });
-  });
-
-  // Agregar manejadores para los botones de cierre
-  const closeButtons = modalContent.querySelectorAll('.close-button, .close-modal-button');
-  closeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const modal = modalContent.closest('#experience-modal');
-      if (!modal) return;
-      
-      if ('closeModal' in modal && typeof modal.closeModal === 'function') {
-        modal.closeModal();
-      } else {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
       }
     });
   });

@@ -16,7 +16,7 @@ const { title = "", initiallyExpanded = false, class: className = '' } = Astro.p
     <div class="accordion-title">
       {title ? <h3>{title}</h3> : <slot name="title" />}
     </div>
-    <span class={`accordion-icon ${initiallyExpanded ? 'rotated' : ''}`}>▼</span>
+    <span class={`accordion-icon ${initiallyExpanded ? 'rotated' : ''}`} style="color: var(--text-color, #333);">▼</span>
   </button>
 
   <div

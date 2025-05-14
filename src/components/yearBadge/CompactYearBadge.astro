@@ -1,0 +1,35 @@
+---
+interface Props {
+  startYear: string | number;
+  endYear?: string | number;
+  class?: string;
+  showIcon?: boolean;
+  variant?: "primary" | "secondary" | "outline";
+}
+
+const {
+  startYear,
+  endYear,
+  class: className = '',
+  showIcon = true,
+  variant = "primary"
+} = Astro.props;
+
+const displayEndYear = endYear || "Actual";
+
+const getVariantClass = () => {
+  switch (variant) {
+    case "secondary":
+      return "year-badge-secondary";
+    case "outline":
+      return "year-badge-outline";
+    default:
+      return "";
+  }
+};
+---
+
+<div class={`year-badge-compact ${getVariantClass()} ${className}`}>
+  {showIcon && <i class="fas fa-calendar-alt"></i>}
+  <time>{startYear} - {displayEndYear}</time>
+</div> 

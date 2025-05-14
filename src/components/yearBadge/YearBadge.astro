@@ -1,0 +1,59 @@
+---
+interface Props {
+  startYear: string | number;
+  endYear?: string | number;
+  class?: string;
+  showIcon?: boolean;
+}
+
+const {
+  startYear,
+  endYear,
+  class: className = '',
+  showIcon = true
+} = Astro.props;
+
+const displayEndYear = endYear || "Actual";
+---
+
+<div class={`year-badge ${className}`}>
+  {showIcon && <i class="fas fa-calendar-alt"></i>}
+  <time>{startYear} - {displayEndYear}</time>
+</div>
+
+<style>
+  .year-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary, #8B0000);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+  }
+
+  .year-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  .year-badge i {
+    font-size: 0.8rem;
+  }
+
+  .year-badge time {
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .year-badge {
+      padding: 0.2rem 0.6rem;
+      font-size: 0.75rem;
+    }
+  }
+</style> 

@@ -31,13 +31,13 @@ const groupedWork = work.reduce((acc, experience) => {
           const startYear = new Date(firstExperience.startDate).getFullYear();
           const endYear = lastExperience.endDate 
             ? new Date(lastExperience.endDate).getFullYear() 
-            : "Actual";
-          const years = `${startYear} - ${endYear}`;
+            : undefined;
 
           return (
             <CompanyCard
               company={company}
-              years={years}
+              startYear={startYear}
+              endYear={endYear}
             />
           );
         })

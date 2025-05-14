@@ -35,18 +35,28 @@ function initializeAccordions() {
       // Ajustar altura máxima para animación
       if (!isExpanded) {
         // Expandir el contenido
-        content.style.maxHeight = `${content.scrollHeight}px`;
+        content.style.maxHeight = '2000px'; // Altura suficiente para el contenido
         
-        // Hacer scroll si es necesario
-        if (container) {
-          setTimeout(() => {
-            container.scrollIntoView({ 
-              behavior: 'smooth', 
-              block: 'start',
-              inline: 'nearest'
+        // Desplazarse al acordeón expandido, considerando la posición del header modal si existe
+        setTimeout(() => {
+          const modalHeader = header.closest('.modal-content')?.querySelector('.modal-header');
+          const modalHeaderHeight = modalHeader ? (modalHeader as HTMLElement).offsetHeight : 0;
+          
+          const headerRect = header.getBoundingClientRect();
+          const scrollContainer = header.closest('.modal-content') || window;
+          
+          if (scrollContainer && scrollContainer !== window) {
+            (scrollContainer as HTMLElement).scrollTo({
+              top: (header as HTMLElement).offsetTop - modalHeaderHeight - 10,
+              behavior: 'smooth'
             });
-          }, 100);
-        }
+          } else {
+            window.scrollTo({
+              top: window.scrollY + headerRect.top - modalHeaderHeight - 10,
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
       } else {
         // Contraer el contenido
         content.style.maxHeight = '0px';

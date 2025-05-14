@@ -2,30 +2,36 @@
 
 .accordion-container {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .accordion-header {
   width: 100%;
-  padding: 1rem;
-  background: var(--bg-secondary, #f5f5f5);
-  border: 1px solid var(--border, #e0e0e0);
-  border-radius: 8px;
+  padding: 0.85rem 1.1rem;
+  background: transparent;
+  border: 1px solid var(--border, #e5e5e5);
+  border-radius: 6px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  box-shadow: none;
+  z-index: 0;
+  position: relative;
+  gap: 1rem;
 }
 
 .accordion-header:hover {
-  background: var(--bg-hover, #eaeaea);
+  border-color: var(--primary, #8B0000);
+  background-color: rgba(139, 0, 0, 0.02);
 }
 
 .accordion-header h2,
 .accordion-header h3 {
   margin: 0;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 0.95rem;
   color: var(--text-color, #333);
   display: flex;
   align-items: center;
@@ -34,12 +40,22 @@
 
 .accordion-header h2 i,
 .accordion-header h3 i {
-  color: var(--primary, #800020);
+  color: var(--text-color, #333);
 }
 
 .accordion-icon {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  color: var(--text-color, #333);
   transition: transform 0.3s ease;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+.accordion-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
 }
 
 .accordion-header[aria-expanded="true"] .accordion-icon,
@@ -51,58 +67,80 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
-  background: var(--bg-primary, #ffffff);
-  border-radius: 0 0 8px 8px;
+  background: transparent;
+  border-radius: 0 0 6px 6px;
+  padding: 0 0.75rem;
+  z-index: 0;
+  position: relative;
 }
 
 .accordion-content[aria-hidden="false"] {
-  max-height: 100vh;
-  overflow-y: auto;
+  max-height: 2000px;
+  overflow-y: visible;
   scrollbar-width: thin;
-  scrollbar-color: var(--primary, #800020) var(--bg-secondary, #f5f5f5);
+  scrollbar-color: var(--border, #e0e0e0) transparent;
+  padding: 0.75rem 0.75rem 0.5rem;
 }
 
 /* Estilos para scrollbar */
 .accordion-content::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 
 .accordion-content::-webkit-scrollbar-track {
-  background: var(--bg-secondary, #f5f5f5);
-  border-radius: 4px;
+  background: transparent;
 }
 
 .accordion-content::-webkit-scrollbar-thumb {
-  background: var(--primary, #800020);
+  background: var(--border, #e0e0e0);
   border-radius: 4px;
 }
 
 .accordion-content::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-dark, #600018);
+  background: var(--secondary, #666);
 }
 
 /* Estilos para acordeones anidados */
 .accordion-item {
-  border: 1px solid var(--border, #e0e0e0);
-  border-radius: 8px;
-  overflow: hidden;
+  border: none;
+  border-radius: 6px;
+  overflow: visible;
   margin-bottom: 0.5rem;
+  background: transparent;
+  z-index: 0;
+  position: relative;
 }
 
 .accordion-item .accordion-header {
-  border-radius: 8px 8px 0 0;
-  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-color, #333);
+  border: 1px solid var(--border, #e5e5e5);
+}
+
+.accordion-item .accordion-header:hover {
+  border-color: var(--primary, #8B0000);
+}
+
+.accordion-item .accordion-header h3,
+.accordion-item .accordion-header .accordion-title {
+  color: var(--text-color, #333);
+  font-size: 0.95rem;
 }
 
 .accordion-item .accordion-content {
   border-top: none;
+  padding: 0.75rem 0.75rem 0.5rem;
 }
 
 /* Estilos para la información de posición y fecha */
 .position-info {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
+  width: 100%;
+  flex: 1;
 }
 
 @media (max-width: 768px) {
@@ -111,24 +149,48 @@
     align-items: flex-start;
     gap: 0.5rem;
   }
+  
+  .accordion-header {
+    gap: 0.5rem;
+  }
+  
+  .accordion-icon-wrapper {
+    margin-left: 0.25rem;
+  }
+  
+  .modal .year-badge {
+    margin-right: 0;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
 }
 
 .year-badge {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--primary, #800020);
-  color: white;
+  background-color: rgba(128, 0, 32, 0.1);
+  color: var(--primary, #800020);
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
+  font-weight: 500;
   white-space: nowrap;
+  margin-right: 0.5rem;
 }
 
 .year-badge i {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
 }
 
 .year-badge time {
   font-weight: 500;
+}
+
+/* Estilos específicos para experiencias en el modal */
+.modal .experiences-accordion {
+  padding: 0.5rem 0;
+  z-index: 0;
+  position: relative;
 } 
