@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 
 import { EducationSection, ExperienceSection, SkillsSection, LanguagesSection } from "@sections/index";
 import { ScrollToTopButton, FloatingButtons } from "@buttons/index";
+import TimelineNav from "../components/TimelineNav.astro";
 import About from "@sections/About.astro";
 import Hero from "@sections/Hero.astro";
 
@@ -11,16 +12,38 @@ import "../styles/global.css";
 
 const cvData = await getCVData();
 const { name, label } = cvData.basics;
+
+const sections = [
+  { id: "inicio", title: "Inicio", icon: "fas fa-home" },
+  { id: "sobre-mi", title: "Perfil", icon: "fas fa-id-card" },
+  { id: "experiencia", title: "Experiencia", icon: "fas fa-briefcase" },
+  { id: "educacion", title: "Educación", icon: "fas fa-graduation-cap" },
+  { id: "idiomas", title: "Idiomas", icon: "fas fa-language" },
+  { id: "habilidades", title: "Habilidades", icon: "fas fa-tools" }
+];
 ---
 
 <Layout title={`Portafolio de ${name} - ${label}`}>
+  <TimelineNav sections={sections} />
   <main>
-    <Hero />
-    <About />
-    <ExperienceSection />
-    <EducationSection />
-    <LanguagesSection />
-    <SkillsSection />
+    <section id="inicio">
+      <Hero />
+    </section>
+    <section id="sobre-mi">
+      <About />
+    </section>
+    <section id="experiencia">
+      <ExperienceSection />
+    </section>
+    <section id="educacion">
+      <EducationSection />
+    </section>
+    <section id="idiomas">
+      <LanguagesSection />
+    </section>
+    <section id="habilidades">
+      <SkillsSection />
+    </section>
   </main>
 
   <FloatingButtons />
@@ -29,14 +52,36 @@ const { name, label } = cvData.basics;
 
 <style>
   main {
-    padding: 4rem;
+    padding: 4rem 4rem 4rem 8rem;
     margin: auto;
     width: 100%;
   }
 
-  @media (width <= 700px) {
+  section {
+    margin-bottom: 4rem;
+    scroll-margin-top: 2rem;
+  }
+
+  @media (width <= 768px) {
     main {
       padding: 1.5rem;
+      padding-bottom: calc(1.5rem + 100px);
+    }
+
+    section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 1rem;
+    }
+  }
+
+  @media (width <= 480px) {
+    main {
+      padding: 1rem;
+      padding-bottom: calc(1rem + 90px);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
     }
   }
 </style>

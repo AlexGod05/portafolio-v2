@@ -275,7 +275,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
   .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     margin-top: 16px;
     padding: 0 1rem;
   }
@@ -283,41 +283,38 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
   .contact-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
   }
 
   .icon-link {
-    color: var(--secondary);
+    color: var(--text-secondary);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--border);
-    padding: 4px;
-    height: 24px;
-    width: 24px;
+    padding: 8px;
+    height: 32px;
+    width: 32px;
     border-radius: 6px;
     transition: all 0.3s ease;
     flex-shrink: 0;
   }
 
   .icon-link:hover, .icon-link:focus {
-    background: var(--primary-light);
-    border: 1px solid var(--primary);
     color: var(--primary);
   }
 
   .contact-value-container {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 12px;
     flex-grow: 1;
     min-width: 0;
   }
 
   .contact-value {
-    color: var(--secondary);
-    font-size: 0.85rem;
-    padding: 2px 4px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    padding: 8px;
     border-radius: 4px;
     transition: all 0.3s ease;
     white-space: nowrap;
@@ -329,15 +326,17 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
   .copy-button {
     background: none;
     border: none;
-    padding: 2px;
+    padding: 8px;
     cursor: pointer;
-    color: var(--secondary);
+    color: var(--text-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0.6;
     transition: all 0.3s ease;
     flex-shrink: 0;
+    width: 32px;
+    height: 32px;
   }
 
   .copy-button:hover, .copy-button:focus {
@@ -346,12 +345,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
   }
 
   .contact-value:hover, .contact-value:focus {
-    background: var(--primary-light);
     color: var(--primary);
-  }
-
-  .contact-value:hover .copy-button, .contact-value:focus .copy-button {
-    opacity: 1;
   }
 
   .name-logo {
@@ -387,13 +381,27 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     }
 
     .contact-info {
-      align-items: center;
+      align-items: flex-start;
+      width: 100%;
+      padding: 0 0.5rem;
     }
+
     .contact-item {
       width: 100%;
+      padding: 4px 0;
     }
+
+    .contact-value-container {
+      gap: 12px;
+    }
+
     .contact-value {
-      max-width: 200px;
+      font-size: 0.9rem;
+    }
+
+    .copy-button {
+      width: 36px;
+      height: 36px;
     }
 
     .name-logo {

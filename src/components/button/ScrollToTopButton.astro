@@ -5,40 +5,42 @@
 <style>
   .scroll-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 50%;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    border: none;
-    background: var(--primary);
-    color: var(--text-on-dark);
-    cursor: pointer;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 5px var(--shadow);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 100;
-  }
-
-  .scroll-to-top.visible {
-    display: flex;
-    opacity: 0.9;
+    color: var(--text-secondary);
+    z-index: 101;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   .scroll-to-top:hover {
     transform: translateY(-3px);
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+
+  .scroll-to-top.visible {
     opacity: 1;
-    background: var(--primary-dark);
+    visibility: visible;
   }
 
   @media (max-width: 768px) {
     .scroll-to-top {
-      bottom: 10px;
-      right: 10px;
-      width: 35px;
-      height: 35px;
+      bottom: calc(2rem + 80px);
+      right: 1rem;
+      width: 36px;
+      height: 36px;
     }
   }
 </style>

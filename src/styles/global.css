@@ -5,23 +5,23 @@
 @import url('@modal/styles/modal.css');
 
 :root {
-  /* Light theme variables */
-  --background: #f5f5f5;
-  --text: #1a1a1a;
-  --secondary: #666666;
-  --primary: #8B0000;
-  --border: #d1d5db;
-  --border-color: #8B0000;
-  --card-bg: #ffffff;
-  --bg-secondary: #f5f5f5;
-  --bg-hover: #eaeaea;
-  --accent: #8B0000;
-  --card-border: #d1d5db;
-  --shadow: rgba(0, 0, 0, 0.08);
-  --text-color: #333;
-  --text-secondary: #666;
-  --primary-dark: #600018;
-  --text-on-dark: #f0f0f0;
+  /* Light theme variables - Colores más suaves */
+  --background: #e4eaf0; /* Azul muy claro */
+  --text: #2d3748; /* Gris azulado oscuro */
+  --secondary: #718096; /* Gris medio */
+  --primary: #4a5568; /* Gris azulado */
+  --border: #a9bbcd; /* Gris azulado medio - más visible */
+  --border-color: #4a5568; /* Gris azulado */
+  --card-bg: #ffffff; /* Blanco */
+  --bg-secondary: #edf2f7; /* Gris azulado muy claro */
+  --bg-hover: #e2e8f0; /* Gris claro */
+  --accent: #4a5568; /* Gris azulado */
+  --card-border: #cbd5e0; /* Gris azulado medio - más visible */
+  --shadow: rgba(0, 0, 0, 0.08); /* Sombra ligeramente más visible */
+  --text-color: #2d3748; /* Gris azulado oscuro */
+  --text-secondary: #718096; /* Gris medio */
+  --primary-dark: #2d3748; /* Gris azulado más oscuro */
+  --text-on-dark: #f7fafc; /* Blanco suave */
 }
 
 :root.dark {
@@ -52,7 +52,7 @@ body {
   line-height: 1.5;
   margin: 0;
   padding: 0;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease;
 }
 
 /* Card styles */
@@ -117,6 +117,7 @@ html {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 /* Estilos para títulos */
@@ -217,4 +218,73 @@ code, pre {
   h6 {
     font-size: 1rem;
   }
+}
+
+/* Timeline Navigation Styles */
+.timeline-dot.active {
+  background: var(--accent) !important;
+  box-shadow: 0 0 0 4px var(--accent-light) !important;
+}
+
+.timeline-item:hover .timeline-dot.active,
+.timeline-item:focus .timeline-dot.active {
+  box-shadow: 0 0 0 6px var(--accent-light) !important;
+}
+
+/* Reading Modes */
+body.mode-normal {
+  background-color: var(--background);
+  color: var(--text);
+  filter: none;
+}
+
+body.mode-sepia {
+  --background: #f4ecd8;
+  --text: #5c4b37;
+  --text-secondary: #7a6652;
+  --card-bg: #fff9ed;
+  --border: #d3c4a9;
+  --bg-secondary: #eee4d0;
+  --bg-hover: #e6dac6;
+  filter: brightness(0.95);
+}
+
+body.mode-sepia.dark {
+  --background: #2c2620;
+  --text: #e6dcc4;
+  --text-secondary: #bdb19d;
+  --card-bg: #352e27;
+  --border: #463d33;
+  --bg-secondary: #2a241e;
+  --bg-hover: #403931;
+  filter: brightness(1.1);
+}
+
+body.mode-dim {
+  --background: #e8e8e8;
+  --text: #454545;
+  --text-secondary: #666666;
+  --card-bg: #f0f0f0;
+  --border: #d4d4d4;
+  --bg-secondary: #e0e0e0;
+  --bg-hover: #dadada;
+  filter: brightness(0.9) contrast(0.9) saturate(0.95);
+}
+
+body.mode-dim.dark {
+  --background: #141414;
+  --text: #c0c0c0;
+  --text-secondary: #909090;
+  --card-bg: #1c1c1c;
+  --border: #2a2a2a;
+  --bg-secondary: #1a1a1a;
+  --bg-hover: #252525;
+  filter: brightness(0.8) contrast(0.85) saturate(0.9);
+}
+
+/* Transiciones suaves para los cambios de modo */
+body {
+  transition: background-color 0.3s ease, 
+              color 0.3s ease, 
+              filter 0.3s ease;
 } 

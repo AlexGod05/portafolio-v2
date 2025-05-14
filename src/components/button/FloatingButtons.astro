@@ -149,7 +149,7 @@
 <style>
   .floating-buttons {
     position: fixed;
-    left: 20px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -242,7 +242,7 @@
 
   .color-picker-panel {
     position: absolute;
-    left: 50px;
+    right: 50px;
     top: 5px;
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -254,7 +254,7 @@
     box-shadow: 0 3px 8px var(--shadow);
     opacity: 0;
     pointer-events: none;
-    transform: translateX(-10px);
+    transform: translateX(10px);
     transition: all 0.3s ease;
   }
 
@@ -284,33 +284,48 @@
 
   @media (max-width: 768px) {
     .floating-buttons {
-      left: 10px;
+      right: 1rem;
+      top: auto;
+      bottom: calc(5.5rem + 80px);
+      transform: none;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
     .theme-switch {
-      width: 35px;
-      height: 50px;
+      width: 36px;
+      height: 60px;
+    }
+
+    .slider {
+      flex-direction: column;
+      padding: 6px 0;
     }
 
     .slider:before {
-      height: 14px;
-      width: 14px;
-      left: 10px;
+      left: 9px;
       top: 6px;
+      width: 16px;
+      height: 16px;
     }
 
     input:checked + .slider:before {
-      transform: translateY(26px);
-    }
-
-    .slider i {
-      font-size: 0.7rem;
+      transform: translateY(32px);
     }
 
     .color-picker-btn {
-      width: 35px;
-      height: 35px;
+      width: 36px;
+      height: 36px;
       font-size: 1rem;
+    }
+
+    .color-picker-panel {
+      right: calc(100% + 10px);
+      left: auto;
+      top: 0;
+      bottom: auto;
+      flex-direction: row;
+      gap: 8px;
     }
 
     .color-option {
