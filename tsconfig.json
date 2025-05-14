@@ -1,11 +1,18 @@
 {
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./src/*"],
       "@cv": ["./src/utils/cv"],
-      "@/*": ["src/*"]
+      "@components/*": ["./src/components/*"],
+      "@icons/*": ["./src/icons/*"],
+      "@scripts/*": ["./src/scripts/*"],
+      "@utils/*": ["./src/utils/*"]
     },
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowJs": true,
+    "checkJs": true
   }
 }

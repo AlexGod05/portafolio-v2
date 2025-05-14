@@ -1,18 +1,18 @@
 ---
-import Layout from "@/layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro"
 
-import About from "@/components/sections/About.astro"
-import Education from "@/components/sections/Education.astro"
-import Experience from "@/components/sections/Experience.astro"
-import Hero from "@/components/sections/Hero.astro"
-import Projects from "@/components/sections/Projects.astro"
-import Skills from "@/components/sections/Skills.astro"
-import KeyboardManager from "@/components/KeyboardManager.astro"
-import FloatingButtons from "@/components/FloatingButtons.astro"
-import ScrollToTop from "@/components/ScrollToTop.astro"
+import About from "../components/sections/About.astro"
+import Education from "../components/sections/Education.astro"
+import Experience from "../components/sections/Experience.astro"
+import Hero from "../components/sections/Hero.astro"
+import Projects from "../components/sections/Projects.astro"
+import Skills from "../components/sections/Skills.astro"
+import KeyboardManager from "../components/KeyboardManager.astro"
+import FloatingButtons from "../components/FloatingButtons.astro"
+import ScrollToTop from "../components/ScrollToTop.astro"
 
-import { getCVData } from "@cv"
-import "@/styles/global.css"
+import { getCVData } from "../utils/cv"
+import "../styles/global.css"
 
 const cvData = await getCVData()
 const { name, label } = cvData.basics

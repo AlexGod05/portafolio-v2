@@ -1,7 +1,7 @@
 ---
 import Section from "../Section.astro"
 import Modal from "../Modal.astro"
-import { getCVData } from "@cv"
+import { getCVData } from "../../utils/cv"
 
 const cvData = await getCVData()
 const { work } = cvData
@@ -142,8 +142,17 @@ const groupedWork = work.reduce((acc, experience) => {
   }
 </style>
 
-<script type="module" is:inline define:vars={{ groupedWork }}>
-  import { initAccordions } from "/src/scripts/accordion";
+<!-- groupedWork como JSON para el cliente -->
+<script type="application/json" id="grouped-work-data" is:inline>
+  {JSON.stringify(groupedWork)}
+</script>
+
+<script type="module" is:inline>
+  import { initAccordions } from "../../scripts/accordion";
+  import { renderExperienceCards } from "../../utils/experience";
+  
+  // Leer groupedWork desde el DOM
+  const groupedWork = JSON.parse(document.getElementById('grouped-work-data').textContent);
   
   document.addEventListener('DOMContentLoaded', () => {
     // Inicializar el acordeón
@@ -166,40 +175,7 @@ const groupedWork = work.reduce((acc, experience) => {
         if (modalTitle) modalTitle.textContent = company;
 
         // Crear el contenido de la modal con tarjetas
-        const experienceCards = groupedWork[company].map(exp => {
-          const startYear = new Date(exp.startDate).getFullYear();
-          const endYear = exp.endDate 
-            ? new Date(exp.endDate).getFullYear() 
-            : "Actual";
-
-          return `
-            <div class="experience-card">
-              <div class="card-header">
-                <div class="position-info">
-                  <h3>${exp.position}</h3>
-                  <time>${startYear} - ${endYear}</time>
-                </div>
-              </div>
-              <div class="card-content">
-                <div class="summary-card">
-                  <h4>Descripción del Rol</h4>
-                  <p>${exp.summary}</p>
-                </div>
-                <div class="highlights-card">
-                  <h4>Logros y Responsabilidades</h4>
-                  <ul>
-                    ${exp.highlights.map(highlight => `
-                      <li>
-                        <span class="bullet">•</span>
-                        <span>${highlight}</span>
-                      </li>
-                    `).join('')}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          `;
-        }).join('');
+        const experienceCards = renderExperienceCards(groupedWork[company]);
 
         // Actualizar el contenido de la modal
         modalContent.innerHTML = `
@@ -465,8 +441,8 @@ const groupedWork = work.reduce((acc, experience) => {
         const closeButtons = modalContent.querySelectorAll('.close-button, .close-modal-button');
         closeButtons.forEach(button => {
           button.addEventListener('click', () => {
-            if (typeof modal.closeModal === 'function') {
-              modal.closeModal();
+            if (typeof modal['closeModal'] === 'function') {
+              modal['closeModal']();
             } else {
               modal.classList.remove('active');
               document.body.style.overflow = '';
@@ -475,8 +451,8 @@ const groupedWork = work.reduce((acc, experience) => {
         });
 
         // Abrir la modal
-        if (typeof modal.openModal === 'function') {
-          modal.openModal();
+        if (typeof modal['openModal'] === 'function') {
+          modal['openModal']();
         } else {
           modal.classList.add('active');
           document.body.style.overflow = 'hidden';

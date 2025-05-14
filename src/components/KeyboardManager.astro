@@ -1,5 +1,5 @@
 ---
-import { getCVData } from "@cv"
+import { getCVData } from "../utils/cv"
 
 const cvData = await getCVData()
 const profiles = cvData.basics?.profiles || []

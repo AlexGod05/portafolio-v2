@@ -1,6 +1,6 @@
 ---
 import Section from "../Section.astro"
-import { getCVData } from "@cv"
+import { getCVData } from "../../utils/cv"
 
 const cvData = await getCVData()
 const { education } = cvData
@@ -53,7 +53,7 @@ const { education } = cvData
 </Section>
 
 <script>
-  import { initAccordions } from "@/scripts/accordion";
+  import { initAccordions } from "../../scripts/accordion";
   document.addEventListener('DOMContentLoaded', () => {
     initAccordions();
   });
