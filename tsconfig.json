@@ -15,6 +15,7 @@
       "@yearBadge/*": ["src/components/yearBadge/*"],
       "@experience/*": ["src/components/sections/experience/*"],
       "@education/*": ["src/components/sections/education/*"],
+      "@navbar/*": ["src/components/navbar/*"],
       "@types/*": ["src/types/*"],
       "@data/*": ["src/data/*"],
       "@utils/*": ["src/utils/*"],

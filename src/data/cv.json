@@ -232,8 +232,7 @@
       "keywords":[
         "Microservicios",
         "API REST",
-        "Event-Driven",
-        "gRPC",
+        "Webhooks",
         "RPC",
         "SOAP",
         "GraphQL",

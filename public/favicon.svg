@@ -1,9 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="16" height="16">
-    <style>
-        path { fill: #000; }
-        @media (prefers-color-scheme: dark) {
-            path { fill: #FFF; }
-        }
-    </style>
-  <path fill-rule="evenodd" d="M2 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4Zm4.78 1.97a.75.75 0 0 1 0 1.06L5.81 8l.97.97a.75.75 0 1 1-1.06 1.06l-1.5-1.5a.75.75 0 0 1 0-1.06l1.5-1.5a.75.75 0 0 1 1.06 0Zm2.44 1.06a.75.75 0 0 1 1.06-1.06l1.5 1.5a.75.75 0 0 1 0 1.06l-1.5 1.5a.75.75 0 1 1-1.06-1.06l.97-.97-.97-.97Z" clip-rule="evenodd" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Metadata -->
+  <metadata>
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+             xmlns:dc="http://www.purl.org/dc/elements/1.1/"
+             xmlns:cc="http://creativecommons.org/ns#">
+      <cc:Work rdf:about="">
+        <dc:title>JL 70% Favicon</dc:title>
+        <dc:creator>Claiderman Alexander Lozano Cardona</dc:creator>
+        <dc:rights>Copyright © 2024 Claiderman Alexander Lozano Cardona. All rights reserved.</dc:rights>
+        <dc:date>2024</dc:date>
+        <cc:license>Private use only - All rights reserved</cc:license>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+
+  <style>
+    path, circle {
+      stroke: #000;
+      fill: none;
+    }
+    circle {
+      fill: #000;
+    }
+    @media (prefers-color-scheme: dark) {
+      path, circle {
+        stroke: #fff;
+      }
+      circle {
+        fill: #fff;
+      }
+    }
+  </style>
+
+  <!-- Iniciales "JL" estilizadas -->
+  <path d="M 11 9 
+           L 11 20
+           Q 11 23, 14 23
+           L 18 23
+           Q 21 23, 21 20
+           L 21 17"
+        stroke-width="3"
+        stroke-linecap="round"/>
+  
+  <!-- Punto decorativo -->
+  <circle cx="21" cy="11" r="1.5"/>
+  
+  <!-- Marca de agua invisible -->
+  <text x="50%" y="95%" font-size="1" fill-opacity="0.1" text-anchor="middle" fill="currentColor">
+    © 2024 CALC
+  </text>
 </svg>

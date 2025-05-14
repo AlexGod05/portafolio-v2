@@ -21,7 +21,10 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
         <img src={image} alt={name} />
       </figure>
       <div class="name-section">
-        <h1>{name}</h1>
+        <div class="name-logo">
+          <h1>{name}</h1>
+          <img src="/portfolio/logo.svg" alt="Logo JL" class="logo" />
+        </div>
         <h2>{label}</h2>
       </div>
     </div>
@@ -351,6 +354,22 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     opacity: 1;
   }
 
+  .name-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+  }
+
+  .logo:hover {
+    transform: scale(1.1);
+  }
+
   @media (width <= 700px) {
     .top-section {
       flex-direction: column;
@@ -375,6 +394,16 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     }
     .contact-value {
       max-width: 200px;
+    }
+
+    .name-logo {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .logo {
+      width: 32px;
+      height: 32px;
     }
   }
 </style>

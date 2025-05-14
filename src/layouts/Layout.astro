@@ -22,12 +22,23 @@ const initialTheme = getInitialTheme();
     <title>{title}</title>
     <meta name="description" content={summary} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Favicon y logos -->
+    <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
+    <link rel="apple-touch-icon" href="/portfolio/logo.svg" />
+    <link rel="mask-icon" href="/portfolio/logo.svg" color="#1E1E2E" />
+    <meta name="theme-color" content="#1E1E2E" />
+    <meta name="msapplication-TileColor" content="#1E1E2E" />
+    <meta property="og:image" content="/portfolio/logo.svg" />
+    
     <link rel="preload" as="image" href={image} />
+    <link rel="preload" as="image" href="/portfolio/logo.svg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
-    <slot />
+    <main class="mt-16 px-4 sm:px-6 lg:px-8">
+      <slot />
+    </main>
     <ClientInit />
   </body>
 </html>

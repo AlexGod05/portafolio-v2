@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <metadata>
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+             xmlns:dc="http://www.purl.org/dc/elements/1.1/"
+             xmlns:cc="http://creativecommons.org/ns#">
+      <cc:Work rdf:about="">
+        <dc:title>JL 70% Logo</dc:title>
+        <dc:creator>Claiderman Alexander Lozano Cardona</dc:creator>
+        <dc:rights>Copyright © 2024 Claiderman Alexander Lozano Cardona. All rights reserved.</dc:rights>
+        <dc:date>2024</dc:date>
+        <cc:license>Private use only - All rights reserved</cc:license>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+
+  <rect width="512" height="512" rx="128" fill="#000000"/>
+  
+  <path d="M 180 140 
+           L 180 320
+           Q 180 360, 220 360
+           L 280 360
+           Q 320 360, 320 320
+           L 320 280"
+        stroke="#FFFFFF"
+        stroke-width="48"
+        stroke-linecap="round"
+        fill="none"/>
+  
+  <circle cx="320" cy="180" r="24" fill="#FFFFFF"/>
+  
+  <text x="50%" y="50%" font-size="8" fill="#FFFFFF" fill-opacity="0.1" text-anchor="middle">
+    © 2024 Claiderman Alexander Lozano Cardona
+  </text>
+</svg> 
