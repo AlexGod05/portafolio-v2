@@ -24,6 +24,8 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 8
+      - name: Set npm registry
+        run: npm config set registry https://registry.npmjs.org/
       - name: Install, build, and upload your site
         uses: withastro/action@v3
 
