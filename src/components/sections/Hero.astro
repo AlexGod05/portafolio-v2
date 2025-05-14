@@ -45,12 +45,14 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           >
             <i class="fas fa-envelope"></i>
           </a>
-          <a href={`mailto:${email}`} class="contact-value" target="_blank" rel="noopener noreferrer">
-            {email}
-            <button class="copy-button" onclick={`event.stopPropagation(); copyToClipboard('${email}')`} title="Copiar email">
+          <div class="contact-value-container">
+            <a href={`mailto:${email}`} class="contact-value" target="_blank" rel="noopener noreferrer">
+              {email}
+            </a>
+            <button class="copy-button" onclick={`copyToClipboard('${email}')`} title="Copiar email">
               <i class="fas fa-copy"></i>
             </button>
-          </a>
+          </div>
         </div>
       )
     }
@@ -66,12 +68,14 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           >
             <i class="fas fa-phone"></i>
           </a>
-          <a href={`tel:${phone}`} class="contact-value" target="_blank" rel="noopener noreferrer">
-            {phone}
-            <button class="copy-button" onclick={`event.stopPropagation(); copyToClipboard('${phone}')`} title="Copiar teléfono">
+          <div class="contact-value-container">
+            <a href={`tel:${phone}`} class="contact-value" target="_blank" rel="noopener noreferrer">
+              {phone}
+            </a>
+            <button class="copy-button" onclick={`copyToClipboard('${phone}')`} title="Copiar teléfono">
               <i class="fas fa-copy"></i>
             </button>
-          </a>
+          </div>
         </div>
       )
     }
@@ -85,12 +89,14 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
       >
         <i class="fas fa-map-marker-alt"></i>
       </a>
-      <a href="https://www.google.com/maps?q=6.299806,-75.535111" class="contact-value" target="_blank" rel="noopener noreferrer">
-        {city}, {department}, {region}
-        <button class="copy-button" onclick={`event.stopPropagation(); copyToClipboard('https://www.google.com/maps?q=6.299806,-75.535111')`} title="Copiar ubicación">
+      <div class="contact-value-container">
+        <a href="https://www.google.com/maps?q=6.299806,-75.535111" class="contact-value" target="_blank" rel="noopener noreferrer">
+          {city}, {department}, {region}
+        </a>
+        <button class="copy-button" onclick={`copyToClipboard('https://www.google.com/maps?q=6.299806,-75.535111')`} title="Copiar ubicación">
           <i class="fas fa-copy"></i>
         </button>
-      </a>
+      </div>
     </div>
     {
       linkedUrl && (
@@ -104,12 +110,14 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           >
             <i class="fab fa-linkedin"></i>
           </a>
-          <a href={linkedUrl} class="contact-value" target="_blank" rel="noopener noreferrer">
-            {linkedUrl}
-            <button class="copy-button" onclick={`event.stopPropagation(); copyToClipboard('${linkedUrl}')`} title="Copiar perfil de LinkedIn">
+          <div class="contact-value-container">
+            <a href={linkedUrl} class="contact-value" target="_blank" rel="noopener noreferrer">
+              {linkedUrl}
+            </a>
+            <button class="copy-button" onclick={`copyToClipboard('${linkedUrl}')`} title="Copiar perfil de LinkedIn">
               <i class="fas fa-copy"></i>
             </button>
-          </a>
+          </div>
         </div>
       )
     }
@@ -125,12 +133,14 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           >
             <i class="fab fa-github"></i>
           </a>
-          <a href={githubUrl} class="contact-value" target="_blank" rel="noopener noreferrer">
-            {githubUrl}
-            <button class="copy-button" onclick={`event.stopPropagation(); copyToClipboard('${githubUrl}')`} title="Copiar perfil de GitHub">
+          <div class="contact-value-container">
+            <a href={githubUrl} class="contact-value" target="_blank" rel="noopener noreferrer">
+              {githubUrl}
+            </a>
+            <button class="copy-button" onclick={`copyToClipboard('${githubUrl}')`} title="Copiar perfil de GitHub">
               <i class="fas fa-copy"></i>
             </button>
-          </a>
+          </div>
         </div>
       )
     }
@@ -293,6 +303,14 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     color: var(--primary);
   }
 
+  .contact-value-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-grow: 1;
+    min-width: 0;
+  }
+
   .contact-value {
     color: var(--secondary);
     font-size: 0.85rem;
@@ -302,10 +320,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    cursor: pointer;
+    flex-grow: 1;
   }
 
   .copy-button {
@@ -319,6 +334,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     justify-content: center;
     opacity: 0.6;
     transition: all 0.3s ease;
+    flex-shrink: 0;
   }
 
   .copy-button:hover, .copy-button:focus {

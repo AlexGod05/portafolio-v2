@@ -1,90 +1,74 @@
-# Personal Portfolio - Claiderman Lozano
+# 👋 ¡Hola! Soy Claiderman Alexander Lozano
 
-[![Astro](https://img.shields.io/badge/Astro-5.7.12-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.3.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/claiderman-lozano)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AlexGod05)
 
-Personal portfolio developed with Astro and TypeScript, designed to showcase my professional experience, projects, and technical skills.
+## 👨‍💻 Sobre mí
 
-## 🚀 Features
+Desarrollador Backend con más de 4 años de experiencia en desarrollo de software. Tengo conocimientos en Java, TypeScript, Python y servicios cloud (AWS, Azure). He trabajado implementando APIs REST, gestionando bases de datos y desplegando soluciones en la nube. He tenido la oportunidad de contribuir en proyectos para clientes como Bancolombia, Banistmo y Grupo Familia, y actualmente trabajo en el desarrollo de backends para videojuegos y aplicaciones interactivas en Polygonus.
 
-- 🎨 Minimalist and modern design
-- 📱 Fully responsive
-- ⚡ Performance optimized with Astro
-- 🎨 Icons with Astro Icon
-- 📊 Organized sections:
-  - Hero
-  - About Me
-  - Experience
-  - Education
-  - Projects
-  - Skills
+- 🎮 Desarrollo de backends para videojuegos y aplicaciones interactivas
+- ☁️ Experiencia en arquitecturas serverless y cloud (AWS)
+- 🚀 Implementación de microservicios escalables
+- 🔄 Prácticas DevOps y CI/CD
+- 📊 Optimización de bases de datos y sistemas de caché
 
-## 🛠️ Technologies
+## 🛠️ Stack Tecnológico
 
-- [Astro](https://astro.build) - Web framework for static sites
-- [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript superset
-- [Astro Icon](https://github.com/natemoo-re/astro-icon) - Icon system
-- [Ninja Keys](https://github.com/ssleptsov/ninja-keys) - Keyboard navigation
+### Lenguajes
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=c-sharp&logoColor=white)
 
-## 🚀 Installation
+### Frameworks
+![Spring Framework](https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=spring&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white)
 
-1. Clone the repository:
-```bash
-git clone https://github.com/AlexGod05/portafolio.git
-cd portafolio
-```
+### Base de Datos
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-00000F?style=flat-square&logo=mysql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![DynamoDB](https://img.shields.io/badge/DynamoDB-4053D6?style=flat-square&logo=amazon-dynamodb&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
 
-2. Install dependencies:
-```bash
-pnpm install
-```
+### Cloud & DevOps
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
 
-3. Start the development server:
-```bash
-pnpm start
-```
+### Mensajería
+![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=flat-square&logo=rabbitmq&logoColor=white)
+![AWS SQS](https://img.shields.io/badge/AWS_SQS-FF4F8B?style=flat-square&logo=amazon-sqs&logoColor=white)
 
-4. Open [http://localhost:4321/portafolio](http://localhost:4321/portafolio) in your browser.
+## 🚀 Proyectos Destacados
 
-## 📦 Available Scripts
+### Gaming & Web3
+- 🎮 [The Next Legends (TNL)](https://www.thenextlegends.xyz/) - Backend para juego de boxeo con IA y NFTs
+- 🏎️ [Raicers](https://www.raicers.com/) - Backend para juego de carreras con IA y criptomonedas
+- ⚽ [AI League FIFA](https://www.futureverse.com/ecosystem) - Backend para juego de fútbol con IA
 
-- `pnpm start` - Start development server
-- `pnpm build` - Build for production
-- `pnpm preview` - Preview production build
+### Fintech & Enterprise
+- 🏦 Sistema de Log de Auditoría para Bancolombia
+- 💳 Gestión Digital de Créditos para Banistmo
+- 📱 Aplicación móvil V-App para Nosotras
 
-## 🌐 Deployment
+## 🎯 Intereses
 
-The site is deployed on GitHub Pages and automatically updates when pushing to the main branch.
+- 🎮 Desarrollo de backends para videojuegos
+- 🌐 Arquitecturas cloud-native y serverless
+- 🤖 Inteligencia Artificial
+- ⛓️ Blockchain y Web3
 
-## 📝 Project Structure
+## 📫 Contacto
 
-```
-portafolio/
-├── public/          # Static files
-├── src/
-│   ├── components/  # Astro components
-│   ├── data/        # CV data in JSON
-│   ├── layouts/     # Application layouts
-│   ├── pages/       # Application pages
-│   ├── scripts/     # JavaScript/TypeScript scripts
-│   └── styles/      # Global styles
-└── docs/           # Production build
-```
-
-## 🤝 Contributing
-
-Contributions are welcome. Please open an issue first to discuss what you would like to change.
-
-## 📄 License
-
-This project is under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-**Claiderman Alexander Lozano Cardona**
-- GitHub: [@AlexGod05](https://github.com/AlexGod05)
-- LinkedIn: [Claiderman Lozano](https://www.linkedin.com/in/claiderman-alexander-lozano-cardona-292a19174/)
+| 📧 Email | claiderman.lozano@gmail.com |
+|----------|----------------------------|
+| 📱 LinkedIn | [Claiderman Alexander Lozano Cardona](https://www.linkedin.com/in/claiderman-lozano) |
+| 🌐 GitHub | [@AlexGod05](https://github.com/AlexGod05) |
 
 ---
-⭐️ If you like this project, give it a star on GitHub
+⭐️ From [AlexGod05](https://github.com/AlexGod05)
