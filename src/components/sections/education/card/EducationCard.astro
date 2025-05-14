@@ -8,9 +8,11 @@ interface Props {
   startYear: string | number;
   endYear?: string | number;
   url: string;
+  score?: string;
 }
 
-const { institution, area, studyType, startYear, endYear, url } = Astro.props;
+const { institution, area, studyType, startYear, endYear, url, score } = Astro.props;
+const isLanguage = area === "Inglés";
 ---
 
 <a href={url} target="_blank" rel="noopener noreferrer" class="card education-card">
@@ -19,7 +21,15 @@ const { institution, area, studyType, startYear, endYear, url } = Astro.props;
       <h3>{institution}</h3>
       <CompactYearBadge startYear={startYear} endYear={endYear} showIcon={true} />
     </div>
-    <p class="card-description education-degree">{studyType} en {area}</p>
+    <p class="card-description education-degree">
+      {studyType} {isLanguage && <span class="language-level">{area}</span>}
+      {!isLanguage && `en ${area}`}
+    </p>
+    {isLanguage && score && (
+      <p class="language-score">
+        <i class="fas fa-language"></i> {score}
+      </p>
+    )}
     <div class="card-indicator education-indicator">
       <i class="fas fa-external-link-alt"></i>
       <span>Ver institución</span>
@@ -34,5 +44,19 @@ const { institution, area, studyType, startYear, endYear, url } = Astro.props;
     margin: 0 0 0.5rem 0;
     color: var(--secondary);
     font-size: 0.85rem;
+  }
+
+  .language-level {
+    font-weight: 500;
+    color: var(--primary);
+  }
+
+  .language-score {
+    margin: 0 0 0.5rem 0;
+    color: var(--secondary);
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
   }
 </style> 

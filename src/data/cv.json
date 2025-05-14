@@ -64,7 +64,7 @@
       "position":"Practicante Auxiliar en Desarrollo de Software",
       "url":"https://www.pragma.co/es/",
       "startDate":"2020-01-01",
-      "endDate":"2020-08-02",
+      "endDate":"2023-08-02",
       "summary":"Contribuyó como desarrollador full-stack en proyectos internos de la empresa, aplicando conocimientos en Node.js, Java y Angular. Inició su experiencia con AWS implementando soluciones con S3, DynamoDB y Cognito.",
       "highlights":[
         "Desarrolló componentes full-stack para aplicaciones internas de la empresa",
@@ -109,9 +109,9 @@
     {
       "institution":"Sena",
       "url":"https://oferta.senasofiaplus.edu.co/sofia-oferta/",
-      "area":"Tecnólogo en Desarrollo y Sistemas de Información",
+      "area":"Tecnólogo en Análisis y Desarrollo de Sistemas de Información",
       "studyType":"Tecnólogo",
-      "startDate":"2019-01-01",
+      "startDate":"2020-09-12",
       "endDate":"2021-01-01",
       "score":"Sobresaliente",
       "courses":[
@@ -127,7 +127,7 @@
       "url":"https://oferta.senasofiaplus.edu.co/sofia-oferta/",
       "area":"Técnico en Sistemas",
       "studyType":"Técnico",
-      "startDate":"2018-01-01",
+      "startDate":"2018-03-09",
       "endDate":"2019-01-01",
       "score":"Sobresaliente",
       "courses":[
@@ -143,7 +143,7 @@
       "url":"https://oferta.senasofiaplus.edu.co/sofia-oferta/",
       "area":"Técnico en Dibujo Arquitectónico",
       "studyType":"Técnico",
-      "startDate":"2017-01-01",
+      "startDate":"2017-05-30",
       "endDate":"2018-01-01",
       "score":"Sobresaliente",
       "courses":[
@@ -185,7 +185,7 @@
       ]
     },
     {
-      "name":"Frameworks y Bibliotecas Backend",
+      "name":"Frameworks",
       "keywords":[
         "Spring Framework",
         "FastAPI",
@@ -202,24 +202,18 @@
         "Firebase",
         "Redis"
       ]
-    },    
+    },
     {
-      "name":"Mensajería y Colas",
+      "name":"Services Cloud",
+      "keywords":[
+        "AWS"        
+      ]
+    },  
+    {
+      "name":"Mensajería",
       "keywords":[
         "RabbitMQ",
         "SQS"
-      ]
-    },
-    {
-      "name":"Cloud y Servicios",
-      "keywords":[
-        "Serverless",
-        "Lambda",
-        "S3",
-        "EC2",
-        "RDS",
-        "CloudFormation",
-        "API Gateway"
       ]
     },
     {
@@ -270,12 +264,12 @@
   ],
   "languages":[
     {
-      "language":"Spanish",
+      "language":"Español",
       "fluency":"Nativo"
     },
     {
-      "language":"English",
-      "fluency":"Intermedio (B2)"
+      "language":"Inglés",
+      "fluency":"Elemental (A2)"
     }
   ],
   "interests":[
@@ -315,24 +309,6 @@
   ],
   "projects":[
     {
-      "name":"Plataforma de videojuegos Web3",
-      "client": "Futureverse",
-      "company": "Polygonus",
-      "startYear": "2024",
-      "endYear": "Actual",
-      "description":"Desarrollo de backend para plataforma de videojuegos Web3, implementando arquitectura serverless con TypeScript. Mejoró el rendimiento del sistema optimizando las consultas a DynamoDB e implementando estrategias de caché.",
-      "highlights":[
-        "TypeScript",
-        "Serverless",
-        "AWS Lambda",
-        "API Gateway",
-        "SQS"
-      ],
-      "url":"https://www.polygon.us/",
-      "github": "https://github.com/AlexGod05/polygonus-samples",
-      "icon":"gamepad"
-    },
-    {
       "name":"Plataforma educativa",
       "client": "Academy",
       "company": "Polygonus",
@@ -346,9 +322,93 @@
         "AWS S3",
         "Docker"
       ],
-      "url":"https://www.polygon.us/",
+      "url":"https://www.academy.polygon.us/",
       "github": "https://github.com/AlexGod05/academy-backend",
       "icon":"graduation-cap"
+    },
+    {
+      "name":"Fanta Runner",
+      "client": "Fanta",
+      "company": "Polygonus",
+      "startYear": "2024",
+      "endYear": "Actual",
+      "description":"Desarrolló una API REST para un videojuego tipo runner, diseñada específicamente para ser consumida por un cliente Unity WebGL3. Implementó sistemas de puntuación, progresión de dificultad y sincronización de datos con backend serverless.",
+      "highlights":[
+        "TypeScript",
+        "Serverless",
+        "AWS",
+        "GitHub Actions",
+        "PostgreSQL",
+        "Postman",
+        "Excalidraw",
+        "REST API",
+        "Unity WebGL3"
+      ],
+      "url":"https://www.fanta.com/",
+      "github": "https://github.com/AlexGod05/fanta-runner-api",
+      "icon":"gamepad"
+    },
+    {
+      "name":"Dprimero Runner",
+      "client": "Dprimero",
+      "company": "Polygonus",
+      "startYear": "2024",
+      "endYear": "Actual",
+      "description":"Desarrolló un videojuego tipo runner con ambiente nórdico y frío donde los jugadores deben esquivar barriles y vallas. Implementó sistemas de puntuación, progresión de dificultad y sincronización de datos con backend serverless.",
+      "highlights":[
+        "TypeScript",
+        "Serverless",
+        "AWS",
+        "GitHub Actions",
+        "PostgreSQL",
+        "Postman",
+        "Excalidraw"
+      ],
+      "url":"https://www.dprimero.com/",
+      "github": "https://github.com/AlexGod05/dprimero-runner",
+      "icon":"snowflake"
+    },
+    {
+      "name":"Panafutbol",
+      "client": "Panafoto",
+      "company": "Polygonus",
+      "startYear": "2024",
+      "endYear": "Actual",
+      "description":"Desarrolló una API REST para un videojuego de dominadas de fútbol con sistema de recompensas. Implementó un sistema de redención de facturas que otorga intentos en el juego, tabla de clasificación para premios, y sincronización en tiempo real de puntuaciones. La API fue diseñada para ser consumida por un cliente Unity WebGL3.",
+      "highlights":[
+        "TypeScript",
+        "Serverless",
+        "AWS",
+        "GitHub Actions",
+        "PostgreSQL",
+        "Postman",
+        "Excalidraw",
+        "REST API",
+        "Unity WebGL3"
+      ],
+      "url":"https://www.panafoto.com/",
+      "github": "https://github.com/AlexGod05/panafutbol-api",
+      "icon":"futbol"
+    },
+    {
+      "name":"Agentes de lo Cotidiano",
+      "client": "Comfama",
+      "company": "Polygonus",
+      "startYear": "2024",
+      "endYear": "Actual",
+      "description":"Desarrolló un videojuego educativo con sistema de gamificación que integra preguntas y respuestas para mejorar la experiencia de aprendizaje. Implementó una arquitectura serverless que gestiona la progresión de los usuarios y almacena resultados para análisis de rendimiento.",
+      "highlights":[
+        "TypeScript",
+        "Serverless",
+        "AWS",
+        "GitHub Actions",
+        "PostgreSQL",
+        "Postman",
+        "Excalidraw"
+      ],
+      "url":"https://www.comfama.com/",
+      "github": "https://github.com/AlexGod05/comfama-game",
+      "icon":"gamepad"
     },
     {
       "name":"Servidor de juegos",
@@ -368,6 +428,66 @@
       "url":"https://www.polygon.us/",
       "github": "https://github.com/AlexGod05/nakama-config",
       "icon":"server"
+    },
+    {
+      "name":"The Next Legends (TNL)",
+      "client": "Futureverse",
+      "company": "Polygonus",
+      "startYear": "2024",
+      "endYear": "2025",
+      "description":"Desarrolló el backend para un innovador juego de boxeo con IA donde los jugadores entrenan boxeadores virtuales. Implementó una arquitectura serverless que gestiona perfiles de usuarios, combates en tiempo real y sistemas de progresión de personajes con NFTs.",
+      "highlights":[
+        "TypeScript",
+        "Serverless",
+        "AWS Lambda",
+        "GitHub Actions",
+        "GraphQL",
+        "NFT",
+        "Web3"
+      ],
+      "url":"https://www.thenextlegends.xyz/",
+      "github": "https://github.com/AlexGod05/tnl-backend",
+      "icon":"gamepad"
+    },
+    {
+      "name":"Raicers",
+      "client": "Futureverse",
+      "company": "Polygonus",
+      "startYear": "2024",
+      "endYear": "2025",
+      "description":"Contribuyó al desarrollo del backend para un juego de carreras impulsado por IA donde los jugadores compiten por recompensas en carreras programadas. Implementó sistemas de matchmaking, recompensas y gestión de activos digitales con criptomonedas.",
+      "highlights":[
+        "TypeScript",
+        "AWS",
+        "Serverless",
+        "GitHub Actions",
+        "NFT",
+        "Crypto",
+        "Web3"
+      ],
+      "url":"https://www.raicers.com/",
+      "github": "https://github.com/AlexGod05/raicers-api",
+      "icon":"car-side"
+    },
+    {
+      "name":"AI League FIFA",
+      "client": "Futureverse",
+      "company": "Polygonus",
+      "startYear": "2025",
+      "endYear": "2025",
+      "description":"Desarrolló backends para un juego de fútbol inteligente con IA en colaboración con FIFA, donde los jugadores actúan como entrenadores de equipos de IA. Implementó sistemas de autenticación, perfiles de usuario y micropagos a través de Web3.",
+      "highlights":[
+        "TypeScript",
+        "GraphQL",
+        "AWS",
+        "Serverless",
+        "GitHub Actions",
+        "NFT",
+        "Web3"
+      ],
+      "url":"https://www.futureverse.com/ecosystem",
+      "github": "https://github.com/AlexGod05/ai-league-api",
+      "icon":"futbol"
     },
     {
       "name":"Sistema de Log de Auditoría",

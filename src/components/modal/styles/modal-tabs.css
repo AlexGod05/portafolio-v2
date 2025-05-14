@@ -64,7 +64,7 @@
 
 .tab-button .badge {
   background-color: var(--primary, #800020);
-  color: white;
+  color: var(--text-on-dark);
   font-size: 0.7rem;
   padding: 0.15rem 0.4rem;
   border-radius: 1rem;
@@ -116,7 +116,7 @@
 .project-card:hover {
   border-color: var(--primary, #800020);
   transform: translateY(-2px);
-  background-color: rgba(139, 0, 0, 0.02);
+  background-color: var(--bg-hover);
 }
 
 .project-header {
@@ -140,7 +140,7 @@
   align-items: center;
   gap: 0.5rem;
   background-color: var(--primary, #8B0000);
-  color: white;
+  color: var(--text-on-dark);
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
   font-size: 0.8rem;
@@ -214,7 +214,7 @@
 }
 
 :root.dark .project-card:hover {
-  background-color: rgba(178, 34, 34, 0.05);
+  background-color: var(--bg-hover);
   border-color: var(--primary, #B22222);
 }
 
@@ -259,4 +259,19 @@
 
 .client-value {
   font-weight: 500;
+}
+
+/* Asegurarse que los textos sean visibles en el hover */
+.project-card:hover h3,
+.project-card:hover a {
+  color: var(--text);
+}
+
+.project-card:hover p {
+  color: var(--secondary);
+}
+
+:root.dark .project-tag {
+  background-color: #2d2d2d; /* Un tono ligeramente más claro que el fondo */
+  border-color: var(--border);
 } 

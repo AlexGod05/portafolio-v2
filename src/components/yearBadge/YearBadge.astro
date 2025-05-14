@@ -14,11 +14,14 @@ const {
 } = Astro.props;
 
 const displayEndYear = endYear || "Actual";
+const sameYear = startYear === endYear && endYear !== undefined;
 ---
 
 <div class={`year-badge ${className}`}>
   {showIcon && <i class="fas fa-calendar-alt"></i>}
-  <time>{startYear} - {displayEndYear}</time>
+  <time>
+    {sameYear ? startYear : `${startYear} - ${displayEndYear}`}
+  </time>
 </div>
 
 <style>

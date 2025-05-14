@@ -45,12 +45,12 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           >
             <i class="fas fa-envelope"></i>
           </a>
-          <div class="contact-value">
+          <a href={`mailto:${email}`} class="contact-value" target="_blank" rel="noopener noreferrer">
             {email}
-            <button class="copy-button" onclick={`copyToClipboard('${email}')`} title="Copiar email">
+            <button class="copy-button" onclick={`event.stopPropagation(); copyToClipboard('${email}')`} title="Copiar email">
               <i class="fas fa-copy"></i>
             </button>
-          </div>
+          </a>
         </div>
       )
     }
@@ -66,12 +66,12 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           >
             <i class="fas fa-phone"></i>
           </a>
-          <div class="contact-value">
+          <a href={`tel:${phone}`} class="contact-value" target="_blank" rel="noopener noreferrer">
             {phone}
-            <button class="copy-button" onclick={`copyToClipboard('${phone}')`} title="Copiar teléfono">
+            <button class="copy-button" onclick={`event.stopPropagation(); copyToClipboard('${phone}')`} title="Copiar teléfono">
               <i class="fas fa-copy"></i>
             </button>
-          </div>
+          </a>
         </div>
       )
     }
@@ -85,12 +85,12 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
       >
         <i class="fas fa-map-marker-alt"></i>
       </a>
-      <div class="contact-value">
+      <a href="https://www.google.com/maps?q=6.299806,-75.535111" class="contact-value" target="_blank" rel="noopener noreferrer">
         {city}, {department}, {region}
-        <button class="copy-button" onclick={`copyToClipboard('https://www.google.com/maps?q=6.299806,-75.535111')`} title="Copiar ubicación">
+        <button class="copy-button" onclick={`event.stopPropagation(); copyToClipboard('https://www.google.com/maps?q=6.299806,-75.535111')`} title="Copiar ubicación">
           <i class="fas fa-copy"></i>
         </button>
-      </div>
+      </a>
     </div>
     {
       linkedUrl && (
@@ -104,12 +104,12 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           >
             <i class="fab fa-linkedin"></i>
           </a>
-          <div class="contact-value">
+          <a href={linkedUrl} class="contact-value" target="_blank" rel="noopener noreferrer">
             {linkedUrl}
-            <button class="copy-button" onclick={`copyToClipboard('${linkedUrl}')`} title="Copiar perfil de LinkedIn">
+            <button class="copy-button" onclick={`event.stopPropagation(); copyToClipboard('${linkedUrl}')`} title="Copiar perfil de LinkedIn">
               <i class="fas fa-copy"></i>
             </button>
-          </div>
+          </a>
         </div>
       )
     }
@@ -125,12 +125,12 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
           >
             <i class="fab fa-github"></i>
           </a>
-          <div class="contact-value">
+          <a href={githubUrl} class="contact-value" target="_blank" rel="noopener noreferrer">
             {githubUrl}
-            <button class="copy-button" onclick={`copyToClipboard('${githubUrl}')`} title="Copiar perfil de GitHub">
+            <button class="copy-button" onclick={`event.stopPropagation(); copyToClipboard('${githubUrl}')`} title="Copiar perfil de GitHub">
               <i class="fas fa-copy"></i>
             </button>
-          </div>
+          </a>
         </div>
       )
     }
@@ -287,9 +287,10 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     flex-shrink: 0;
   }
 
-  .icon-link:hover {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
+  .icon-link:hover, .icon-link:focus {
+    background: var(--primary-light);
+    border: 1px solid var(--primary);
+    color: var(--primary);
   }
 
   .contact-value {
@@ -304,6 +305,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     display: flex;
     align-items: center;
     gap: 4px;
+    cursor: pointer;
   }
 
   .copy-button {
@@ -319,15 +321,17 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     transition: all 0.3s ease;
   }
 
-  .copy-button:hover {
+  .copy-button:hover, .copy-button:focus {
     opacity: 1;
+    color: var(--primary);
   }
 
-  .contact-value:hover {
-    background: var(--card-bg);
+  .contact-value:hover, .contact-value:focus {
+    background: var(--primary-light);
+    color: var(--primary);
   }
 
-  .contact-value:hover .copy-button {
+  .contact-value:hover .copy-button, .contact-value:focus .copy-button {
     opacity: 1;
   }
 

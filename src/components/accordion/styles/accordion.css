@@ -24,7 +24,19 @@
 
 .accordion-header:hover {
   border-color: var(--primary, #8B0000);
-  background-color: rgba(139, 0, 0, 0.02);
+  background-color: var(--bg-hover);
+}
+
+/* Asegurar que el texto permanezca visible en el hover */
+.accordion-header:hover h2,
+.accordion-header:hover h3,
+.accordion-item .accordion-header:hover h3,
+.accordion-item .accordion-header:hover .accordion-title {
+  color: var(--text);
+}
+
+.accordion-header:hover .accordion-icon {
+  color: var(--text);
 }
 
 .accordion-header h2,
@@ -120,6 +132,7 @@
 
 .accordion-item .accordion-header:hover {
   border-color: var(--primary, #8B0000);
+  background-color: var(--bg-hover);
 }
 
 .accordion-item .accordion-header h3,

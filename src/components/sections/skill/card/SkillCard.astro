@@ -3,9 +3,10 @@ interface Props {
   name: string;
   iconHtml: string;
   keywords: string[];
+  skillIcons: Record<string, string>;
 }
 
-const { name, iconHtml, keywords } = Astro.props;
+const { name, iconHtml, keywords, skillIcons } = Astro.props;
 ---
 
 <div class="card skill-card">
@@ -19,9 +20,15 @@ const { name, iconHtml, keywords } = Astro.props;
       </div>
     </div>
     <div class="skill-keywords">
-      {keywords.map(keyword => (
-        <span class="keyword-tag">{keyword}</span>
-      ))}
+      {keywords.map(keyword => {
+        const keywordIcon = skillIcons[keyword] || `<i class="fas fa-circle"></i>`;
+        return (
+          <span class="keyword-tag">
+            <span class="keyword-icon" set:html={keywordIcon} />
+            <span class="keyword-text">{keyword}</span>
+          </span>
+        )
+      })}
     </div>
   </div>
 </div>
@@ -46,6 +53,7 @@ const { name, iconHtml, keywords } = Astro.props;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-top: 0.75rem;
   }
   
   .keyword-tag {
@@ -55,6 +63,22 @@ const { name, iconHtml, keywords } = Astro.props;
     border-radius: 4px;
     font-size: 0.75rem;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .keyword-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: var(--secondary);
+    min-width: 14px;
+  }
+  
+  .keyword-text {
+    flex: 1;
   }
   
   .keyword-tag:hover {

@@ -11,6 +11,16 @@
       </div>
     </label>
   </div>
+  <button class="color-picker-btn" id="color-picker-btn" title="Cambiar color principal">
+    <i class="fas fa-palette"></i>
+  </button>
+  <div class="color-picker-panel" id="color-picker-panel">
+    <div class="color-option" data-color="#8B0000" style="background-color: #8B0000;"></div>
+    <div class="color-option" data-color="#006400" style="background-color: #006400;"></div>
+    <div class="color-option" data-color="#00008B" style="background-color: #00008B;"></div>
+    <div class="color-option" data-color="#4B0082" style="background-color: #4B0082;"></div>
+    <div class="color-option" data-color="#800080" style="background-color: #800080;"></div>
+  </div>
 </div>
 
 <script>
@@ -30,19 +40,110 @@
     }
   }
 
-  const themeToggle = document.getElementById('theme-toggle');
+  function setCustomColors(primaryColor) {
+    // Función para calcular un color más oscuro para primary-dark
+    function darkenColor(color, percent) {
+      const num = parseInt(color.replace('#', ''), 16);
+      const amt = Math.round(2.55 * percent);
+      const R = (num >> 16) - amt;
+      const G = (num >> 8 & 0x00FF) - amt;
+      const B = (num & 0x0000FF) - amt;
+      return '#' + (
+        0x1000000 + 
+        (R < 0 ? 0 : R) * 0x10000 + 
+        (G < 0 ? 0 : G) * 0x100 + 
+        (B < 0 ? 0 : B)
+      ).toString(16).slice(1);
+    }
 
-  // Actualizar el texto del idioma al cargar la página
-  updateLanguageText();
-
-  if (themeToggle && themeToggle instanceof HTMLInputElement) {
-    // Establecer el estado inicial del checkbox basado en el tema actual
-    themeToggle.checked = document.documentElement.classList.contains('dark');
-
-    themeToggle.addEventListener('change', () => {
-      toggleTheme();
-    });
+    // Crear estilos CSS personalizados
+    const isDark = document.documentElement.classList.contains('dark');
+    const root = document.documentElement;
+    
+    if (isDark) {
+      // Versión del tema oscuro
+      root.style.setProperty('--primary', primaryColor);
+      root.style.setProperty('--border-color', primaryColor);
+      root.style.setProperty('--accent', primaryColor);
+      root.style.setProperty('--primary-dark', darkenColor(primaryColor, 20));
+    } else {
+      // Versión del tema claro
+      root.style.setProperty('--primary', primaryColor);
+      root.style.setProperty('--border-color', primaryColor);
+      root.style.setProperty('--accent', primaryColor);
+      root.style.setProperty('--primary-dark', darkenColor(primaryColor, 20));
+    }
+    
+    // Guardar la preferencia en localStorage
+    localStorage.setItem('primaryColor', primaryColor);
   }
+
+  // Inicializar cosas después de que se carga el documento
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const colorPickerBtn = document.getElementById('color-picker-btn');
+    const colorPickerPanel = document.getElementById('color-picker-panel');
+    const colorOptions = document.querySelectorAll('.color-option');
+
+    // Cargar el color guardado
+    const savedColor = localStorage.getItem('primaryColor');
+    if (savedColor) {
+      setCustomColors(savedColor);
+      // Marcar el color seleccionado actualmente
+      colorOptions.forEach(option => {
+        if ((option as HTMLElement).dataset.color === savedColor) {
+          option.classList.add('selected');
+        }
+      });
+    }
+
+    // Actualizar el texto del idioma al cargar la página
+    updateLanguageText();
+
+    if (themeToggle && themeToggle instanceof HTMLInputElement) {
+      // Establecer el estado inicial del checkbox basado en el tema actual
+      themeToggle.checked = document.documentElement.classList.contains('dark');
+
+      themeToggle.addEventListener('change', () => {
+        toggleTheme();
+        // Reaplica los colores personalizados después de cambiar el tema
+        const savedColor = localStorage.getItem('primaryColor');
+        if (savedColor) {
+          setCustomColors(savedColor);
+        }
+      });
+    }
+
+    // Mostrar/ocultar el panel de colores
+    if (colorPickerBtn) {
+      colorPickerBtn.addEventListener('click', () => {
+        colorPickerPanel.classList.toggle('show');
+      });
+    }
+
+    // Manejar la selección de colores
+    colorOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        // Eliminar la selección anterior
+        colorOptions.forEach(opt => opt.classList.remove('selected'));
+        // Seleccionar el nuevo color
+        option.classList.add('selected');
+        // Aplicar el color
+        const newColor = (option as HTMLElement).dataset.color;
+        setCustomColors(newColor);
+        // Ocultar el panel después de seleccionar
+        colorPickerPanel.classList.remove('show');
+      });
+    });
+
+    // Cerrar el panel de colores al hacer clic fuera
+    document.addEventListener('click', (event) => {
+      if (!colorPickerBtn.contains(event.target as Node) && 
+          !colorPickerPanel.contains(event.target as Node)) {
+        colorPickerPanel.classList.remove('show');
+      }
+    });
+  });
 </script>
 
 <style>
@@ -117,7 +218,8 @@
     z-index: 1;
   }
 
-  .language-toggle {
+  /* Estilos para el selector de colores */
+  .color-picker-btn {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -126,29 +228,58 @@
     color: var(--text);
     cursor: pointer;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 5px var(--shadow);
     transition: all 0.3s ease;
-    padding: 0;
-    position: relative;
+    font-size: 1.2rem;
   }
 
-  .language-toggle:hover {
+  .color-picker-btn:hover {
     transform: scale(1.1);
     border-color: var(--primary);
   }
 
-  .language-toggle i {
-    font-size: 0.8rem;
-    margin-bottom: 2px;
+  .color-picker-panel {
+    position: absolute;
+    left: 50px;
+    top: 5px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 3px 8px var(--shadow);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
   }
 
-  .lang-text {
-    font-size: 0.6rem;
-    line-height: 1;
-    font-weight: bold;
+  .color-picker-panel.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+
+  .color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 2px solid transparent;
+  }
+
+  .color-option:hover {
+    transform: scale(1.15);
+  }
+
+  .color-option.selected {
+    border-color: white;
+    box-shadow: 0 0 0 2px var(--border);
   }
 
   @media (max-width: 768px) {
@@ -159,11 +290,6 @@
     .theme-switch {
       width: 35px;
       height: 50px;
-    }
-
-    .language-toggle {
-      width: 35px;
-      height: 35px;
     }
 
     .slider:before {
@@ -181,12 +307,15 @@
       font-size: 0.7rem;
     }
 
-    .language-toggle i {
-      font-size: 0.7rem;
+    .color-picker-btn {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
     }
 
-    .lang-text {
-      font-size: 0.5rem;
+    .color-option {
+      width: 25px;
+      height: 25px;
     }
   }
 

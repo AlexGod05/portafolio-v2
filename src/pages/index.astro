@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import { EducationSection, ExperienceSection, SkillsSection } from "@sections/index";
+import { EducationSection, ExperienceSection, SkillsSection, LanguagesSection } from "@sections/index";
 import { ScrollToTopButton, FloatingButtons } from "@buttons/index";
 import About from "@sections/About.astro";
 import Hero from "@sections/Hero.astro";
@@ -19,6 +19,7 @@ const { name, label } = cvData.basics;
     <About />
     <ExperienceSection />
     <EducationSection />
+    <LanguagesSection />
     <SkillsSection />
   </main>
 

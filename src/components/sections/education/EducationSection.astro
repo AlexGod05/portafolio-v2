@@ -13,7 +13,7 @@ const { education } = cvData
     <div class="cards-grid education-grid">
       {
         education.map(
-          ({ institution, area, studyType, startDate, endDate, url }) => {
+          ({ institution, area, studyType, startDate, endDate, url, score }) => {
             const startYear = new Date(startDate).getFullYear()
             const endYear =
               endDate != null ? new Date(endDate).getFullYear() : "Actual"
@@ -26,6 +26,7 @@ const { education } = cvData
                 startYear={startYear}
                 endYear={endYear}
                 url={url}
+                score={score}
               />
             )
           }
@@ -37,6 +38,4 @@ const { education } = cvData
 
 <style>
   @import '@card/styles/cards.css';
-  
-  /* Estilos específicos adicionales si son necesarios */
 </style>

@@ -35,6 +35,11 @@ const { id, title, subtitle } = Astro.props;
         Cerrar
       </button>
     </div>
+    
+    <!-- Botón para volver arriba -->
+    <button class="scroll-to-top-btn" aria-label="Volver al inicio del modal">
+      <i class="fas fa-arrow-up"></i>
+    </button>
   </div>
 </div>
 
@@ -47,8 +52,42 @@ const { id, title, subtitle } = Astro.props;
     const closeModalBtn = modal.querySelector('.close-modal-button');
     const prevBtn = modal.querySelector('.prev-modal');
     const nextBtn = modal.querySelector('.next-modal');
+    const scrollTopBtn = modal.querySelector('.scroll-to-top-btn');
+    const modalContent = modal.querySelector('.modal-content');
     
-    if (!closeBtn) return;
+    if (!closeBtn || !modalContent) return;
+
+    // Función para mostrar/ocultar el botón de scroll según la posición
+    function toggleScrollTopButton() {
+      if (!scrollTopBtn || !modalContent) return;
+      
+      // Mostrar el botón cuando se ha scrolleado 200px o más
+      if (modalContent.scrollTop > 200) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    }
+
+    // Función para volver arriba al hacer clic en el botón
+    function scrollToTop() {
+      if (!modalContent) return;
+      
+      modalContent.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Evento de scroll en el contenido del modal
+    if (modalContent) {
+      modalContent.addEventListener('scroll', toggleScrollTopButton);
+    }
+
+    // Evento de clic en botón de volver arriba
+    if (scrollTopBtn) {
+      scrollTopBtn.addEventListener('click', scrollToTop);
+    }
 
     // Función para abrir la modal
     function openModal() {
@@ -62,6 +101,16 @@ const { id, title, subtitle } = Astro.props;
       if (!modal) return;
       modal.classList.remove('active');
       document.body.style.overflow = '';
+      
+      // Asegurarse de que el modal vuelva a la posición inicial
+      if (modalContent) {
+        modalContent.scrollTop = 0;
+      }
+      
+      // Ocultar el botón de scroll cuando se cierra el modal
+      if (scrollTopBtn) {
+        scrollTopBtn.classList.remove('visible');
+      }
     }
 
     // Navegación entre modales
@@ -87,13 +136,53 @@ const { id, title, subtitle } = Astro.props;
         newIndex = (currentIndex - 1 + companyCards.length) % companyCards.length;
       }
       
-      // Simular clic en la nueva tarjeta
+      // Obtener la nueva tarjeta
       const newCard = companyCards[newIndex] as HTMLElement;
       if (newCard) {
-        closeModal();
-        setTimeout(() => {
-          newCard.click();
-        }, 300); // Delay después de cerrar la modal
+        // En lugar de cerrar y abrir el modal, simulamos un clic en la tarjeta
+        // pero mantenemos el modal abierto para evitar el parpadeo
+        
+        // Aplicamos una transición de desvanecimiento al contenido actual
+        const modalBody = modal.querySelector('.modal-body');
+        const modalHeader = modal.querySelector('.modal-header h2');
+        
+        if (modalBody && modalHeader) {
+          // Asegurarse de que la posición de scroll vuelva al inicio
+          if (modalContent) {
+            modalContent.scrollTop = 0;
+          }
+          
+          // Ocultar el botón de scroll al cambiar de modal
+          if (scrollTopBtn) {
+            scrollTopBtn.classList.remove('visible');
+          }
+          
+          // Animación de salida
+          modalBody.classList.add('fade-out');
+          
+          // Después de la animación de salida, actualizamos el contenido
+          setTimeout(() => {
+            // Disparamos el evento de clic en la nueva tarjeta pero sin cerrar el modal
+            const event = new CustomEvent('modal-navigate', { 
+              detail: { 
+                company: newCard.getAttribute('data-company'),
+                modalElement: modal
+              } 
+            });
+            newCard.dispatchEvent(event);
+            
+            // Animación de entrada
+            setTimeout(() => {
+              modalBody.classList.remove('fade-out');
+              modalBody.classList.add('fade-in');
+              
+              // Quitar la clase de animación después
+              setTimeout(() => {
+                modalBody.classList.remove('fade-in');
+              }, 300);
+            }, 50);
+          }, 250);
+        }
       }
     }
 

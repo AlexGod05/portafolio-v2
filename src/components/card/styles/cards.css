@@ -15,7 +15,22 @@
 .card:hover, .company-card:hover, .education-card:hover, .project-card:hover {
   transform: translateY(-2px);
   border-color: var(--primary, #8B0000);
-  background-color: rgba(139, 0, 0, 0.02);
+  background-color: var(--bg-hover);
+}
+
+/* Asegurar que el texto permanezca visible en el hover */
+.card:hover h3, 
+.company-card:hover h3, 
+.education-card:hover h3, 
+.project-card:hover h3 {
+  color: var(--text);
+}
+
+.card:hover .card-description, 
+.company-card:hover .card-description, 
+.education-card:hover .card-description, 
+.project-card:hover .card-description {
+  color: var(--secondary);
 }
 
 .card-content, .company-card-content, .education-card-content, .project-card-content {
@@ -204,7 +219,7 @@ a.card, a.company-card, a.education-card, a.project-card {
   gap: 0.5rem;
   padding: 0.5rem 1.25rem;
   background: var(--primary, #800020);
-  color: white;
+  color: var(--text-on-dark);
   border: none;
   border-radius: 2rem;
   font-size: 0.9rem;

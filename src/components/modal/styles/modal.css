@@ -24,6 +24,19 @@
   to { opacity: 1; }
 }
 
+/* Animaciones para cambio entre modales */
+.modal-body.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.modal-body.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
 .modal-content {
   background: var(--background, #ffffff);
   border-radius: 12px;
@@ -172,7 +185,7 @@
   gap: 0.5rem;
   padding: 0.5rem 1.25rem;
   background: var(--primary, #800020);
-  color: white;
+  color: var(--text-on-dark);
   border: none;
   border-radius: 2rem;
   font-size: 0.9rem;
@@ -247,5 +260,54 @@
   
   .modal-footer {
     padding: 1.25rem 1.5rem 1.5rem;
+  }
+}
+
+/* Estilos para botón de volver arriba */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 80px;
+  right: calc(5% + 20px);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary, #8B0000);
+  color: var(--text-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 2px 5px var(--shadow);
+  z-index: 10;
+}
+
+.scroll-to-top-btn.visible {
+  opacity: 0.8;
+  visibility: visible;
+}
+
+.scroll-to-top-btn:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.scroll-to-top-btn i {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top-btn {
+    width: 35px;
+    height: 35px;
+    bottom: 70px;
+    right: calc(2.5% + 10px);
+  }
+  
+  .scroll-to-top-btn i {
+    font-size: 0.875rem;
   }
 } 
