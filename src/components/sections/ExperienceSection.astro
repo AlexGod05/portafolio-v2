@@ -1,0 +1,52 @@
+---
+import Section from "../Section.astro"
+import CompanyCard from "../card/CompanyCard.astro"
+import ExperienceModal from "./ExperienceModal.astro"
+import { Accordion } from "../accordion"
+import { getCVData } from "../../utils/cv"
+
+const cvData = await getCVData()
+const { work } = cvData
+
+// Agrupar experiencias por empresa
+const groupedWork = work.reduce((acc, experience) => {
+  const companyName = experience.name.split(' - ')[0]
+  if (!acc[companyName]) {
+    acc[companyName] = []
+  }
+  acc[companyName].push(experience)
+  return acc
+}, {} as Record<string, typeof work>)
+---
+
+<Section>
+  <Accordion title="Experiencia laboral" icon="fas fa-briefcase">
+    <div class="companies-grid">
+      {
+        Object.entries(groupedWork).map(([company, experiences]) => {
+          // Cast experiences to the correct type
+          const typedExperiences = experiences as typeof work;
+          const firstExperience = typedExperiences[0];
+          const lastExperience = typedExperiences[typedExperiences.length - 1];
+          const startYear = new Date(firstExperience.startDate).getFullYear();
+          const endYear = lastExperience.endDate 
+            ? new Date(lastExperience.endDate).getFullYear() 
+            : "Actual";
+          const years = `${startYear} - ${endYear}`;
+
+          return (
+            <CompanyCard
+              company={company}
+              years={years}
+            />
+          );
+        })
+      }
+    </div>
+  </Accordion>
+</Section>
+
+<ExperienceModal />
+
+<!-- groupedWork como JSON para el cliente -->
+<div id="grouped-work-data" data-work={JSON.stringify(groupedWork)} style="display: none;"></div> 

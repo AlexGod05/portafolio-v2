@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  icon?: string;
+  initiallyExpanded?: boolean;
+  class?: string;
+}
+
+const { title, icon, initiallyExpanded = false, class: className = '' } = Astro.props;
+---
+
+<div class={`accordion-container ${className}`}>
+  <button
+    class="accordion-header"
+    aria-expanded={initiallyExpanded ? "true" : "false"}
+  >
+    <h2>
+      {icon && <i class={icon}></i>}
+      {title}
+    </h2>
+    <span class={`accordion-icon ${initiallyExpanded ? 'rotated' : ''}`}>▼</span>
+  </button>
+
+  <div
+    class="accordion-content"
+    aria-hidden={initiallyExpanded ? "false" : "true"}
+    style={initiallyExpanded ? "max-height: 100vh" : ""}
+  >
+    <slot />
+  </div>
+</div> 

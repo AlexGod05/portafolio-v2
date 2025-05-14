@@ -1,0 +1,21 @@
+---
+interface Props {
+  company: string;
+  years: string;
+}
+
+const { company, years } = Astro.props;
+---
+
+<div class="company-card" data-company={company}>
+  <div class="company-card-content">
+    <div class="company-header">
+      <h3>{company}</h3>
+      <time>{years}</time>
+    </div>
+    <div class="company-indicator">
+      <i class="fas fa-info-circle"></i>
+      <span>Ver experiencia</span>
+    </div>
+  </div>
+</div> 

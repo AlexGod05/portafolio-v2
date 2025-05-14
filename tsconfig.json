@@ -1,18 +1,15 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@cv": ["./src/utils/cv"],
-      "@components/*": ["./src/components/*"],
-      "@icons/*": ["./src/icons/*"],
-      "@scripts/*": ["./src/scripts/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@components/*": ["src/components/*"],
+      "@sections/*": ["src/components/sections/*"],
+      "@utils/*": ["src/utils/*"],
+      "@/*": ["src/*"],
+      "@scripts/*": ["src/scripts/*"]
     },
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "allowJs": true,
-    "checkJs": true
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

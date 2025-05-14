@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
+@import url('../components/accordion/styles/accordion.css');
+@import url('./experience-cards.css');
 
 :root {
   /* Light theme variables */
@@ -10,9 +12,13 @@
   --border-color: #8B0000;
   --card-bg: #ffffff;
   --bg-secondary: #f5f5f5;
+  --bg-hover: #eaeaea;
   --accent: #8B0000;
   --card-border: #e5e7eb;
   --shadow: rgba(0, 0, 0, 0.1);
+  --text-color: #333;
+  --text-secondary: #666;
+  --primary-dark: #600018;
 }
 
 :root.dark {
@@ -25,9 +31,13 @@
   --border-color: #B22222;
   --card-bg: #2a2a2a;
   --bg-secondary: #333333;
+  --bg-hover: #444444;
   --accent: #B22222;
   --card-border: #374151;
   --shadow: rgba(0, 0, 0, 0.3);
+  --text-color: #f5f5f5;
+  --text-secondary: #cccccc;
+  --primary-dark: #800000;
 }
 
 /* Base styles */
@@ -94,60 +104,6 @@ input {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--secondary);
-}
-
-/* Estilos de acordeón */
-.accordion-container {
-  width: 100%;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-
-.accordion-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 1rem;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.accordion-header:hover {
-  background: var(--bg-secondary);
-}
-
-.accordion-header h2 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.accordion-icon {
-  font-size: 0.75rem;
-  color: var(--secondary);
-  transition: transform 0.3s ease;
-}
-
-.accordion-header[aria-expanded="true"] .accordion-icon {
-  transform: rotate(180deg);
-}
-
-.accordion-content {
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  border-top: 1px solid var(--border);
-}
-
-.accordion-content[aria-hidden="true"] {
-  display: none;
 }
 
 /* Configuración global de fuentes */
