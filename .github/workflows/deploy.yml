@@ -21,23 +21,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Enable Corepack
-        run: corepack enable
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: 'npm'
 
-      - name: Set NPM registry to avoid ERR_INVALID_THIS
-        run: pnpm config set registry https://registry.npmjs.org/
-
-      - name: Install dependencies without frozen lockfile
-        run: pnpm install --no-frozen-lockfile
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build Astro site
-        run: pnpm run build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
