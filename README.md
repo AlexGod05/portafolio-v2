@@ -11,7 +11,6 @@ Personal portfolio developed with Astro and TypeScript, designed to showcase my 
 - 🎨 Minimalist and modern design
 - 📱 Fully responsive
 - ⚡ Performance optimized with Astro
-- 🎯 Keyboard navigation with Ninja Keys
 - 🎨 Icons with Astro Icon
 - 📊 Organized sections:
   - Hero
