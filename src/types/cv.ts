@@ -114,8 +114,13 @@ export interface References {
 
 export interface Projects {
   name: string
+  client?: string
+  company: string
+  startYear: string
+  endYear?: string
   description: string
   highlights: Array<string>
   url?: string
+  github?: string
   icon: string
 } 

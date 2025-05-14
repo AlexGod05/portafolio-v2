@@ -6,10 +6,7 @@ export default function Card() {
   setupResponsiveCardGridUtil();
   
   initClickableCardsUtil('.company-card', (card) => {
-    const company = card.getAttribute('data-company');
-    if (company) {
-      console.log(`Clicked on company card: ${company}`);
-    }
+    card.getAttribute('data-company');
   });
 
   CompanyCardScripts();

@@ -33,12 +33,27 @@ function setupCompanyCards() {
       if (!modalBody) return;
 
       const modalTitle = modal.querySelector('.modal-header h2');
-      if (modalTitle) modalTitle.textContent = company;
+      if (modalTitle) {
+        // Obtener la URL de la empresa desde la primera experiencia
+        const companyUrl = groupedWork[company][0]?.url;
+        
+        if (companyUrl) {
+          modalTitle.innerHTML = `
+            ${company}
+            <a href="${companyUrl}" target="_blank" class="company-link" title="Visitar sitio web de ${company}">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          `;
+        } else {
+          modalTitle.textContent = company;
+        }
+      }
 
       updateModalContent(
         modalBody, 
         groupedWork[company], 
-        groupedProjects[company] || []
+        groupedProjects[company] || [],
+        company
       );
 
       if (typeof modal['openModal'] === 'function') {
@@ -64,7 +79,7 @@ function setupCompanyCards() {
   });
 }
 
-function updateModalContent(modalBody, experiences, projects) {
+function updateModalContent(modalBody, experiences, projects, company) {
   modalBody.innerHTML = `
     <div class="tab-container">
       <div class="tab-header">
@@ -129,17 +144,32 @@ function updateModalContent(modalBody, experiences, projects) {
         <div class="tab-pane" id="projects-tab">
           ${projects.length > 0 ? `
             <div class="projects-grid">
-              ${projects.map(project => `
+              ${projects.map(project => {
+                return `
                 <div class="project-card">
-                  <h3>
-                    ${project.url ? `
-                      <a href="${project.url}" target="_blank" title="Ver proyecto ${project.name}">
+                  <div class="project-header">
+                    <h3>
+                      ${project.url ? `
+                        <a href="${project.url}" target="_blank" title="Ver proyecto ${project.name}">
+                          ${project.name}
+                        </a>
+                      ` : `
                         ${project.name}
-                      </a>
-                    ` : `
-                      ${project.name}
-                    `}
-                  </h3>
+                      `}
+                    </h3>
+                    ${project.startYear ? `
+                      <div class="year-badge">
+                        <i class="fas fa-calendar-alt"></i>
+                        <time>${project.startYear} - ${project.endYear || "Actual"}</time>
+                      </div>
+                    ` : ''}
+                  </div>
+                  ${project.client ? `
+                    <div class="project-client">
+                      <span class="client-label">Cliente:</span>
+                      <span class="client-value">${project.client}</span>
+                    </div>
+                  ` : ''}
                   <p>${project.description || ''}</p>
                   <div class="project-tags">
                     ${project.highlights.map(tag => `
@@ -147,7 +177,8 @@ function updateModalContent(modalBody, experiences, projects) {
                     `).join('')}
                   </div>
                 </div>
-              `).join('')}
+              `;
+              }).join('')}
             </div>
           ` : `
             <div class="no-projects">

@@ -63,6 +63,10 @@
   font-weight: 600;
   text-align: center;
   flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .right-controls {
@@ -168,6 +172,25 @@
 :root.dark .modal-footer {
   background: var(--background, #1a1a1a);
   border-color: var(--border, #333333);
+}
+
+.company-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary, #666);
+  font-size: 0.8rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  margin-left: 0.5rem;
+}
+
+.company-link:hover {
+  color: var(--primary, #8B0000);
+  background-color: rgba(139, 0, 0, 0.05);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {

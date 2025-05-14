@@ -119,10 +119,48 @@
   background-color: rgba(139, 0, 0, 0.02);
 }
 
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .project-card h3 {
   font-size: 1.05rem;
   margin: 0;
   color: var(--text-color, #333);
+  flex: 1;
+}
+
+.project-card .year-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--primary, #8B0000);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.project-card .year-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.project-card .year-badge i {
+  font-size: 0.8rem;
+}
+
+.project-card .year-badge time {
+  font-weight: 500;
 }
 
 .project-card a {
@@ -193,4 +231,32 @@
   .projects-grid {
     grid-template-columns: 1fr;
   }
+  
+  .project-card .year-badge {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}
+
+.project-card .client-name {
+  font-weight: 600;
+  color: var(--primary, #8B0000);
+  font-size: 0.9em;
+}
+
+.project-client {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.client-label {
+  font-weight: 500;
+  color: var(--text-secondary, #666);
+}
+
+.client-value {
+  font-weight: 500;
 } 

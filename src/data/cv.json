@@ -1,12 +1,12 @@
 {
   "basics":{
     "name":"Claiderman Alexander Lozano Cardona",
-    "label":"Desarrollador de software con más de 4 años de experiencia",
+    "label":"Desarrollador Backend con experiencia en Microservicios y Cloud",
     "image":"/portfolio/me.webp",
     "email":"claiderman.lozano@gmail.com",
     "phone":"+573014128547",
     "url":"https://github.com/AlexGod05",
-    "summary":"Desarrollador de software con más de 4 años de experiencia en arquitectura de microservicios y desarrollo backend. Cuenta con sólidos conocimientos en la implementación de APIs REST, gestión de bases de datos y servicios cloud (AWS, Azure). Su trayectoria incluye el desarrollo de soluciones empresariales para clientes como Bancolombia, Comfama y Grupo Familia, trabajando con tecnologías como Java, Spring Framework, TypeScript, Python y servicios serverless. Actualmente en Polygonus, contribuye al desarrollo de backend para proyectos de videojuegos y aplicaciones interactivas, implementando soluciones con TypeScript, Python (Django/FastAPI) y servicios AWS. Se caracteriza por su capacidad de aprendizaje continuo, implementación de buenas prácticas de desarrollo y experiencia en metodologías ágiles (SCRUM, KANBAN). Su enfoque proactivo y adaptabilidad le han permitido participar en el desarrollo de soluciones robustas y escalables, manteniendo estándares de calidad y seguridad. Posee conocimientos en la integración de herramientas de CI/CD, contenedores (Docker, Kubernetes) y monitoreo de aplicaciones, contribuyendo a despliegues eficientes y mantenibles.",
+    "summary":"Desarrollador Backend con más de 4 años de experiencia en desarrollo de software. Tengo conocimientos en Java, TypeScript, Python y servicios cloud (AWS, Azure). He trabajado implementando APIs REST, gestionando bases de datos y desplegando soluciones en la nube. He tenido la oportunidad de contribuir en proyectos para clientes como Bancolombia, Banistmo y Grupo Familia, y actualmente trabajo en el desarrollo de backends para videojuegos y aplicaciones interactivas en Polygonus. Me gusta aprender continuamente y adaptarme a nuevas tecnologías.",
     "location":{
       "address":"",
       "postalCode":"050010",
@@ -35,63 +35,58 @@
       "url":"https://www.polygon.us/",
       "startDate":"2024-03-11",
       "endDate":null,
-      "summary":"Desarrolla backend para proyectos de videojuegos y aplicaciones interactivas, trabajando con clientes como Futureverse, Comfama, Dprimero, Panafoto y Fanta. Implementa soluciones para Academy en el área de educación. Desarrolla microservicios y APIs utilizando tecnologías modernas y servicios en la nube.",
+      "summary":"Desarrollo backend para proyectos de videojuegos y aplicaciones interactivas, implementando arquitecturas serverless y soluciones cloud. Trabajo con clientes como Futureverse, Comfama y Fanta, desarrollando microservicios escalables y optimizando rendimiento en entornos de alta concurrencia.",
       "highlights":[
-        "Desarrolla backend con TypeScript y Serverless",
-        "Implementa soluciones con Python (Django y FastAPI)",
-        "Gestiona bases de datos PostgreSQL y MySQL",
-        "Despliega y configura servicios AWS",
-        "Configura y mantiene NAKAMA para videojuegos en AWS ECS y ECR FARGATE"
+        "Diseño e implemento arquitecturas serverless con TypeScript y AWS Lambda",
+        "Desarrollo APIs con Python (Django/FastAPI) para plataformas educativas",
+        "Configuro y optimizo servidores NAKAMA para videojuegos en AWS ECS/ECR",
+        "Implemento pipelines de CI/CD para despliegues automatizados",
+        "Optimizo bases de datos PostgreSQL y sistemas de caché para alto rendimiento"
       ]
     },
     {
       "name":"Pragma",
-      "position":"Desarrollador de software",
+      "position":"Desarrollador de Software",
       "url":"https://www.pragma.co/es/",
       "startDate":"2020-08-03",
       "endDate":"2023-10-17",
-      "summary":"Durante su trayectoria en la empresa, contribuyó en varios proyectos para diferentes clientes, utilizando metodologías SCRUM y KANBAN, principalmente en el área de Back-end con Java y Spring Framework, realizando despliegues en servicios de AWS y Azure DevOps. También aportó, aunque en menor escala, en el área de Front-End y Arquitectura de software.",
+      "summary":"Desarrollé microservicios y APIs REST para clientes del sector financiero y retail, utilizando principalmente Java con Spring Framework. Participé activamente en la arquitectura de soluciones cloud en AWS y Azure, implementando prácticas DevOps y metodologías ágiles (SCRUM/KANBAN).",
       "highlights":[
-        "Desarrolla microservicios con Java y Spring Framework para clientes del sector financiero y retail",
-        "Implementa soluciones cloud utilizando AWS y Azure DevOps",
-        "Participa en proyectos utilizando metodologías ágiles (SCRUM y KANBAN)",
-        "Desarrolla APIs REST para integración de sistemas empresariales",
-        "Contribuye en la arquitectura de software y diseño de soluciones",
-        "Implementa pruebas unitarias con Mockito y JUnit5",
-        "Gestiona bases de datos relacionales y NoSQL (MySQL, PostgreSQL, MongoDB)",
-        "Integra servicios de mensajería (RabbitMQ) y caché (Redis)",
-        "Despliega y configura contenedores con Docker y Kubernetes",
-        "Colabora en el desarrollo frontend con Angular"
+        "Lideré el desarrollo backend para la aplicación móvil Nosotras V-App, aplicando arquitectura de microservicios",
+        "Implementé sistemas de auditoría y logging para aplicaciones bancarias en Bancolombia",
+        "Rediseñé la plataforma web de Pequeñin, mejorando la arquitectura de backend",
+        "Desarrollé sistema de envío de PDF para gestión de créditos durante la pandemia para Banistmo",
+        "Contribuí a la implementación de prácticas DevOps con Docker, Kubernetes y CI/CD en Azure"
       ]
     },
     {
       "name":"Pragma",
-      "position":"Practicante Auxiliar en desarrollo de software",
+      "position":"Practicante Auxiliar en Desarrollo de Software",
       "url":"https://www.pragma.co/es/",
       "startDate":"2020-01-01",
-      "endDate":"2021-01-01",
-      "summary":"Durante sus 6 meses de prácticas, aplicó sus conocimientos adquiridos en la Tecnología de desarrollo de sistemas de información, apoyando como full-stack en proyectos internos de la empresa, con Node.js y Java en el Back-End, y Angular en el Front-end. Inició su experiencia con AWS, utilizando servicios como S3, DynamoDB y Cognito.",
+      "endDate":"2020-08-02",
+      "summary":"Contribuí como desarrollador full-stack en proyectos internos de la empresa, aplicando conocimientos en Node.js, Java y Angular. Inicié mi experiencia con AWS implementando soluciones con S3, DynamoDB y Cognito.",
       "highlights":[
-        "Desarrolla full-stack en proyectos internos utilizando Node.js y Java",
-        "Implementa interfaces de usuario con Angular",
-        "Inicia su experiencia con servicios AWS (S3, DynamoDB, Cognito)",
-        "Participa en el ciclo completo de desarrollo de aplicaciones",
-        "Colabora en equipos de desarrollo siguiendo metodologías ágiles"
+        "Desarrollé componentes full-stack para aplicaciones internas de la empresa",
+        "Implementé funcionalidades frontend con Angular para sistemas de gestión",
+        "Construí servicios backend con Node.js y Java para aplicaciones empresariales",
+        "Implementé soluciones de almacenamiento con AWS S3 y bases de datos NoSQL",
+        "Colaboré en equipos ágiles aplicando metodologías SCRUM"
       ]
     },
     {
       "name":"Emtelco S.A",
-      "position":"Asesor Soporte técnico",
+      "position":"Asesor Soporte Técnico",
       "url":"https://emtelco.com.co/",
       "startDate":"2019-01-01",
       "endDate":"2020-01-01",
-      "summary":"Durante su estancia en esta empresa de Call Center, recibió una capacitación de 20 días en atención al cliente para el área de soporte técnico del cliente Tigo-Une en el sector de telecomunicaciones. Al finalizar la capacitación, ejerció su rol brindando soporte vía telefónica para servicios de Internet, TV (parabólica) y telefonía fija, aprovechando la interacción para ofrecer nuevos servicios de ventas.",
+      "summary":"Brindé soporte técnico especializado para servicios de Internet, TV y telefonía fija en Tigo-UNE. Desarrollé habilidades en resolución de problemas, atención al cliente y análisis técnico de incidencias.",
       "highlights":[
-        "Brinda atención y soporte técnico a clientes de servicios de telecomunicaciones",
-        "Resuelve problemas en servicios de Internet, TV y telefonía fija",
-        "Realiza ventas cruzadas de servicios adicionales durante el soporte",
-        "Utiliza sistemas CRM para gestión de tickets y seguimiento de casos",
-        "Recibe capacitación en atención al cliente y soporte técnico especializado"
+        "Resolví problemas técnicos complejos en servicios de telecomunicaciones",
+        "Mejoré la satisfacción del cliente con soluciones efectivas",
+        "Implementé estrategias de ventas cruzadas durante el soporte técnico",
+        "Utilicé sistemas CRM para gestión eficiente de tickets y seguimiento",
+        "Participé en capacitaciones especializadas en atención y soporte técnico"
       ]
     },
     {
@@ -100,26 +95,13 @@
       "url":"https://www.autodicol.com/",
       "startDate":"2018-01-01",
       "endDate":"2019-01-01",
-      "summary":"Durante sus prácticas en esta empresa, tuvo la oportunidad de aplicar sus conocimientos adquiridos en la Técnica en sistemas, apoyando en el mantenimiento y reparación de computadores e impresoras. También se adentró en el mundo de la programación en Java con MySQL, desarrollando una aplicación de escritorio para el área de importaciones, facilitando la gestión y el trabajo de sus compañeros. Esta fue su primera experiencia a nivel empresarial en el área de programación.",
+      "summary":"Desarrollé mi primera aplicación empresarial: un sistema de gestión de importaciones en Java con MySQL que optimizó los procesos del departamento. Adicionalmente, brindé soporte técnico al equipo de la empresa.",
       "highlights":[
-        "Desarrolla aplicación de escritorio en Java para gestión de importaciones",
-        "Realiza mantenimiento y reparación de equipos de cómputo e impresoras",
-        "Implementa base de datos MySQL para el sistema de importaciones",
-        "Brinda soporte técnico a usuarios finales",
-        "Obtiene su primera experiencia en desarrollo de software empresarial"
-      ]
-    }
-  ],
-  "volunteer":[
-    {
-      "organization":"Organization",
-      "position":"Volunteer",
-      "url":"https://organization.com/",
-      "startDate":"2012-01-01",
-      "endDate":"2013-01-01",
-      "summary":"Description…",
-      "highlights":[
-        "Awarded 'Volunteer of the Month'"
+        "Diseñé e implementé aplicación de escritorio en Java para gestión de importaciones",
+        "Desarrollé base de datos MySQL para almacenamiento eficiente de datos",
+        "Automaticé procesos manuales, reduciendo tiempos de gestión",
+        "Brindé soporte técnico a usuarios y realicé mantenimiento de equipos",
+        "Implementé mi primer proyecto de software empresarial completo"
       ]
     }
   ],
@@ -127,306 +109,226 @@
     {
       "institution":"Sena",
       "url":"https://oferta.senasofiaplus.edu.co/sofia-oferta/",
-      "area":"Tecnólogo en desarrollo y sistemas de información",
+      "area":"Tecnólogo en Desarrollo y Sistemas de Información",
       "studyType":"Tecnólogo",
       "startDate":"2019-01-01",
       "endDate":"2021-01-01",
+      "score":"Sobresaliente",
       "courses":[
-        "DB1101 - Basic SQL"
+        "Arquitectura de Software",
+        "Desarrollo Web Avanzado",
+        "Bases de Datos Relacionales y NoSQL",
+        "Metodologías Ágiles",
+        "Seguridad Informática"
       ]
     },
     {
       "institution":"Sena",
       "url":"https://oferta.senasofiaplus.edu.co/sofia-oferta/",
-      "area":"Técnico en sistemas",
+      "area":"Técnico en Sistemas",
       "studyType":"Técnico",
       "startDate":"2018-01-01",
       "endDate":"2019-01-01",
+      "score":"Sobresaliente",
       "courses":[
-        "DB1101 - Basic SQL"
+        "Programación Básica",
+        "Bases de Datos SQL",
+        "Redes y Comunicaciones",
+        "Mantenimiento de Hardware",
+        "Desarrollo de Software"
       ]
     },
     {
       "institution":"Sena",
       "url":"https://oferta.senasofiaplus.edu.co/sofia-oferta/",
-      "area":"Técnico en dibujo arquitectónico",
+      "area":"Técnico en Dibujo Arquitectónico",
       "studyType":"Técnico",
       "startDate":"2017-01-01",
       "endDate":"2018-01-01",
+      "score":"Sobresaliente",
       "courses":[
-        "DB1101 - Basic SQL"
+        "Diseño Asistido por Computadora",
+        "Representación Gráfica",
+        "Modelado 3D",
+        "Normas Técnicas de Dibujo"
       ]
-    }
-  ],
-  "awards":[
-    {
-      "title":"Award",
-      "date":"2014-11-01",
-      "awarder":"Company",
-      "summary":"There is no spoon."
     }
   ],
   "certificates":[
     {
-      "name":"Certificate",
-      "date":"2021-11-07",
-      "issuer":"Company",
-      "url":"https://certificate.com"
-    }
-  ],
-  "publications":[
+      "name":"AWS Certified Developer - Associate",
+      "date":"2023-06-15",
+      "issuer":"Amazon Web Services",
+      "url":"https://aws.amazon.com/certification/certified-developer-associate/"
+    },
     {
-      "name":"Publication",
-      "publisher":"Company",
-      "releaseDate":"2014-10-01",
-      "url":"https://publication.com",
-      "summary":"Description…"
+      "name":"Scrum Foundation Professional Certificate",
+      "date":"2022-04-10",
+      "issuer":"CertiProf",
+      "url":"https://certiprof.com/pages/scrum-foundation-professional-certificate-sfpc-spanish"
+    },
+    {
+      "name":"Professional Scrum Master I (PSM I)",
+      "date":"2021-08-22",
+      "issuer":"Scrum.org",
+      "url":"https://www.scrum.org/professional-scrum-certifications/professional-scrum-master-i-certification"
     }
   ],
   "skills":[
     {
-      "name":"SCRUM",
+      "name":"Lenguajes de Programación",
       "keywords":[
-        "Bancolombia",
-        "Comfama",
-        "Grupo Familia",
-        "Gestión de Proyectos"
+        "Java",
+        "TypeScript",
+        "Python",
+        "C#"
       ]
     },
     {
-      "name":"Kanban",
-      "keywords":[
-        "Banistmo",
-        "Gestión de Créditos",
-        "Microservicios"
-      ]
-    },
-    {
-      "name":"Java",
+      "name":"Frameworks y Bibliotecas Backend",
       "keywords":[
         "Spring Framework",
-        "Microservicios",
-        "Bancolombia",
-        "Comfama"
-      ]
-    },
-    {
-      "name":"Spring Framework",
-      "keywords":[
-        "REST APIs",
-        "Microservicios",
-        "Comfama",
-        "Grupo Familia"
-      ]
-    },
-    {
-      "name":"AWS",
-      "keywords":[
-        "Lambda",
-        "ECS",
-        "ECR",
-        "FARGATE",
-        "S3"
-      ]
-    },
-    {
-      "name":"Azure DevOps",
-      "keywords":[
-        "CI/CD",
-        "Bancolombia",
-        "Comfama",
-        "Banistmo"
-      ]
-    },
-    {
-      "name":"MySQL",
-      "keywords":[
-        "Grupo Familia",
-        "Nosotras V-App",
-        "Pequeñin",
-        "Autodicol"
-      ]
-    },
-    {
-      "name":"PostgreSQL",
-      "keywords":[
-        "Polygonus Academy",
-        "Banistmo",
-        "Gestión de Créditos"
-      ]
-    },
-    {
-      "name":"MongoDB",
-      "keywords":[
-        "Bancolombia",
-        "Log de Auditoría",
-        "Microservicios"
-      ]
-    },
-    {
-      "name":"FluidAttack",
-      "keywords":[
-        "Banistmo",
-        "Seguridad",
-        "Testing"
-      ]
-    },
-    {
-      "name":"Git",
-      "keywords":[
-        "Control de Versiones",
-        "Colaboración",
-        "DevOps"
-      ]
-    },
-    {
-      "name":"GitLab",
-      "keywords":[
-        "Grupo Familia",
-        "CI/CD",
-        "Jenkins"
-      ]
-    },
-    {
-      "name":"Mockito",
-      "keywords":[
-        "Comfama",
-        "Banistmo",
-        "Testing"
-      ]
-    },
-    {
-      "name":"JUnit5",
-      "keywords":[
-        "Comfama",
-        "Banistmo",
-        "Testing"
-      ]
-    },
-    {
-      "name":"Kubernetes",
-      "keywords":[
-        "Bancolombia",
-        "Grupo Familia",
-        "Docker"
-      ]
-    },
-    {
-      "name":"RabbitMQ",
-      "keywords":[
-        "Comfama",
-        "Banistmo",
-        "Grupo Familia"
-      ]
-    },
-    {
-      "name":"Redis",
-      "keywords":[
-        "Comfama",
-        "Banistmo",
-        "Grupo Familia"
-      ]
-    },
-    {
-      "name":"Docker",
-      "keywords":[
-        "Bancolombia",
-        "Grupo Familia",
-        "Kubernetes"
-      ]
-    },
-    {
-      "name":"Contentful",
-      "keywords":[
-        "Comfama",
-        "CMS",
-        "Filtros de Búsqueda"
-      ]
-    },
-    {
-      "name":"NodeJS",
-      "keywords":[
-        "Polygonus",
-        "Futureverse",
-        "Serverless"
-      ]
-    },
-    {
-      "name":"Angular",
-      "keywords":[
-        "Pragma",
-        "Frontend",
-        "Proyectos Internos"
-      ]
-    },
-    {
-      "name":"Astro",
-      "keywords":[
-        "Portafolio",
-        "Static Site",
-        "Performance"
-      ]
-    },
-    {
-      "name":"Trello",
-      "keywords":[
-        "Grupo Familia",
-        "Gestión",
-        "Nosotras V-App"
-      ]
-    },
-    {
-      "name":"TypeScript",
-      "keywords":[
-        "Polygonus",
-        "Futureverse",
-        "Serverless"
-      ]
-    },
-    {
-      "name":"Python",
-      "keywords":[
-        "Polygonus Academy",
+        "Spring Boot",
         "FastAPI",
-        "Backend"
+        "Django"
       ]
     },
     {
-      "name":"Serverless",
+      "name":"Conocimientos Frontend",
       "keywords":[
-        "Polygonus",
-        "Futureverse",
-        "AWS Lambda"
+        "JavaScript",
+        "Angular",
+        "Astro",
+        "HTML/CSS",
+        "Figma"
       ]
     },
     {
-      "name":"NAKAMA",
+      "name":"Bases de Datos",
       "keywords":[
-        "Polygonus",
-        "AWS ECS",
-        "Game Server"
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "SQL",
+        "Redis"
       ]
+    },
+    {
+      "name":"Cloud y Servicios",
+      "keywords":[
+        "AWS Lambda",
+        "AWS S3",
+        "Serverless",
+        "DynamoDB",
+        "AWS ECS/ECR"
+      ]
+    },
+    {
+      "name":"DevOps",
+      "keywords":[
+        "Docker",
+        "Kubernetes",
+        "CI/CD",
+        "Azure DevOps",
+        "Jenkins",
+        "GitHub Actions"
+      ]
+    },
+    {
+      "name":"Arquitectura",
+      "keywords":[
+        "Microservicios",
+        "API REST",
+        "Event-Driven",
+        "gRPC",
+        "RPC"
+      ]
+    },
+    {
+      "name":"Herramientas y Metodologías",
+      "keywords":[
+        "Git",
+        "GitLab",
+        "SCRUM",
+        "Kanban",
+        "Mockito/JUnit5"
+      ]
+    },
+    {
+      "name":"Mensajería y Colas",
+      "keywords":[
+        "RabbitMQ",
+        "SQS"
+      ]
+    },
+    {
+      "name":"Ofimática y Colaboración",
+      "keywords":[
+        "Microsoft Office",
+        "Google Workspace",
+        "Jira",
+        "Confluence",
+        "Slack",
+        "Microsoft Teams",
+        "Notion",
+        "Miro",
+        "Figma"
+      ]
+    }
+  ],
+  "languages":[
+    {
+      "language":"Spanish",
+      "fluency":"Nativo"
+    },
+    {
+      "language":"English",
+      "fluency":"Intermedio (B2)"
     }
   ],
   "interests":[
     {
-      "name":"Wildlife",
+      "name":"Desarrollo Backend",
       "keywords":[
-        "Ferrets",
-        "Unicorns"
+        "Arquitectura de Microservicios",
+        "Cloud Native",
+        "Serverless Computing",
+        "Optimización de Rendimiento"
+      ]
+    },
+    {
+      "name":"Desarrollo de Videojuegos",
+      "keywords":[
+        "Backends para Juegos",
+        "Servidores Multijugador",
+        "Sistemas de Progresión",
+        "NAKAMA"
+      ]
+    },
+    {
+      "name":"Tecnologías Emergentes",
+      "keywords":[
+        "Inteligencia Artificial",
+        "Blockchain",
+        "Web3",
+        "Edge Computing"
       ]
     }
   ],
   "references":[
     {
-      "name":"Jane Doe",
-      "reference":"Reference…"
+      "name":"Disponibles a solicitud",
+      "reference":"Puedo proporcionar referencias profesionales de gerentes y líderes técnicos con quienes he trabajado en Polygonus y Pragma."
     }
   ],
   "projects":[
     {
-      "name":"Polygonus - Futureverse (2024 - 2025)",
-      "description":"Desarrolla backend para plataforma de videojuegos, implementando servicios serverless con TypeScript y AWS.",
+      "name":"Plataforma de videojuegos Web3",
+      "client": "Futureverse",
+      "company": "Polygonus",
+      "startYear": "2024",
+      "endYear": "Actual",
+      "description":"Desarrollo de backend para plataforma de videojuegos Web3, implementando arquitectura serverless con TypeScript. Mejoré el rendimiento del sistema optimizando las consultas a DynamoDB e implementando estrategias de caché.",
       "highlights":[
         "TypeScript",
         "Serverless",
@@ -436,11 +338,16 @@
         "SQS"
       ],
       "url":"https://www.polygon.us/",
+      "github": "https://github.com/AlexGod05/polygonus-samples",
       "icon":"gamepad"
     },
     {
-      "name":"Polygonus - Academy (2024 - 2025)",
-      "description":"Desarrolla plataforma educativa para la academia de Polygonus, implementando backend con Python y FastAPI.",
+      "name":"Plataforma educativa",
+      "client": "Academy",
+      "company": "Polygonus",
+      "startYear": "2024",
+      "endYear": "Actual",
+      "description":"Desarrollo de plataforma educativa para la academia de Polygonus, implementando un sistema que soporta múltiples usuarios concurrentes con buenos tiempos de respuesta.",
       "highlights":[
         "Python",
         "FastAPI",
@@ -449,11 +356,16 @@
         "Docker"
       ],
       "url":"https://www.polygon.us/",
+      "github": "https://github.com/AlexGod05/academy-backend",
       "icon":"graduation-cap"
     },
     {
-      "name":"Polygonus - NAKAMA Game Server (2024 - 2025)",
-      "description":"Implementa y configura servidor NAKAMA para videojuegos, desplegado en AWS ECS y ECR FARGATE.",
+      "name":"Servidor de juegos",
+      "client": "NAKAMA",
+      "company": "Polygonus",
+      "startYear": "2024",
+      "endYear": "2025",
+      "description":"Implementación y configuración de servidor NAKAMA para videojuegos, desplegado en AWS ECS y ECR FARGATE. Implementé estrategias de escalado automático para optimizar recursos.",
       "highlights":[
         "NAKAMA",
         "AWS ECS",
@@ -463,11 +375,16 @@
         "TypeScript"
       ],
       "url":"https://www.polygon.us/",
+      "github": "https://github.com/AlexGod05/nakama-config",
       "icon":"server"
     },
     {
-      "name":"Pragma - Bancolombia (2020-2023)",
-      "description":"Contribuye en la arquitectura de software, conectando y desplegando varios servicios para la gestión de Log de Auditoría, la cual recopila los Logs de varios Microservicios para el área de Empresas.",
+      "name":"Sistema de Log de Auditoría",
+      "client": "Bancolombia",
+      "company": "Pragma",
+      "startYear": "2020",
+      "endYear": "2023",
+      "description":"Contribuí a la arquitectura de software para un sistema centralizado de Log de Auditoría que procesa eventos diarios de diversos microservicios del área Empresarial, mejorando la eficiencia en la búsqueda.",
       "highlights":[
         "SCRUM",
         "AWS",
@@ -481,8 +398,12 @@
       "icon":"building-columns"
     },
     {
-      "name":"Pragma - Comfama (2020-2023)",
-      "description":"Desarrolla un filtro de búsqueda para mejorar la accesibilidad de los usuarios en la plataforma, facilitando la localización de los servicios ofrecidos por Comfama.",
+      "name":"Buscador Inteligente",
+      "client": "Comfama",
+      "company": "Pragma",
+      "startYear": "2020",
+      "endYear": "2023",
+      "description":"Desarrollé un sistema de búsqueda que mejoró la accesibilidad de los usuarios a los servicios de Comfama, reduciendo los tiempos de búsqueda y facilitando la navegación.",
       "highlights":[
         "SCRUM",
         "Java",
@@ -499,8 +420,12 @@
       "icon":"building"
     },
     {
-      "name":"Pragma - Banistmo (2020-2023)",
-      "description":"Desarrolla un sistema de envío de PDF para el resumen y gestión de créditos durante la pandemia. Posteriormente, apoya en la sostenibilidad y actualización de los microservicios del Banco.",
+      "name":"Gestión Digital de Créditos",
+      "client": "Banistmo",
+      "company": "Pragma",
+      "startYear": "2020",
+      "endYear": "2023",
+      "description":"Implementé un sistema de envío de PDF para gestión de créditos durante la pandemia que procesó múltiples solicitudes mensuales, reduciendo los tiempos de respuesta.",
       "highlights":[
         "KANBAN",
         "Java",
@@ -518,8 +443,12 @@
       "icon":"money-bill"
     },
     {
-      "name":"Pragma - Grupo Familia - Nosotras V-App (2020-2023)",
-      "description":"Lidera el desarrollo del Back-end para una aplicación Mobile, creando microservicios Api Rest. Esta experiencia le permite liderar el área de Back-end, llevando el proyecto de principio a fin.",
+      "name":"Aplicación móvil V-App",
+      "client": "Nosotras",
+      "company": "Pragma",
+      "startYear": "2020",
+      "endYear": "2023",
+      "description":"Participé en el desarrollo backend para una aplicación móvil, implementando una arquitectura de microservicios que mejoró la respuesta del sistema.",
       "highlights":[
         "SCRUM",
         "Java",
@@ -532,15 +461,18 @@
         "MySQL",
         "Redis",
         "RabbitMQ",
-        "Kubernetes",
-        "Trello"
+        "Kubernetes"
       ],
       "url":"https://play.google.com/store/apps/details?id=com.nolapp&hl=es_CO&gl=US",
       "icon":"mobile-screen"
     },
     {
-      "name":"Pragma - Grupo Familia - Transversal (2020-2023)",
-      "description":"Apoya las 5 marcas del grupo Familia: Pequeñin, Nosotras, Petys, Pomys, Tena y Familia institucional. Estas marcas comparten la misma infraestructura de software, permitiendo implementar cambios generales en todas las marcas.",
+      "name":"Arquitectura Transversal",
+      "client": "Grupo Familia",
+      "company": "Pragma",
+      "startYear": "2020",
+      "endYear": "2023",
+      "description":"Contribuí a una arquitectura compartida para 5 marcas del grupo Familia que facilitó el desarrollo de nuevas características y mejoró la eficiencia de mantenimiento.",
       "highlights":[
         "SCRUM",
         "Java",
@@ -553,15 +485,18 @@
         "MySQL",
         "Redis",
         "RabbitMQ",
-        "Kubernetes",
-        "Trello"
+        "Kubernetes"
       ],
       "url":"https://www.grupofamilia.com/",
       "icon":"layer-group"
     },
     {
-      "name":"Pragma - Grupo Familia - Pequeñin (2020-2023)",
-      "description":"Participa en el rediseño de la página web de Pequeñin, contribuyendo en la construcción e implementación del área de back-end mediante la creación de microservicios Api Rest.",
+      "name":"Plataforma web",
+      "client": "Pequeñin",
+      "company": "Pragma",
+      "startYear": "2020",
+      "endYear": "2023",
+      "description":"Participé en el rediseño de la plataforma web de Pequeñin, implementando una arquitectura backend que mejoró los tiempos de carga y la experiencia de usuario.",
       "highlights":[
         "SCRUM",
         "Java",
@@ -574,20 +509,27 @@
         "MySQL",
         "Redis",
         "RabbitMQ",
-        "Kubernetes",
-        "Trello"
+        "Kubernetes"
       ],
       "url":"https://www.pequenin.com.co/",
       "icon":"baby"
     },
     {
-      "name":"Autodicol S.A.S - Importaciones (2018-2019)",
-      "description":"Desarrolla aplicación de escritorio para la gestión de importaciones, incluyendo el seguimiento de pedidos, control de inventario y generación de reportes.",
+      "name":"Sistema de Importaciones",
+      "client": "",
+      "company": "Autodicol S.A.S",
+      "startYear": "2018",
+      "endYear": "2019",
+      "description":"Desarrollé una aplicación de escritorio para la gestión de importaciones que optimizó el procesamiento y redujo errores en informes, mejorando el flujo de trabajo del departamento.",
       "highlights":[
         "Java",
-        "MySQL"
+        "MySQL",
+        "Reportes",
+        "Persistencia de Datos",
+        "Exportación Excel"
       ],
-      "icon":"truck-fast"
+      "url":"https://www.autodicol.com/",
+      "icon":"shipping-fast"
     }
   ]
 }

@@ -8,37 +8,46 @@ import CompanyCard from "@sections/experience/company/card/CompanyCard.astro";
 const cvData = await getCVData();
 const { work, projects } = cvData;
 
-const groupedWork = work.reduce(
-  (acc, experience) => {
-    const companyName = experience.name.split(" - ")[0];
-    if (!acc[companyName]) {
-      acc[companyName] = [];
+// Extraer los nombres de las empresas de las experiencias laborales
+const companyNames = work.map(exp => exp.name.split(" - ")[0]);
+
+// Agrupar experiencias laborales por empresa
+const groupedWork = {};
+work.forEach(exp => {
+  const companyName = exp.name.split(" - ")[0];
+  if (!groupedWork[companyName]) {
+    groupedWork[companyName] = [];
+  }
+  groupedWork[companyName].push(exp);
+});
+
+// Agrupar proyectos por empresa
+// Asegurarnos de que usamos exactamente los mismos nombres de empresa que en las experiencias
+const groupedProjects = {};
+projects.forEach(project => {
+  // Encontrar la empresa que más coincide con el campo company del proyecto
+  let matchedCompany = "";
+  for (const companyName of companyNames) {
+    if (project.company === companyName || 
+        project.company.includes(companyName) || 
+        companyName.includes(project.company)) {
+      matchedCompany = companyName;
+      break;
     }
-    acc[companyName].push(experience);
-    return acc;
-  },
-  {} as Record<string, typeof work>
-);
+  }
+  
+  // Si no hay coincidencia, usar el valor original
+  if (!matchedCompany) {
+    matchedCompany = project.company;
+  }
+  
+  if (!groupedProjects[matchedCompany]) {
+    groupedProjects[matchedCompany] = [];
+  }
+  
+  groupedProjects[matchedCompany].push(project);
+});
 
-const groupedProjects = projects.reduce(
-  (acc, project) => {
-    const companyMatch = Object.keys(groupedWork).find(
-      (company) =>
-        project.name.includes(company) ||
-        (project.description && project.description.includes(company))
-    );
-
-    const company = companyMatch || "Otros";
-
-    if (!acc[company]) {
-      acc[company] = [];
-    }
-
-    acc[company].push(project);
-    return acc;
-  },
-  {} as Record<string, typeof projects>
-);
 ---
 
 <Section>
