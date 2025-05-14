@@ -11,24 +11,26 @@
     height: 40px;
     border-radius: 50%;
     border: none;
-    background: var(--card-bg);
-    color: var(--text);
+    background: var(--primary);
+    color: var(--text-on-dark);
     cursor: pointer;
     display: none;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px var(--shadow);
     transition: all 0.3s ease;
     z-index: 100;
   }
 
   .scroll-to-top.visible {
     display: flex;
+    opacity: 0.9;
   }
 
   .scroll-to-top:hover {
     transform: translateY(-3px);
-    background: var(--hover);
+    opacity: 1;
+    background: var(--primary-dark);
   }
 
   @media (max-width: 768px) {

@@ -9,26 +9,30 @@ const { languages } = cvData;
 
 <Section>
   <Accordion title="Idiomas" icon="fas fa-language">
-    <div class="languages-container">
+    <div class="cards-grid languages-grid">
       {
         languages.map(({ language, fluency }) => (
-          <div class="language-card">
-            <div class="language-icon">
-              {language === "Español" ? (
-                <i class="fas fa-flag"></i>
-              ) : language === "Inglés" ? (
-                <i class="fas fa-language"></i>
-              ) : (
-                <i class="fas fa-globe"></i>
-              )}
+          <div class="card language-card">
+            <div class="card-content">
+              <div class="card-header language-header">
+                <div class="language-icon">
+                  {language === "Español" ? (
+                    <i class="fas fa-flag"></i>
+                  ) : language === "Inglés" ? (
+                    <i class="fas fa-language"></i>
+                  ) : (
+                    <i class="fas fa-globe"></i>
+                  )}
+                </div>
+                <div class="language-content">
+                  <h3 class="language-name">{language}</h3>
+                  <p class="language-level">{fluency}</p>
+                </div>
+                {language === "Inglés" && (
+                  <div class="language-badge">A2</div>
+                )}
+              </div>
             </div>
-            <div class="language-content">
-              <h3 class="language-name">{language}</h3>
-              <p class="language-level">{fluency}</p>
-            </div>
-            {language === "Inglés" && (
-              <div class="language-badge">A2</div>
-            )}
           </div>
         ))
       }
@@ -37,28 +41,22 @@ const { languages } = cvData;
 </Section>
 
 <style>
-  .languages-container {
-    display: flex;
-    flex-direction: column;
+  @import '@card/styles/cards.css';
+
+  .languages-grid {
     gap: 1rem;
     padding: 1rem;
   }
 
   .language-card {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    padding: 1rem;
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.2s ease;
   }
 
-  .language-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
+  .language-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0;
   }
 
   .language-icon {
@@ -68,9 +66,10 @@ const { languages } = cvData;
     width: 2.5rem;
     height: 2.5rem;
     background-color: var(--primary);
-    color: white;
+    color: var(--text-on-dark);
     border-radius: 50%;
     font-size: 1.2rem;
+    flex-shrink: 0;
   }
 
   .language-content {
@@ -79,14 +78,14 @@ const { languages } = cvData;
 
   .language-name {
     margin: 0;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 500;
     color: var(--text);
   }
 
   .language-level {
     margin: 0.2rem 0 0;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--secondary);
   }
 
@@ -96,11 +95,29 @@ const { languages } = cvData;
     justify-content: center;
     min-width: 2.2rem;
     height: 2.2rem;
-    background-color: var(--primary-light);
-    color: white;
+    background-color: var(--primary);
+    color: var(--text-on-dark);
     border-radius: 6px;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 0.9rem;
     padding: 0 0.4rem;
+  }
+
+  @media (max-width: 768px) {
+    .language-header {
+      gap: 0.75rem;
+    }
+
+    .language-icon {
+      width: 2.2rem;
+      height: 2.2rem;
+      font-size: 1rem;
+    }
+
+    .language-badge {
+      min-width: 2rem;
+      height: 2rem;
+      font-size: 0.85rem;
+    }
   }
 </style> 
