@@ -176,10 +176,8 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ")
     border-radius: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-  }
-
-  img:hover {
-    transform: scale(1.02);
+    image-rendering: auto;
+    -webkit-backface-visibility: hidden;
   }
 
   span {
