@@ -8,20 +8,9 @@ export interface Experience {
 
 export function renderExperienceCards(experiences: Experience[]): string {
   return experiences.map(exp => {
-    const startYear = new Date(exp.startDate).getFullYear();
-    const endYear = exp.endDate 
-      ? new Date(exp.endDate).getFullYear() 
-      : "Actual";
-
     return `
-      <div class="experience-card">
-        <div class="card-header">
-          <div class="position-info">
-            <h3>${exp.position}</h3>
-            <time>${startYear} - ${endYear}</time>
-          </div>
-        </div>
-        <div class="card-content">
+      <div class="experience-item">
+        <div class="experience-content">
           <div class="summary-card">
             <h4>Descripción del Rol</h4>
             <p>${exp.summary}</p>

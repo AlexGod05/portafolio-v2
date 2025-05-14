@@ -6,7 +6,7 @@
     "email":"claiderman.lozano@gmail.com",
     "phone":"+573014128547",
     "url":"https://github.com/AlexGod05",
-    "summary":"Desarrollador de software con más de 4 años de experiencia en arquitectura de microservicios y desarrollo backend. Posee sólidos conocimientos en la implementación de APIs REST, gestión de bases de datos y servicios cloud (AWS, Azure). Su trayectoria incluye el desarrollo de soluciones empresariales para clientes como Bancolombia, Comfama y Grupo Familia, trabajando con tecnologías como Java, Spring Framework, TypeScript, Python y servicios serverless. Actualmente en Polygonus, contribuye al desarrollo de backend para proyectos de videojuegos y aplicaciones interactivas, implementando soluciones con TypeScript, Python (Django/FastAPI) y servicios AWS. Se caracteriza por su capacidad de aprendizaje continuo, implementación de buenas prácticas de desarrollo y experiencia en metodologías ágiles (SCRUM, KANBAN). Su enfoque proactivo y adaptabilidad le han permitido participar en el desarrollo de soluciones robustas y escalables, manteniendo estándares de calidad y seguridad. Posee conocimientos en la integración de herramientas de CI/CD, contenedores (Docker, Kubernetes) y monitoreo de aplicaciones, contribuyendo a despliegues eficientes y mantenibles.",
+    "summary":"Desarrollador de software con más de 4 años de experiencia en arquitectura de microservicios y desarrollo backend. Cuenta con sólidos conocimientos en la implementación de APIs REST, gestión de bases de datos y servicios cloud (AWS, Azure). Su trayectoria incluye el desarrollo de soluciones empresariales para clientes como Bancolombia, Comfama y Grupo Familia, trabajando con tecnologías como Java, Spring Framework, TypeScript, Python y servicios serverless. Actualmente en Polygonus, contribuye al desarrollo de backend para proyectos de videojuegos y aplicaciones interactivas, implementando soluciones con TypeScript, Python (Django/FastAPI) y servicios AWS. Se caracteriza por su capacidad de aprendizaje continuo, implementación de buenas prácticas de desarrollo y experiencia en metodologías ágiles (SCRUM, KANBAN). Su enfoque proactivo y adaptabilidad le han permitido participar en el desarrollo de soluciones robustas y escalables, manteniendo estándares de calidad y seguridad. Posee conocimientos en la integración de herramientas de CI/CD, contenedores (Docker, Kubernetes) y monitoreo de aplicaciones, contribuyendo a despliegues eficientes y mantenibles.",
     "location":{
       "address":"",
       "postalCode":"050010",
@@ -35,13 +35,13 @@
       "url":"https://www.polygon.us/",
       "startDate":"2024-03-11",
       "endDate":null,
-      "summary":"Desarrollo de backend para proyectos de videojuegos y aplicaciones interactivas, trabajando con clientes como Futureverse, Comfama, Dprimero, Panafoto y Fanta. Implementación de soluciones para Academy en el área de educación. Desarrollo de microservicios y APIs utilizando tecnologías modernas y servicios en la nube.",
+      "summary":"Desarrolla backend para proyectos de videojuegos y aplicaciones interactivas, trabajando con clientes como Futureverse, Comfama, Dprimero, Panafoto y Fanta. Implementa soluciones para Academy en el área de educación. Desarrolla microservicios y APIs utilizando tecnologías modernas y servicios en la nube.",
       "highlights":[
-        "Desarrollo de backend con TypeScript y Serverless",
-        "Implementación de soluciones con Python (Django y FastAPI)",
-        "Gestión de bases de datos PostgreSQL y MySQL",
-        "Despliegue y configuración de servicios AWS",
-        "Configuración y mantenimiento de NAKAMA para videojuegos en AWS ECS y ECR FARGATE"
+        "Desarrolla backend con TypeScript y Serverless",
+        "Implementa soluciones con Python (Django y FastAPI)",
+        "Gestiona bases de datos PostgreSQL y MySQL",
+        "Despliega y configura servicios AWS",
+        "Configura y mantiene NAKAMA para videojuegos en AWS ECS y ECR FARGATE"
       ]
     },
     {
@@ -50,18 +50,18 @@
       "url":"https://www.pragma.co/es/",
       "startDate":"2020-08-03",
       "endDate":"2023-10-17",
-      "summary":"Durante mi trayecto por la empresa tuve la oportunidad de aportar en varios proyectos, en diferentes clientes, con el marco de trabajo SCRUM y KANBAN, principalmente en el área de Back-end con el lenguaje de programación Java y el Framework Spring, realizando despliegues en servicios de AWS y Azure DevOps, también aporté, pero a menor escala en el área de Front-End y Arquitectura de software.",
+      "summary":"Durante su trayectoria en la empresa, contribuyó en varios proyectos para diferentes clientes, utilizando metodologías SCRUM y KANBAN, principalmente en el área de Back-end con Java y Spring Framework, realizando despliegues en servicios de AWS y Azure DevOps. También aportó, aunque en menor escala, en el área de Front-End y Arquitectura de software.",
       "highlights":[
-        "Desarrollo de microservicios con Java y Spring Framework para clientes del sector financiero y retail",
-        "Implementación de soluciones cloud utilizando AWS y Azure DevOps",
-        "Participación en proyectos utilizando metodologías ágiles (SCRUM y KANBAN)",
-        "Desarrollo de APIs REST para integración de sistemas empresariales",
-        "Contribución en la arquitectura de software y diseño de soluciones",
-        "Implementación de pruebas unitarias con Mockito y JUnit5",
-        "Gestión de bases de datos relacionales y NoSQL (MySQL, PostgreSQL, MongoDB)",
-        "Integración de servicios de mensajería (RabbitMQ) y caché (Redis)",
-        "Despliegue y configuración de contenedores con Docker y Kubernetes",
-        "Colaboración en el desarrollo frontend con Angular"
+        "Desarrolla microservicios con Java y Spring Framework para clientes del sector financiero y retail",
+        "Implementa soluciones cloud utilizando AWS y Azure DevOps",
+        "Participa en proyectos utilizando metodologías ágiles (SCRUM y KANBAN)",
+        "Desarrolla APIs REST para integración de sistemas empresariales",
+        "Contribuye en la arquitectura de software y diseño de soluciones",
+        "Implementa pruebas unitarias con Mockito y JUnit5",
+        "Gestiona bases de datos relacionales y NoSQL (MySQL, PostgreSQL, MongoDB)",
+        "Integra servicios de mensajería (RabbitMQ) y caché (Redis)",
+        "Despliega y configura contenedores con Docker y Kubernetes",
+        "Colabora en el desarrollo frontend con Angular"
       ]
     },
     {
@@ -70,13 +70,13 @@
       "url":"https://www.pragma.co/es/",
       "startDate":"2020-01-01",
       "endDate":"2021-01-01",
-      "summary":"Durante estos 6 meses de prácticas, pude aplicar mis conocimientos adquiridos en la Tecnología de desarrollo de sistemas de información, apoyando como full-stack en proyectos internos de la empresa, con el lenguaje de programación Node.js y Java por el lado del Back-End, y por el lado del Front-end con Angular, también inicié mi camino en AWS, consumiendo varios servicios como son S3, DynamoDB y Cognito",
+      "summary":"Durante sus 6 meses de prácticas, aplicó sus conocimientos adquiridos en la Tecnología de desarrollo de sistemas de información, apoyando como full-stack en proyectos internos de la empresa, con Node.js y Java en el Back-End, y Angular en el Front-end. Inició su experiencia con AWS, utilizando servicios como S3, DynamoDB y Cognito.",
       "highlights":[
-        "Desarrollo full-stack en proyectos internos utilizando Node.js y Java",
-        "Implementación de interfaces de usuario con Angular",
-        "Primera experiencia con servicios AWS (S3, DynamoDB, Cognito)",
-        "Participación en el ciclo completo de desarrollo de aplicaciones",
-        "Colaboración en equipos de desarrollo siguiendo metodologías ágiles"
+        "Desarrolla full-stack en proyectos internos utilizando Node.js y Java",
+        "Implementa interfaces de usuario con Angular",
+        "Inicia su experiencia con servicios AWS (S3, DynamoDB, Cognito)",
+        "Participa en el ciclo completo de desarrollo de aplicaciones",
+        "Colabora en equipos de desarrollo siguiendo metodologías ágiles"
       ]
     },
     {
@@ -85,13 +85,13 @@
       "url":"https://emtelco.com.co/",
       "startDate":"2019-01-01",
       "endDate":"2020-01-01",
-      "summary":"Durante mi estancia en esta empresa de Call Center tuve una capacitación de 20 días, donde vimos temas de atención al cliente en el área de soporte técnico para el cliente Tigo-Une que hace parte del área de telecomunicaciones, donde al finalizar la capacitación pude ejercer mi rol, dando soporte vía telefónica, para los servicios de Internet, Tv (parabólica) y telefonía fija, donde también se aprovechaba la llamada para ofrecer nuevos servicios de ventas",
+      "summary":"Durante su estancia en esta empresa de Call Center, recibió una capacitación de 20 días en atención al cliente para el área de soporte técnico del cliente Tigo-Une en el sector de telecomunicaciones. Al finalizar la capacitación, ejerció su rol brindando soporte vía telefónica para servicios de Internet, TV (parabólica) y telefonía fija, aprovechando la interacción para ofrecer nuevos servicios de ventas.",
       "highlights":[
-        "Atención y soporte técnico a clientes de servicios de telecomunicaciones",
-        "Resolución de problemas en servicios de Internet, TV y telefonía fija",
-        "Ventas cruzadas de servicios adicionales durante el soporte",
-        "Manejo de sistemas CRM para gestión de tickets y seguimiento de casos",
-        "Capacitación en atención al cliente y soporte técnico especializado"
+        "Brinda atención y soporte técnico a clientes de servicios de telecomunicaciones",
+        "Resuelve problemas en servicios de Internet, TV y telefonía fija",
+        "Realiza ventas cruzadas de servicios adicionales durante el soporte",
+        "Utiliza sistemas CRM para gestión de tickets y seguimiento de casos",
+        "Recibe capacitación en atención al cliente y soporte técnico especializado"
       ]
     },
     {
@@ -100,13 +100,13 @@
       "url":"https://www.autodicol.com/",
       "startDate":"2018-01-01",
       "endDate":"2019-01-01",
-      "summary":"Durante mis prácticas en esta empresa, tuve la oportunidad de aportar mi conocimiento adquirido en la Técnica en sistemas, apoyando en el mantenimiento y reparación de computadores e impresoras, también tuve la oportunidad de adentrarme en el mundo de la programación en Java con MySQL, desarrollando una aplicación de escritorio para el área de importaciones, facilitando la gestión y el trabajo final de mis compañeros. Esta sería mi primera experiencia a nivel empresarial en el área de programación.",
+      "summary":"Durante sus prácticas en esta empresa, tuvo la oportunidad de aplicar sus conocimientos adquiridos en la Técnica en sistemas, apoyando en el mantenimiento y reparación de computadores e impresoras. También se adentró en el mundo de la programación en Java con MySQL, desarrollando una aplicación de escritorio para el área de importaciones, facilitando la gestión y el trabajo de sus compañeros. Esta fue su primera experiencia a nivel empresarial en el área de programación.",
       "highlights":[
-        "Desarrollo de aplicación de escritorio en Java para gestión de importaciones",
-        "Mantenimiento y reparación de equipos de cómputo e impresoras",
-        "Implementación de base de datos MySQL para el sistema de importaciones",
-        "Soporte técnico a usuarios finales",
-        "Primera experiencia en desarrollo de software empresarial"
+        "Desarrolla aplicación de escritorio en Java para gestión de importaciones",
+        "Realiza mantenimiento y reparación de equipos de cómputo e impresoras",
+        "Implementa base de datos MySQL para el sistema de importaciones",
+        "Brinda soporte técnico a usuarios finales",
+        "Obtiene su primera experiencia en desarrollo de software empresarial"
       ]
     }
   ],
@@ -426,7 +426,7 @@
   "projects":[
     {
       "name":"Polygonus - Futureverse (2024 - 2025)",
-      "description":"Desarrollo de backend para plataforma de videojuegos, implementando servicios serverless con TypeScript y AWS.",
+      "description":"Desarrolla backend para plataforma de videojuegos, implementando servicios serverless con TypeScript y AWS.",
       "highlights":[
         "TypeScript",
         "Serverless",
@@ -440,7 +440,7 @@
     },
     {
       "name":"Polygonus - Academy (2024 - 2025)",
-      "description":"Desarrollo de plataforma educativa para la academia de Polygonus, implementando backend con Python y FastAPI.",
+      "description":"Desarrolla plataforma educativa para la academia de Polygonus, implementando backend con Python y FastAPI.",
       "highlights":[
         "Python",
         "FastAPI",
@@ -453,7 +453,7 @@
     },
     {
       "name":"Polygonus - NAKAMA Game Server (2024 - 2025)",
-      "description":"Implementación y configuración de servidor NAKAMA para videojuegos, desplegado en AWS ECS y ECR FARGATE.",
+      "description":"Implementa y configura servidor NAKAMA para videojuegos, desplegado en AWS ECS y ECR FARGATE.",
       "highlights":[
         "NAKAMA",
         "AWS ECS",
@@ -467,7 +467,7 @@
     },
     {
       "name":"Pragma - Bancolombia (2020-2023)",
-      "description":"En este Banco, Aporté en la arquitectura de software, conectando y desplegando varios servicios para la gestión de Log de Auditoría, la cual recopilaba los Logs de varios Microservicios para el área de Empresas.",
+      "description":"Contribuye en la arquitectura de software, conectando y desplegando varios servicios para la gestión de Log de Auditoría, la cual recopila los Logs de varios Microservicios para el área de Empresas.",
       "highlights":[
         "SCRUM",
         "AWS",
@@ -482,7 +482,7 @@
     },
     {
       "name":"Pragma - Comfama (2020-2023)",
-      "description":"Se desarrolló un filtro de búsqueda para que los usuarios tengan una mejor accesibilidad en la plataforma y puedan encontrar de una mejor forma los servicios ofrecidos por Comfama.",
+      "description":"Desarrolla un filtro de búsqueda para mejorar la accesibilidad de los usuarios en la plataforma, facilitando la localización de los servicios ofrecidos por Comfama.",
       "highlights":[
         "SCRUM",
         "Java",
@@ -500,7 +500,7 @@
     },
     {
       "name":"Pragma - Banistmo (2020-2023)",
-      "description":"Se desarrolló un sistema de envío de PDF, para el resumen y gestión de créditos que se dieron en el tiempo de la pandemia, después de esto estuve apoyando en la sostenibilidad y actualización de los microservicios del Banco.",
+      "description":"Desarrolla un sistema de envío de PDF para el resumen y gestión de créditos durante la pandemia. Posteriormente, apoya en la sostenibilidad y actualización de los microservicios del Banco.",
       "highlights":[
         "KANBAN",
         "Java",
@@ -519,7 +519,7 @@
     },
     {
       "name":"Pragma - Grupo Familia - Nosotras V-App (2020-2023)",
-      "description":"En este proyecto realicé el Back-end para una aplicación Mobile, creando microservicios Api Rest, en este caso estuve liderando el área de Back-end, lo cual me permitió retarme y llevar de principio a fin este proyecto.",
+      "description":"Lidera el desarrollo del Back-end para una aplicación Mobile, creando microservicios Api Rest. Esta experiencia le permite liderar el área de Back-end, llevando el proyecto de principio a fin.",
       "highlights":[
         "SCRUM",
         "Java",
@@ -540,7 +540,7 @@
     },
     {
       "name":"Pragma - Grupo Familia - Transversal (2020-2023)",
-      "description":"En este proyecto apoyé las 5 marcas del grupo Familia, las cuales son: Pequeñin, Nosotras, Petys, Pomys, Tena y Familia institucional, estas marcas tienen la misma infraestructura de software lo que permitía que un cambio general se pudiera implementar en todas las marcas.",
+      "description":"Apoya las 5 marcas del grupo Familia: Pequeñin, Nosotras, Petys, Pomys, Tena y Familia institucional. Estas marcas comparten la misma infraestructura de software, permitiendo implementar cambios generales en todas las marcas.",
       "highlights":[
         "SCRUM",
         "Java",
@@ -561,7 +561,7 @@
     },
     {
       "name":"Pragma - Grupo Familia - Pequeñin (2020-2023)",
-      "description":"Se hizo un rediseño de la página web de Pequeñin, estuve en la construcción e implementación en el área de back-end creando microservicios Api Rest.",
+      "description":"Participa en el rediseño de la página web de Pequeñin, contribuyendo en la construcción e implementación del área de back-end mediante la creación de microservicios Api Rest.",
       "highlights":[
         "SCRUM",
         "Java",
@@ -582,7 +582,7 @@
     },
     {
       "name":"Autodicol S.A.S - Importaciones (2018-2019)",
-      "description":"Desarrollo de aplicación de escritorio para la gestión de importaciones, incluyendo el seguimiento de pedidos, control de inventario y generación de reportes",
+      "description":"Desarrolla aplicación de escritorio para la gestión de importaciones, incluyendo el seguimiento de pedidos, control de inventario y generación de reportes.",
       "highlights":[
         "Java",
         "MySQL"

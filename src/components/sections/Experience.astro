@@ -99,6 +99,7 @@ const groupedWork = work.reduce((acc, experience) => {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.75rem;
+    border-bottom: none;
   }
 
   .company-card h3 {
@@ -140,6 +141,84 @@ const groupedWork = work.reduce((acc, experience) => {
       grid-template-columns: 1fr;
     }
   }
+
+  .summary-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 4px;
+  }
+
+  .summary-card p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .highlights-card {
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    box-shadow: none;
+    width: 100%;
+  }
+
+  .highlights-card h4 {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 1rem 0;
+  }
+
+  .highlights-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .highlights-card li {
+    display: flex;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    align-items: flex-start;
+  }
+
+  .bullet {
+    color: var(--text-color);
+    font-size: 1.25rem;
+    line-height: 1;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  .year-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #800020;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  .year-badge i {
+    font-size: 0.875rem;
+  }
+
+  .year-badge time {
+    font-weight: 500;
+  }
 </style>
 
 <!-- groupedWork como JSON para el cliente -->
@@ -167,7 +246,6 @@ const groupedWork = work.reduce((acc, experience) => {
           </div>
           <div class="card-content">
             <div class="summary-card">
-              <h4>Descripción del Rol</h4>
               <p>${exp.summary}</p>
             </div>
             <div class="highlights-card">
@@ -222,11 +300,49 @@ const groupedWork = work.reduce((acc, experience) => {
               <i class="fas fa-times"></i>
             </button>
           </div>
-          <div class="company-title">
+          <div class="company-header">
             <h2>${company}</h2>
           </div>
-          <div class="experiences-grid">
-            ${experienceCards}
+          <div class="experiences-accordion">
+            ${groupedWork[company].map((exp, index) => {
+              const startYear = new Date(exp.startDate).getFullYear();
+              const endYear = exp.endDate 
+                ? new Date(exp.endDate).getFullYear() 
+                : "Actual";
+              
+              return `
+                <div class="accordion-item">
+                  <button class="accordion-header" aria-expanded="false">
+                    <div class="position-info">
+                      <h3>${exp.position}</h3>
+                      <div class="year-badge">
+                        <i class="fas fa-calendar-alt"></i>
+                        <time>${startYear} - ${endYear}</time>
+                      </div>
+                    </div>
+                    <span class="accordion-icon">▼</span>
+                  </button>
+                  <div class="accordion-content" aria-hidden="true">
+                    <div class="experience-content">
+                      <div class="summary-card">
+                        <p>${exp.summary}</p>
+                      </div>
+                      <div class="highlights-card">
+                        <h4>Logros y Responsabilidades</h4>
+                        <ul>
+                          ${exp.highlights.map(highlight => `
+                            <li>
+                              <span class="bullet">•</span>
+                              <span>${highlight}</span>
+                            </li>
+                          `).join('')}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              `;
+            }).join('')}
           </div>
           <div class="modal-footer">
             <button class="close-modal-button">
@@ -236,7 +352,7 @@ const groupedWork = work.reduce((acc, experience) => {
           </div>
         `;
 
-        // Añadir estilos para las tarjetas
+        // Añadir estilos para el acordeón
         const style = document.createElement('style');
         style.textContent = `
           .modal-controls {
@@ -272,7 +388,7 @@ const groupedWork = work.reduce((acc, experience) => {
           .modal-footer {
             display: flex;
             justify-content: center;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             padding-top: 1rem;
             border-top: 2px solid #800020;
           }
@@ -301,125 +417,116 @@ const groupedWork = work.reduce((acc, experience) => {
             font-size: 1rem;
           }
 
-          .company-title {
+          .company-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             padding-bottom: 1rem;
             border-bottom: 2px solid #800020;
           }
 
-          .company-title h2 {
+          .company-header h2 {
             color: var(--text-color);
             font-size: 2rem;
-            font-weight: 600;
+            font-weight: 700;
             margin: 0;
           }
 
-          .experiences-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
-            padding: 1rem;
+          .experiences-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem 0;
           }
 
-          .experience-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            border: none;
+          .accordion-item {
+            border: 1px solid var(--border);
+            border-radius: 8px;
             overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            position: relative;
           }
 
-          .experience-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-          }
-
-          .experience-card:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            bottom: -1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background: #800020;
-            border-radius: 3px;
-          }
-
-          .card-header {
+          .accordion-header {
+            width: 100%;
+            padding: 1rem;
             background: var(--bg-secondary);
-            padding: 1.5rem;
-            border-bottom: none;
-          }
-
-          .position-info {
+            border: none;
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+          }
+
+          .accordion-header:hover {
+            background: var(--bg-hover);
+          }
+
+          .accordion-header .position-info {
+            display: flex;
             align-items: center;
             gap: 1rem;
           }
 
-          .position-info h3 {
-            color: var(--text-color);
-            font-size: 1.25rem;
-            font-weight: 600;
+          .accordion-header h3 {
             margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
           }
 
-          .position-info time {
-            display: inline-block;
-            color: white;
-            font-size: 0.875rem;
-            font-weight: 500;
-            padding: 0.25rem 0.75rem;
-            background: #800020;
-            border: none;
-            border-radius: 1rem;
+          .accordion-icon {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
           }
 
-          .card-content {
+          .accordion-header[aria-expanded="true"] .accordion-icon {
+            transform: rotate(180deg);
+          }
+
+          .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--bg-primary);
+          }
+
+          .accordion-content[aria-hidden="false"] {
+            max-height: 2000px;
+          }
+
+          .accordion-content .experience-content {
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
           }
 
-          .summary-card,
-          .highlights-card {
-            background: var(--bg-secondary);
-            border-radius: 12px;
-            padding: 1.25rem;
-            border: none;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-          }
-
-          .summary-card::after {
-            content: '';
-            position: absolute;
-            bottom: -0.5rem;
-            left: 0;
+          .summary-card {
             width: 100%;
-            height: 2px;
-            background: #800020;
-            opacity: 0.3;
-          }
-
-          .summary-card h4,
-          .highlights-card h4 {
-            color: var(--text-color);
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 0 0 1rem 0;
           }
 
           .summary-card p {
-            color: var(--text-secondary);
+            color: var(--text-color);
             font-size: 1rem;
-            line-height: 1.6;
+            line-height: 1.7;
             margin: 0;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+          }
+
+          .highlights-card {
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            box-shadow: none;
+            width: 100%;
+          }
+
+          .highlights-card h4 {
+            color: var(--text-color);
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0 0 1rem 0;
           }
 
           .highlights-card ul {
@@ -434,46 +541,48 @@ const groupedWork = work.reduce((acc, experience) => {
           .highlights-card li {
             display: flex;
             gap: 0.75rem;
-            color: var(--text-color);
+            color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.5;
           }
 
           .bullet {
-            color: var(--primary);
+            color: var(--text-color);
             font-size: 1.25rem;
             line-height: 1;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 0.125rem;
           }
 
           @media (max-width: 768px) {
-            .experiences-grid {
-              grid-template-columns: 1fr;
+            .company-header h2 {
+              font-size: 1.75rem;
             }
 
-            .card-header {
-              padding: 1.25rem;
-            }
-
-            .position-info {
+            .accordion-header .position-info {
               flex-direction: column;
               align-items: flex-start;
               gap: 0.5rem;
-            }
-
-            .card-content {
-              padding: 1.25rem;
-              gap: 1rem;
-            }
-
-            .summary-card,
-            .highlights-card {
-              padding: 1rem;
             }
           }
         `;
 
         // Añadir los estilos al documento
         document.head.appendChild(style);
+
+        // Agregar event listeners para el acordeón
+        const accordionHeaders = modalContent.querySelectorAll('.accordion-header');
+        accordionHeaders.forEach(header => {
+          header.addEventListener('click', () => {
+            const isExpanded = header.getAttribute('aria-expanded') === 'true';
+            const content = header.nextElementSibling;
+            
+            // Toggle solo el acordeón actual
+            header.setAttribute('aria-expanded', (!isExpanded).toString());
+            content.setAttribute('aria-hidden', isExpanded.toString());
+          });
+        });
 
         // Agregar event listeners para los botones de cierre
         const closeButtons = modalContent.querySelectorAll('.close-button, .close-modal-button');
@@ -495,7 +604,22 @@ const groupedWork = work.reduce((acc, experience) => {
           modal.classList.add('active');
           document.body.style.overflow = 'hidden';
         }
+
+        // Agregar event listener para la tecla ESC
+        const handleEscKey = (event) => {
+          if (event.key === 'Escape') {
+            if (typeof modal['closeModal'] === 'function') {
+              modal['closeModal']();
+            } else {
+              modal.classList.remove('active');
+              document.body.style.overflow = '';
+            }
+            document.removeEventListener('keydown', handleEscKey);
+          }
+        };
+        document.addEventListener('keydown', handleEscKey);
       });
     });
   });
 </script>
+
