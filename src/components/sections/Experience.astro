@@ -148,16 +148,12 @@ const groupedWork = work.reduce((acc, experience) => {
 </script>
 
 <script type="module" is:inline>
-  import { initAccordions } from "../../scripts/accordion";
   import { renderExperienceCards } from "../../utils/experience";
   
   // Leer groupedWork desde el DOM
   const groupedWork = JSON.parse(document.getElementById('grouped-work-data').textContent);
   
   document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar el acordeón
-    initAccordions();
-
     // Add click handlers to company cards
     document.querySelectorAll('.company-card').forEach(card => {
       card.addEventListener('click', () => {
